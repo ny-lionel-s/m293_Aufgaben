@@ -1,4 +1,4 @@
-html {
+﻿html {
     scroll-behavior: smooth;
 }
 body {
@@ -39,22 +39,23 @@ td {
 
 .page-header {
     text-align: center;
-    margin: 30px;
+    margin: 30px 0;
     display: flex;
     position: sticky;
     top: 0;
     border-radius: 20px;
     background-color: rgb(170, 139, 93);
     gap: 30px;
-    padding: 5px;
+    padding: 1rem 5rem;
 }
 
 
-.section-header {
+.home-section {
     color: #555;
-    font-size: 28px;
-    margin-top: 30px;
-    margin-bottom: 10px;
+    background-color: bisque;
+    padding: 3rem;
+    margin: 30px 0;
+    border-radius: 20px;
 }
 
 img {
@@ -64,15 +65,9 @@ img {
     margin: 20px auto;
     border-radius: 10px;
 }
-section {
-    background-color: bisque;
-    padding: 3rem;
-    margin: 30px 0;
-    border-radius: 20px;
-}
 a{
     text-decoration: none;
-    color: white;
+    color: black;
     background-color: rgb(170, 139, 93);
     padding: 10px 20px;
     border-radius: 10px;
