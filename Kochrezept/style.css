@@ -1,0 +1,80 @@
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-color: whitesmoke;
+    margin: 20px;
+    font-family: poppins, sans-serif;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid #ccc;
+    margin: 20px 0;
+}
+table {
+    width: 100%;
+    border-collapse: separate;   
+    border-spacing: 0;     
+    
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+            
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+th {
+    background-color: #e0e0e0;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+.page-header {
+    text-align: center;
+    margin: 30px;
+    display: flex;
+    position: sticky;
+    top: 0;
+    border-radius: 20px;
+    background-color: rgb(170, 139, 93);
+    gap: 30px;
+    padding: 5px;
+}
+
+
+.section-header {
+    color: #555;
+    font-size: 28px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+img {
+    max-width: 30%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+section {
+    background-color: bisque;
+    padding: 3rem;
+    margin: 30px 0;
+    border-radius: 20px;
+}
+a{
+    text-decoration: none;
+    color: white;
+    background-color: rgb(170, 139, 93);
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
