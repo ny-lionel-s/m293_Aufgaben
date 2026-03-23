@@ -89,7 +89,7 @@ header {
 
 /* Newsletter Section */
 .newsletter-section {
-    background-color: var(--accent-color);
+    background: linear-gradient(135deg, var(--primary-color), #1e4620);
     color: var(--text-light);
     padding: 3rem 2rem;
     text-align: center;
