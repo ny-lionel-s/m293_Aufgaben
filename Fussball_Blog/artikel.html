@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alle Artikel - Fussball Blog</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="logo">
+                <h1>⚽ Fussball Blog</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="artikel.html" class="active">Artikel</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Alle Artikel</h2>
+                <p>Entdecke die neuesten News und Analysen aus der Fussballwelt</p>
+            </div>
+        </section>
+
+        <section class="filter-section">
+            <button class="filter-btn active" data-filter="alle">Alle</button>
+            <button class="filter-btn" data-filter="bundesliga">Bundesliga</button>
+            <button class="filter-btn" data-filter="premier-league">Premier League</button>
+            <button class="filter-btn" data-filter="la-liga">La Liga</button>
+            <button class="filter-btn" data-filter="serie-a">Serie A</button>
+            <button class="filter-btn" data-filter="ligue-1">Ligue 1</button>
+            <button class="filter-btn" data-filter="champions-league">Champions League</button>
+        </section>
+
+        <section class="latest-articles">
+            <div class="articles-grid">
+                <article class="article-card" data-category="bundesliga">
+                    <img src="images/bayern-dortmund.jpg" alt="Bayern München vs Borussia Dortmund">
+                    <div class="article-content">
+                        <span class="article-category">Bundesliga</span>
+                        <h3><a href="artikel/bayern-klassiker.html">Der Klassiker: Bayern empfängt Dortmund</a></h3>
+                        <p>Das Spitzenspiel der Bundesliga steht bevor. Beide Teams in Topform - wer sichert sich die drei Punkte?</p>
+                        <div class="article-meta">
+                            <img src="images/autor-mueller.jpg" alt="Max Müller" class="author-img">
+                            <span>Max Müller</span>
+                            <span class="date">20. März 2026</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card" data-category="premier-league">
+                    <img src="images/manchester-city.jpg" alt="Manchester City">
+                    <div class="article-content">
+                        <span class="article-category">Premier League</span>
+                        <h3><a href="artikel/city-titelrennen.html">Manchester City im Titelrennen vorne</a></h3>
+                        <p>Die Citizens zeigen beeindruckende Form und führen die Tabelle an. Kann Arsenal noch mithalten?</p>
+                        <div class="article-meta">
+                            <img src="images/autor-schmidt.jpg" alt="Sarah Schmidt" class="author-img">
+                            <span>Sarah Schmidt</span>
+                            <span class="date">19. März 2026</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card" data-category="la-liga">
+                    <img src="images/real-madrid.jpg" alt="Real Madrid">
+                    <div class="article-content">
+                        <span class="article-category">La Liga</span>
+                        <h3><a href="artikel/real-madrid-form.html">Real Madrid in Gala-Form</a></h3>
+                        <p>Die Königlichen zeigen spektakulären Fussball. Bellingham brilliert weiterhin in seiner ersten Saison.</p>
+                        <div class="article-meta">
+                            <img src="images/autor-garcia.jpg" alt="Carlos Garcia" class="author-img">
+                            <span>Carlos Garcia</span>
+                            <span class="date">18. März 2026</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card" data-category="serie-a">
+                    <img src="images/inter-milan.jpg" alt="Inter Milan">
+                    <div class="article-content">
+                        <span class="article-category">Serie A</span>
+                        <h3><a href="artikel/inter-dominanz.html">Inter Mailand dominiert die Serie A</a></h3>
+                        <p>Die Nerazzurri sind das Mass aller Dinge in Italien. Die Defensive steht wie eine Mauer.</p>
+                        <div class="article-meta">
+                            <img src="images/autor-rossi.jpg" alt="Marco Rossi" class="author-img">
+                            <span>Marco Rossi</span>
+                            <span class="date">17. März 2026</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card" data-category="ligue-1">
+                    <img src="images/psg-monaco.jpg" alt="PSG vs Monaco">
+                    <div class="article-content">
+                        <span class="article-category">Ligue 1</span>
+                        <h3><a href="artikel/psg-monaco.html">PSG gegen Monaco: Titelentscheidung?</a></h3>
+                        <p>Das wichtigste Spiel der Saison in Frankreich. Monaco fordert PSG in einem packenden Duell heraus.</p>
+                        <div class="article-meta">
+                            <img src="images/autor-dubois.jpg" alt="Pierre Dubois" class="author-img">
+                            <span>Pierre Dubois</span>
+                            <span class="date">16. März 2026</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card" data-category="champions-league">
+                    <img src="images/champions-league.jpg" alt="Champions League">
+                    <div class="article-content">
+                        <span class="article-category champions">Champions League</span>
+                        <h3><a href="artikel/champions-league-viertelfinale.html">Viertelfinale: Die Highlights</a></h3>
+                        <p>Spektakuläre Duelle im Viertelfinale der Champions League. Alle Spiele und Analysen im Überblick.</p>
+                        <div class="article-meta">
+                            <img src="images/autor-mueller.jpg" alt="Max Müller" class="author-img">
+                            <span>Max Müller</span>
+                            <span class="date">15. März 2026</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card" data-category="bundesliga">
+                    <img src="images/leverkusen.jpg" alt="Bayer Leverkusen">
+                    <div class="article-content">
+                        <span class="article-category">Bundesliga</span>
+                        <h3><a href="artikel/leverkusen-meister.html">Leverkusen auf Meisterkurs</a></h3>
+                        <p>Die Werkself zeigt eine beeindruckende Saison. Xabi Alonso revolutioniert die Bundesliga mit seinem Spielstil.</p>
+                        <div class="article-meta">
+                            <img src="images/autor-mueller.jpg" alt="Max Müller" class="author-img">
+                            <span>Max Müller</span>
+                            <span class="date">14. März 2026</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card" data-category="premier-league">
+                    <img src="images/liverpool.jpg" alt="Liverpool FC">
+                    <div class="article-content">
+                        <span class="article-category">Premier League</span>
+                        <h3><a href="artikel/liverpool-comeback.html">Liverpool kämpft sich zurück</a></h3>
+                        <p>Die Reds zeigen Moral und holen wichtige Punkte im Titelrennen. Klopp motiviert sein Team zu Höchstleistungen.</p>
+                        <div class="article-meta">
+                            <img src="images/autor-schmidt.jpg" alt="Sarah Schmidt" class="author-img">
+                            <span>Sarah Schmidt</span>
+                            <span class="date">13. März 2026</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card" data-category="la-liga">
+                    <img src="images/barcelona.jpg" alt="FC Barcelona">
+                    <div class="article-content">
+                        <span class="article-category">La Liga</span>
+                        <h3><a href="artikel/barcelona-jugend.html">Barcelonas goldene Jugend</a></h3>
+                        <p>La Masia produziert wieder Weltklasse-Talente. Die jungen Stars überzeugen auf ganzer Linie.</p>
+                        <div class="article-meta">
+                            <img src="images/autor-garcia.jpg" alt="Carlos Garcia" class="author-img">
+                            <span>Carlos Garcia</span>
+                            <span class="date">12. März 2026</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card" data-category="serie-a">
+                    <img src="images/ac-milan.jpg" alt="AC Milan">
+                    <div class="article-content">
+                        <span class="article-category">Serie A</span>
+                        <h3><a href="artikel/milan-renaissance.html">AC Milan erlebt Renaissance</a></h3>
+                        <p>Die Rossoneri sind zurück an der Spitze. Mit spektakulärem Fussball zurück zu alter Stärke.</p>
+                        <div class="article-meta">
+                            <img src="images/autor-rossi.jpg" alt="Marco Rossi" class="author-img">
+                            <span>Marco Rossi</span>
+                            <span class="date">11. März 2026</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card" data-category="ligue-1">
+                    <img src="images/marseille.jpg" alt="Olympique Marseille">
+                    <div class="article-content">
+                        <span class="article-category">Ligue 1</span>
+                        <h3><a href="artikel/marseille-europa.html">Marseille greift nach Europa</a></h3>
+                        <p>OM zeigt starke Leistungen und will zurück in die Champions League. Die Fans sind euphorisch.</p>
+                        <div class="article-meta">
+                            <img src="images/autor-dubois.jpg" alt="Pierre Dubois" class="author-img">
+                            <span>Pierre Dubois</span>
+                            <span class="date">10. März 2026</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card" data-category="champions-league">
+                    <img src="images/champions-league-2.jpg" alt="Champions League Action">
+                    <div class="article-content">
+                        <span class="article-category champions">Champions League</span>
+                        <h3><a href="artikel/champions-league-favoriten.html">Die Titelfavoriten im Check</a></h3>
+                        <p>Wer wird Champion? Eine Analyse der heissesten Anwärter auf den Henkelpott.</p>
+                        <div class="article-meta">
+                            <img src="images/autor-mueller.jpg" alt="Max Müller" class="author-img">
+                            <span>Max Müller</span>
+                            <span class="date">9. März 2026</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Über uns</h4>
+                <p>Dein Fussball Blog für die neuesten News aus den Top-Ligen Europas.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="artikel.html">Artikel</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Folge uns</h4>
+                <p>Bleib auf dem Laufenden mit unseren Social Media Kanälen</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Fussball Blog. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <script>
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const articles = document.querySelectorAll('.article-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const filter = btn.getAttribute('data-filter');
+                
+                articles.forEach(article => {
+                    if (filter === 'alle') {
+                        article.style.display = 'block';
+                    } else {
+                        if (article.getAttribute('data-category') === filter) {
+                            article.style.display = 'block';
+                        } else {
+                            article.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const thema = urlParams.get('thema');
+        if (thema) {
+            const targetBtn = document.querySelector(`[data-filter="${thema}"]`);
+            if (targetBtn) {
+                targetBtn.click();
+            }
+        }
+    </script>
+</body>
+</html>

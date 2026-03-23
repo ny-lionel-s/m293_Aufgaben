@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - Fussball Blog</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="logo">
+                <h1>⚽ Fussball Blog</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="artikel.html">Artikel</a></li>
+                <li><a href="kontakt.html" class="active">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Kontakt</h2>
+                <p>Hast du Fragen oder Anregungen? Schreib uns!</p>
+            </div>
+        </section>
+
+        <section class="authors-section">
+            <h2 style="text-align: center; color: var(--primary-color); font-size: 2.5rem; margin-bottom: 1rem;">Unser Team</h2>
+            <div class="authors-grid">
+                <div class="author-card">
+                    <img src="images/autor-mueller.jpg" alt="Max Müller">
+                    <h3>Max Müller</h3>
+                    <p class="specialty">Bundesliga & Champions League Experte</p>
+                    <p>Max berichtet seit über 10 Jahren über die Bundesliga und internationale Wettbewerbe. Seine Leidenschaft gilt dem deutschen Fussball.</p>
+                </div>
+                
+                <div class="author-card">
+                    <img src="images/autor-schmidt.jpg" alt="Sarah Schmidt">
+                    <h3>Sarah Schmidt</h3>
+                    <p class="specialty">Premier League Spezialistin</p>
+                    <p>Sarah lebt für den englischen Fussball und bringt die Atmosphäre der Premier League direkt zu unseren Lesern.</p>
+                </div>
+                
+                <div class="author-card">
+                    <img src="images/autor-garcia.jpg" alt="Carlos Garcia">
+                    <h3>Carlos Garcia</h3>
+                    <p class="specialty">La Liga Korrespondent</p>
+                    <p>Carlos aus Madrid kennt die spanische Liga wie seine Westentasche und liefert exklusive Einblicke.</p>
+                </div>
+                
+                <div class="author-card">
+                    <img src="images/autor-rossi.jpg" alt="Marco Rossi">
+                    <h3>Marco Rossi</h3>
+                    <p class="specialty">Serie A Kenner</p>
+                    <p>Marco aus Mailand bringt die taktische Finesse des italienischen Fussballs näher und analysiert jedes Spiel im Detail.</p>
+                </div>
+                
+                <div class="author-card">
+                    <img src="images/autor-dubois.jpg" alt="Pierre Dubois">
+                    <h3>Pierre Dubois</h3>
+                    <p class="specialty">Ligue 1 Experte</p>
+                    <p>Pierre berichtet live aus Paris über die Ligue 1 und entdeckt die aufstrebenden Talente Frankreichs.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-container">
+            <h2>Kontaktformular</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">E-Mail-Adresse *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Betreff *</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Bitte wählen...</option>
+                        <option value="allgemeine-anfrage">Allgemeine Anfrage</option>
+                        <option value="artikel-vorschlag">Artikel-Vorschlag</option>
+                        <option value="kooperation">Kooperation</option>
+                        <option value="technisches-problem">Technisches Problem</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="sonstiges">Sonstiges</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Nachricht *</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Nachricht senden</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Über uns</h4>
+                <p>Dein Fussball Blog für die neuesten News aus den Top-Ligen Europas.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="artikel.html">Artikel</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Folge uns</h4>
+                <p>Bleib auf dem Laufenden mit unseren Social Media Kanälen</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Fussball Blog. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+</body>
+</html>
