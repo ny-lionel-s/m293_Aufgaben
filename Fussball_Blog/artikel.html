@@ -21,24 +21,60 @@
     </header>
 
     <main>
-        <section class="hero">
+        <section class="hero hero-page">
             <div class="hero-content">
-                <h2>Alle Artikel</h2>
-                <p>Entdecke die neuesten News und Analysen aus der Fussballwelt</p>
+                <span class="eyebrow">Artikelübersicht</span>
+                <h2>Alle Artikel auf einen Blick.</h2>
+                <p>Hier bleiben alle Beiträge als Grid sichtbar und lassen sich über Themenfilter gezielt eingrenzen. Das entspricht direkt den Anforderungen aus dem Auftrag.</p>
+            </div>
+            <aside class="hero-panel">
+                <span class="panel-kicker">Filterbar</span>
+                <h3>Vom Überblick direkt in die passende Liga.</h3>
+                <p>Nutze die Filter, um nur Artikel zu einem bestimmten Thema anzuzeigen oder alles gesammelt zu sehen.</p>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <strong>12</strong>
+                        <span>Artikel</span>
+                    </div>
+                    <div class="hero-stat">
+                        <strong>6</strong>
+                        <span>Themen</span>
+                    </div>
+                    <div class="hero-stat">
+                        <strong>1</strong>
+                        <span>Übersicht</span>
+                    </div>
+                </div>
+            </aside>
+        </section>
+
+        <section class="filter-shell">
+            <div class="section-heading">
+                <div>
+                    <span class="section-kicker">Themenfilter</span>
+                    <h2>Filtere die Übersicht nach Liga oder Wettbewerb.</h2>
+                </div>
+                <p>Alle Artikel bleiben in derselben Kartenlogik dargestellt und können über URL-Parameter weiterhin direkt vorgefiltert werden.</p>
+            </div>
+            <div class="filter-section">
+                <button type="button" class="filter-btn active" data-filter="alle">Alle</button>
+                <button type="button" class="filter-btn" data-filter="bundesliga">Bundesliga</button>
+                <button type="button" class="filter-btn" data-filter="premier-league">Premier League</button>
+                <button type="button" class="filter-btn" data-filter="la-liga">La Liga</button>
+                <button type="button" class="filter-btn" data-filter="serie-a">Serie A</button>
+                <button type="button" class="filter-btn" data-filter="ligue-1">Ligue 1</button>
+                <button type="button" class="filter-btn" data-filter="champions-league">Champions League</button>
             </div>
         </section>
 
-        <section class="filter-section">
-            <button class="filter-btn active" data-filter="alle">Alle</button>
-            <button class="filter-btn" data-filter="bundesliga">Bundesliga</button>
-            <button class="filter-btn" data-filter="premier-league">Premier League</button>
-            <button class="filter-btn" data-filter="la-liga">La Liga</button>
-            <button class="filter-btn" data-filter="serie-a">Serie A</button>
-            <button class="filter-btn" data-filter="ligue-1">Ligue 1</button>
-            <button class="filter-btn" data-filter="champions-league">Champions League</button>
-        </section>
-
         <section class="latest-articles">
+            <div class="section-heading">
+                <div>
+                    <span class="section-kicker">Artikelgrid</span>
+                    <h2>Alle Beiträge im modernen Kartenlayout.</h2>
+                </div>
+                <a href="index.html" class="section-link">Zur Startseite</a>
+            </div>
             <div class="articles-grid">
                 <article class="article-card" data-category="bundesliga">
                     <img src="images/bayern-dortmund.jpg" alt="Bayern München vs Borussia Dortmund">
@@ -215,7 +251,7 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h4>Über uns</h4>
-                <p>Dein Fussball Blog für die neuesten News aus den Top-Ligen Europas.</p>
+                <p>Aktuelle Analysen, klare Themenstruktur und kuratierte Fussball-Artikel aus Europas wichtigsten Wettbewerben.</p>
             </div>
             <div class="footer-section">
                 <h4>Quick Links</h4>
@@ -226,8 +262,8 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <h4>Folge uns</h4>
-                <p>Bleib auf dem Laufenden mit unseren Social Media Kanälen</p>
+                <h4>Bleib dran</h4>
+                <p>Nutze die Themenfilter, um schnell zu Bundesliga, Premier League, La Liga, Serie A, Ligue 1 oder Champions League zu springen.</p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -239,35 +275,27 @@
         const filterBtns = document.querySelectorAll('.filter-btn');
         const articles = document.querySelectorAll('.article-card');
 
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                
-                const filter = btn.getAttribute('data-filter');
-                
-                articles.forEach(article => {
-                    if (filter === 'alle') {
-                        article.style.display = 'block';
-                    } else {
-                        if (article.getAttribute('data-category') === filter) {
-                            article.style.display = 'block';
-                        } else {
-                            article.style.display = 'none';
-                        }
-                    }
-                });
+        function applyFilter(filter) {
+            filterBtns.forEach(btn => {
+                const isActive = btn.dataset.filter === filter;
+                btn.classList.toggle('active', isActive);
+                btn.setAttribute('aria-pressed', isActive);
             });
+
+            articles.forEach(article => {
+                const matches = filter === 'alle' || article.dataset.category === filter;
+                article.hidden = !matches;
+            });
+        }
+
+        filterBtns.forEach(btn => {
+            btn.setAttribute('aria-pressed', btn.classList.contains('active'));
+            btn.addEventListener('click', () => applyFilter(btn.dataset.filter));
         });
 
         const urlParams = new URLSearchParams(window.location.search);
         const thema = urlParams.get('thema');
-        if (thema) {
-            const targetBtn = document.querySelector(`[data-filter="${thema}"]`);
-            if (targetBtn) {
-                targetBtn.click();
-            }
-        }
+        applyFilter(thema || 'alle');
     </script>
 </body>
 </html>

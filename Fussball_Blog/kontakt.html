@@ -21,15 +21,41 @@
     </header>
 
     <main>
-        <section class="hero">
+        <section class="hero hero-page">
             <div class="hero-content">
-                <h2>Kontakt</h2>
-                <p>Hast du Fragen oder Anregungen? Schreib uns!</p>
+                <span class="eyebrow">Kontaktseite</span>
+                <h2>Unser Team und dein direkter Draht zum Blog.</h2>
+                <p>Die Kontaktseite bleibt auftragsgemäss zweigeteilt: Informationen zu den Autor:innen und ein Formular mit auswählbaren Betreffzeilen für verschiedene Anliegen.</p>
             </div>
+            <aside class="hero-panel">
+                <span class="panel-kicker">Kontaktpunkte</span>
+                <h3>Fragen, Feedback oder Artikelideen? Hier läuft alles zusammen.</h3>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <strong>5</strong>
+                        <span>Autor:innen</span>
+                    </div>
+                    <div class="hero-stat">
+                        <strong>6</strong>
+                        <span>Optionen</span>
+                    </div>
+                    <div class="hero-stat">
+                        <strong>1</strong>
+                        <span>Formular</span>
+                    </div>
+                </div>
+                <p>Damit bleibt die Seite funktional klar und wirkt dennoch deutlich moderner als vorher.</p>
+            </aside>
         </section>
 
         <section class="authors-section">
-            <h2 style="text-align: center; color: var(--primary-color); font-size: 2.5rem; margin-bottom: 1rem;">Unser Team</h2>
+            <div class="section-heading">
+                <div>
+                    <span class="section-kicker">Autor:innen</span>
+                    <h2>Unser Team hinter dem Fussball Blog.</h2>
+                </div>
+                <p>Die Autoreninformationen mit Foto bleiben vollständig erhalten und werden in einem klareren, hochwertigeren Kartenlayout präsentiert.</p>
+            </div>
             <div class="authors-grid">
                 <div class="author-card">
                     <img src="images/autor-mueller.jpg" alt="Max Müller">
@@ -69,38 +95,65 @@
         </section>
 
         <section class="contact-container">
-            <h2>Kontaktformular</h2>
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="name">Name *</label>
-                    <input type="text" id="name" name="name" required>
+            <div class="section-heading">
+                <div>
+                    <span class="section-kicker">Formular</span>
+                    <h2>Schreib uns direkt über das Kontaktformular.</h2>
                 </div>
-                
-                <div class="form-group">
-                    <label for="email">E-Mail-Adresse *</label>
-                    <input type="email" id="email" name="email" required>
+                <p>Durch das Dropdown lassen sich Anfragen sauber zuordnen, genau wie es im Auftrag verlangt wird.</p>
+            </div>
+            <div class="contact-layout">
+                <div class="contact-panel">
+                    <span class="eyebrow">Anfragen</span>
+                    <h3>Schnell, klar und thematisch sortiert.</h3>
+                    <p>Nutze das Formular für Feedback, Artikelideen, technische Hinweise oder allgemeine Fragen rund um den Blog.</p>
+                    <ul class="contact-points">
+                        <li>
+                            <strong>Betreffauswahl</strong>
+                            <span>Ordnet jede Anfrage dem passenden Bereich zu.</span>
+                        </li>
+                        <li>
+                            <strong>Autor:innen sichtbar</strong>
+                            <span>Die Teamseite zeigt, wer hinter den Artikeln steht.</span>
+                        </li>
+                        <li>
+                            <strong>Responsiv gestaltet</strong>
+                            <span>Das Formular bleibt auch auf Mobile gut nutzbar.</span>
+                        </li>
+                    </ul>
                 </div>
-                
-                <div class="form-group">
-                    <label for="subject">Betreff *</label>
-                    <select id="subject" name="subject" required>
-                        <option value="">Bitte wählen...</option>
-                        <option value="allgemeine-anfrage">Allgemeine Anfrage</option>
-                        <option value="artikel-vorschlag">Artikel-Vorschlag</option>
-                        <option value="kooperation">Kooperation</option>
-                        <option value="technisches-problem">Technisches Problem</option>
-                        <option value="feedback">Feedback</option>
-                        <option value="sonstiges">Sonstiges</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Nachricht *</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                
-                <button type="submit" class="submit-btn">Nachricht senden</button>
-            </form>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">E-Mail-Adresse *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Betreff *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Bitte wählen...</option>
+                            <option value="allgemeine-anfrage">Allgemeine Anfrage</option>
+                            <option value="artikel-vorschlag">Artikel-Vorschlag</option>
+                            <option value="kooperation">Kooperation</option>
+                            <option value="technisches-problem">Technisches Problem</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="sonstiges">Sonstiges</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Nachricht *</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Nachricht senden</button>
+                </form>
+            </div>
         </section>
     </main>
 
@@ -108,7 +161,7 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h4>Über uns</h4>
-                <p>Dein Fussball Blog für die neuesten News aus den Top-Ligen Europas.</p>
+                <p>Aktuelle Analysen, klare Themenstruktur und kuratierte Fussball-Artikel aus Europas wichtigsten Wettbewerben.</p>
             </div>
             <div class="footer-section">
                 <h4>Quick Links</h4>
@@ -119,8 +172,8 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <h4>Folge uns</h4>
-                <p>Bleib auf dem Laufenden mit unseren Social Media Kanälen</p>
+                <h4>Bleib dran</h4>
+                <p>Fragen, Feedback und Vorschläge lassen sich direkt über das Formular mit passendem Betreff einreichen.</p>
             </div>
         </div>
         <div class="footer-bottom">
