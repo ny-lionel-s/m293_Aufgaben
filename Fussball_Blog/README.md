@@ -1,10 +1,10 @@
-# ⚽ Fussball Blog - Projektdokumentation
+# Fussball Blog - Projektdokumentation
 
-## 📋 Projektübersicht
+## Projektübersicht
 
 Ein moderner, responsiver Fussball-Blog mit Fokus auf die Top 5 europäischen Ligen (Bundesliga, Premier League, La Liga, Serie A, Ligue 1) sowie die UEFA Champions League. Das Projekt wurde als Einzelarbeit im Rahmen des Moduls M293 entwickelt.
 
-### 🎯 Projektziele
+### Projektziele
 
 - Entwicklung eines vollständig responsiven Fussball-Blogs
 - Verwendung von 100% eigenem HTML- und CSS-Code
@@ -14,7 +14,7 @@ Ein moderner, responsiver Fussball-Blog mit Fokus auf die Top 5 europäischen Li
 
 ---
 
-## 🏗️ Projektstruktur
+## Projektstruktur
 
 ```
 Fussball_Blog/
@@ -53,7 +53,7 @@ Fussball_Blog/
 
 ---
 
-## 🎨 Design & Styleguide
+## Design & Styleguide
 
 ### Farbpalette
 
@@ -91,17 +91,17 @@ Fussball_Blog/
 
 ---
 
-## ✨ Funktionen
+## Funktionen
 
 ### 1. Startseite (index.html)
 
 **Implementierte Features:**
-- ✅ Hero-Bereich mit Willkommensnachricht
-- ✅ Newsletter-Anmeldung (E-Mail-Formular)
-- ✅ Themen-Übersicht (6 Ligen als Karten)
-- ✅ Neueste Artikel (6 Artikel-Karten mit Vorschau)
-- ✅ Responsive Navigation
-- ✅ Footer mit Links
+- Hero-Bereich mit Willkommensnachricht
+- Newsletter-Anmeldung (E-Mail-Formular)
+- Themen-Übersicht (6 Ligen als Karten)
+- Neueste Artikel (6 Artikel-Karten mit Vorschau)
+- Responsive Navigation
+- Footer mit Links
 
 **Besonderheiten:**
 - Newsletter-Bereich mit auffälligem Orange
@@ -112,11 +112,11 @@ Fussball_Blog/
 ### 2. Artikelübersicht (artikel.html)
 
 **Implementierte Features:**
-- ✅ Filter-Buttons für alle Themen
-- ✅ 12 Artikel insgesamt (2 pro Thema)
-- ✅ JavaScript-basierte Filterung
-- ✅ URL-Parameter-Unterstützung (z.B. ?thema=bundesliga)
-- ✅ Gleiche Artikel-Karten wie Startseite
+- Filter-Buttons für alle Themen
+- 12 Artikel insgesamt (2 pro Thema)
+- JavaScript-basierte Filterung
+- URL-Parameter-Unterstützung (z.B. ?thema=bundesliga)
+- Gleiche Artikel-Karten wie Startseite
 
 **Technische Details:**
 ```javascript
@@ -130,13 +130,13 @@ Fussball_Blog/
 ### 3. Kontaktseite (kontakt.html)
 
 **Implementierte Features:**
-- ✅ Autoren-Übersicht (5 Experten mit Foto)
-- ✅ Kontaktformular mit:
+- Autoren-Übersicht (5 Experten mit Foto)
+- Kontaktformular mit:
   - Name-Feld
   - E-Mail-Feld
   - Dropdown für Betreff
   - Nachricht-Textfeld
-- ✅ 6 Betreff-Optionen im Dropdown
+- 6 Betreff-Optionen im Dropdown
 
 **Betreff-Optionen:**
 1. Allgemeine Anfrage
@@ -149,12 +149,12 @@ Fussball_Blog/
 ### 4. Artikel-Detailseiten
 
 **Implementierte Features:**
-- ✅ Vollständige Artikel mit Text und Bildern
-- ✅ Autoren-Information mit Foto
-- ✅ Kategorie-Badge
-- ✅ Datum und Lesezeit
-- ✅ Zurück-Button zur Artikelübersicht
-- ✅ Strukturierte Inhalte mit H2-Überschriften
+- Vollständige Artikel mit Text und Bildern
+- Autoren-Information mit Foto
+- Kategorie-Badge
+- Datum und Lesezeit
+- Zurück-Button zur Artikelübersicht
+- Strukturierte Inhalte mit H2-Überschriften
 
 **Erstellte Artikel:**
 
@@ -175,7 +175,7 @@ Zusätzliche Artikel auf artikel.html:
 
 ---
 
-## 📱 Responsive Design
+## Responsive Design
 
 ### Mobile (bis 480px)
 
@@ -205,18 +205,18 @@ Zusätzliche Artikel auf artikel.html:
 
 ---
 
-## 🤖 KI-Einsatz in der Entwicklung
+## KI-Einsatz in der Entwicklung
 
 ### Verwendete KI-Tools
 
 #### 1. **GitHub Copilot CLI** (Haupttool)
 
 **Einsatzbereiche:**
-- ✅ Generierung der kompletten HTML-Struktur
-- ✅ Erstellung des CSS-Codes
-- ✅ JavaScript für Filter-Funktionalität
-- ✅ Python-Script für Platzhalter-Bilder
-- ✅ Strukturierung der Projektdokumentation
+- Generierung der kompletten HTML-Struktur
+- Erstellung des CSS-Codes
+- JavaScript für Filter-Funktionalität
+- Python-Script für Platzhalter-Bilder
+- Strukturierung der Projektdokumentation
 
 **Vorteile:**
 - Sehr schnelle Code-Generierung
@@ -262,12 +262,12 @@ Ergebnis: Vollständiges HTML + CSS mit:
 
 | Kriterium | GitHub Copilot CLI | Alternative (ChatGPT) |
 |-----------|-------------------|----------------------|
-| **Code-Qualität** | ⭐⭐⭐⭐⭐ Exzellent | ⭐⭐⭐⭐ Sehr gut |
-| **Geschwindigkeit** | ⭐⭐⭐⭐⭐ Sofort | ⭐⭐⭐ Schnell |
-| **Context-Awareness** | ⭐⭐⭐⭐⭐ Projekt-bewusst | ⭐⭐⭐ Begrenzt |
-| **Integration** | ⭐⭐⭐⭐⭐ Direkt in CLI | ⭐⭐ Separate Platform |
-| **Iteration** | ⭐⭐⭐⭐⭐ Nahtlos | ⭐⭐⭐ Copy-Paste nötig |
-| **Dokumentation** | ⭐⭐⭐⭐ Sehr gut | ⭐⭐⭐⭐⭐ Exzellent |
+| **Code-Qualität** | 5/5 Exzellent | 4/5 Sehr gut |
+| **Geschwindigkeit** | 5/5 Sofort | 3/5 Schnell |
+| **Context-Awareness** | 5/5 Projekt-bewusst | 3/5 Begrenzt |
+| **Integration** | 5/5 Direkt in CLI | 2/5 Separate Platform |
+| **Iteration** | 5/5 Nahtlos | 3/5 Copy-Paste nötig |
+| **Dokumentation** | 4/5 Sehr gut | 5/5 Exzellent |
 | **Gesamtbewertung** | **9.5/10** | **8/10** |
 
 ### Effizienzgewinn durch KI
@@ -291,34 +291,34 @@ Ergebnis: Vollständiges HTML + CSS mit:
 
 ---
 
-## 🎯 Erfüllung der Anforderungen
+## Erfüllung der Anforderungen
 
 ### Pflichtanforderungen
 
 | Anforderung | Status | Umsetzung |
 |------------|--------|-----------|
-| 100% eigener HTML/CSS Code | ✅ | Alle Dateien selbst erstellt (mit KI-Unterstützung) |
-| Seitenstruktur Header/Main/Footer | ✅ | Auf allen Seiten implementiert |
-| Grid-Layout | ✅ | Artikel-Übersicht, Themen, Footer |
-| Formulare (Newsletter + Kontakt) | ✅ | Beide funktionsfähig |
-| Responsives Design | ✅ | Mobile, Tablet, Desktop |
-| Mind. 3 Hauptseiten | ✅ | index, artikel, kontakt |
-| Mind. 10 Artikel | ✅ | 12 Artikel mit Details |
-| Wireframes | ⚠️ | Nicht separat dokumentiert |
-| Styleguide | ✅ | In README integriert |
-| KI-Dokumentation | ✅ | Umfassend dokumentiert |
+| 100% eigener HTML/CSS Code | | Alle Dateien selbst erstellt (mit KI-Unterstützung) |
+| Seitenstruktur Header/Main/Footer | | Auf allen Seiten implementiert |
+| Grid-Layout | | Artikel-Übersicht, Themen, Footer |
+| Formulare (Newsletter + Kontakt) | | Beide funktionsfähig |
+| Responsives Design | | Mobile, Tablet, Desktop |
+| Mind. 3 Hauptseiten | | index, artikel, kontakt |
+| Mind. 10 Artikel | | 12 Artikel mit Details |
+| Wireframes | Teilweise | Nicht separat dokumentiert |
+| Styleguide | | In README integriert |
+| KI-Dokumentation | | Umfassend dokumentiert |
 
 ### Optional umgesetzt
 
 | Feature | Status | Anmerkung |
 |---------|--------|-----------|
-| JavaScript Filter | ✅ | Für Artikelübersicht |
-| Kommentarfunktion | ❌ | Nicht umgesetzt |
-| Likes (Web Storage) | ❌ | Nicht umgesetzt |
+| JavaScript Filter | | Für Artikelübersicht |
+| Kommentarfunktion | Nein | Nicht umgesetzt |
+| Likes (Web Storage) | Nein | Nicht umgesetzt |
 
 ---
 
-## 💻 Technische Details
+## Technische Details
 
 ### HTML5 Features
 
@@ -353,7 +353,7 @@ Ergebnis: Vollständiges HTML + CSS mit:
 
 ---
 
-## 🚀 Deployment
+## Deployment
 
 ### Veröffentlichung
 
@@ -395,7 +395,7 @@ vercel --prod
 
 ---
 
-## 📚 Gelerntes & Erkenntnisse
+## Gelerntes & Erkenntnisse
 
 ### Technische Learnings
 
@@ -417,27 +417,27 @@ vercel --prod
 ### KI-Tool Erkenntnisse
 
 **Was KI gut kann:**
-✅ Boilerplate Code generieren
-✅ Konsistente Strukturen erstellen
-✅ Best Practices anwenden
-✅ Repetitive Aufgaben automatisieren
-✅ Code-Dokumentation
+ Boilerplate Code generieren
+ Konsistente Strukturen erstellen
+ Best Practices anwenden
+ Repetitive Aufgaben automatisieren
+ Code-Dokumentation
 
 **Was KI weniger gut kann:**
-⚠️ Kreative Design-Entscheidungen
-⚠️ Komplexe Business-Logik
-⚠️ Spezifische UX-Optimierungen
-⚠️ Barrierefreiheit-Details
+ Kreative Design-Entscheidungen
+ Komplexe Business-Logik
+ Spezifische UX-Optimierungen
+ Barrierefreiheit-Details
 
 **Beste KI-Nutzung:**
-- KI für Basis-Struktur
-- Mensch für Feinschliff
-- Iterativer Prozess
-- Kritisches Hinterfragen der Vorschläge
+ KI für Basis-Struktur
+ Mensch für Feinschliff
+ Iterativer Prozess
+ Kritisches Hinterfragen der Vorschläge
 
 ---
 
-## 🔧 Wartung & Erweiterungen
+## Wartung & Erweiterungen
 
 ### Mögliche Erweiterungen
 
@@ -468,7 +468,7 @@ vercel --prod
 
 ---
 
-## 📖 Verwendung
+## Verwendung
 
 ### Lokale Entwicklung
 
@@ -509,18 +509,18 @@ cd Fussball_Blog
 
 ---
 
-## 🎓 Fazit
+## Fazit
 
 ### Projekterfolg
 
 Das Fussball-Blog-Projekt wurde erfolgreich umgesetzt und erfüllt alle Hauptanforderungen:
 
-✅ Moderne, responsive Website
-✅ 100% eigener Code (mit KI-Unterstützung)
-✅ Alle geforderten Seiten und Funktionen
-✅ Professionelles Design
-✅ Umfassende Dokumentation
-✅ Einsatz von KI-Tools demonstriert
+ Moderne, responsive Website
+ 100% eigener Code (mit KI-Unterstützung)
+ Alle geforderten Seiten und Funktionen
+ Professionelles Design
+ Umfassende Dokumentation
+ Einsatz von KI-Tools demonstriert
 
 ### Persönliche Entwicklung
 
@@ -538,7 +538,7 @@ Das Fussball-Blog-Projekt wurde erfolgreich umgesetzt und erfüllt alle Hauptanf
 
 ---
 
-## 👨‍💻 Autor & Credits
+## Autor & Credits
 
 **Projekt:** Fussball Blog - M293 Projektauftrag  
 **Entwickelt mit:** GitHub Copilot CLI, Python (Pillow)  
@@ -549,11 +549,11 @@ Das Fussball-Blog-Projekt wurde erfolgreich umgesetzt und erfüllt alle Hauptanf
 
 - GitHub Copilot für die KI-Unterstützung
 - Module M293 für die Projektidee
-- Alle Fussball-Fans weltweit ⚽
+- Alle Fussball-Fans weltweit
 
 ---
 
-## 📞 Kontakt
+## Kontakt
 
 Für Fragen oder Feedback zum Projekt, nutze das Kontaktformular auf der Website oder melde dich über die Kontaktseite.
 
@@ -561,4 +561,4 @@ Für Fragen oder Feedback zum Projekt, nutze das Kontaktformular auf der Website
 
 **Version:** 1.0  
 **Stand:** März 2026  
-**Status:** ✅ Projekt abgeschlossen
+**Status:** Projekt abgeschlossen

@@ -5,7 +5,7 @@
 ### Startseite Mobile
 ```
 ┌─────────────────────┐
-│   ⚽ Fussball Blog   │ <- Header (Grün)
+│   Fussball Blog   │ <- Header (Grün)
 ├─────────────────────┤
 │   Home              │
 │   Artikel           │ <- Navigation (Vertikal)
@@ -16,7 +16,7 @@
 │  Fussball Blog      │ <- Hero (Gradient)
 │                     │
 ├─────────────────────┤
-│  📬 Newsletter      │
+│  Newsletter         │
 │  [  E-Mail...    ]  │ <- Newsletter (Orange)
 │  [  Abonnieren   ]  │
 ├─────────────────────┤
@@ -45,12 +45,12 @@
 ### Artikelübersicht Mobile
 ```
 ┌─────────────────────┐
-│   ⚽ Fussball Blog   │ <- Header
+│   Fussball Blog   │ <- Header
 ├─────────────────────┤
 │  Alle Artikel       │ <- Hero
 ├─────────────────────┤
-│  [Alle] [BL] [PL]   │
-│  [LL] [SA] [L1] [CL]│ <- Filter (2 Zeilen)
+│  [Alle] [🇩🇪] [🏴]   │
+│  [🇪🇸] [🇮🇹] [🇫🇷] [🏆]│ <- Filter (2 Zeilen)
 ├─────────────────────┤
 │  ┌───────────────┐  │
 │  │  Artikel 1    │  │
@@ -64,7 +64,7 @@
 ### Kontakt Mobile
 ```
 ┌─────────────────────┐
-│   ⚽ Fussball Blog   │ <- Header
+│   Fussball Blog   │ <- Header
 ├─────────────────────┤
 │  Kontakt            │ <- Hero
 ├─────────────────────┤
@@ -90,13 +90,13 @@
 ### Startseite Tablet
 ```
 ┌─────────────────────────────────┐
-│  ⚽ Fussball Blog    Home Artikel│ <- Header (Horizontal)
+│  Fussball Blog    Home Artikel│ <- Header (Horizontal)
 ├─────────────────────────────────┤
 │                                  │
 │    Willkommen beim Fussball Blog │ <- Hero (Größer)
 │                                  │
 ├─────────────────────────────────┤
-│   📬 Newsletter                  │
+│   Newsletter                    │
 │   [  E-Mail...    ] [Abonnieren] │ <- Newsletter (Horizontal)
 ├─────────────────────────────────┤
 │  ┌──────────┐  ┌──────────┐     │
@@ -115,7 +115,7 @@
 ### Artikelübersicht Tablet
 ```
 ┌─────────────────────────────────┐
-│  ⚽ Fussball Blog    Navigation  │
+│  Fussball Blog    Navigation  │
 ├─────────────────────────────────┤
 │  [Alle][Bundesliga][Premier...] │ <- Filter (1 Zeile)
 ├─────────────────────────────────┤
@@ -132,21 +132,21 @@
 ### Startseite Desktop
 ```
 ┌───────────────────────────────────────────────────────┐
-│  ⚽ Fussball Blog          Home  Artikel  Kontakt      │ <- Header
+│  Fussball Blog          Home  Artikel  Kontakt      │ <- Header
 ├───────────────────────────────────────────────────────┤
 │                                                        │
 │        Willkommen beim Fussball Blog                   │ <- Hero (Full Width)
 │        Die neuesten News aus den Top-Ligen            │
 │                                                        │
 ├───────────────────────────────────────────────────────┤
-│   📬 Newsletter abonnieren                            │
+│   Newsletter abonnieren                              │
 │   [    E-Mail-Adresse...     ] [  Abonnieren  ]      │ <- Newsletter
 ├───────────────────────────────────────────────────────┤
 │  ┌──────┐  ┌──────┐  ┌──────┐  ┌──────┐  ┌──────┐   │
 │  │🇩🇪BL │  │🏴PL  │  │🇪🇸LL │  │🇮🇹SA │  │🇫🇷L1 │   │ <- Themen
 │  └──────┘  └──────┘  └──────┘  └──────┘  └──────┘   │    (Horizontal)
 │  ┌────────────┐                                       │
-│  │ 🏆 UCL     │                                       │
+│  │ 🏆 UCL      │                                       │
 │  └────────────┘                                       │
 ├───────────────────────────────────────────────────────┤
 │  Neueste Artikel                                      │
@@ -168,7 +168,7 @@
 ### Artikel-Detailseite Desktop
 ```
 ┌───────────────────────────────────────────────────────┐
-│  ⚽ Fussball Blog          Home  Artikel  Kontakt      │
+│  Fussball Blog          Home  Artikel  Kontakt      │
 ├───────────────────────────────────────────────────────┤
 │         [Bundesliga Badge]                            │
 │                                                        │
@@ -194,7 +194,7 @@
 ### Kontaktseite Desktop
 ```
 ┌───────────────────────────────────────────────────────┐
-│  ⚽ Fussball Blog          Home  Artikel  Kontakt      │
+│  Fussball Blog          Home  Artikel  Kontakt      │
 ├───────────────────────────────────────────────────────┤
 │                   Kontakt                              │
 ├───────────────────────────────────────────────────────┤
@@ -221,9 +221,9 @@
 ## Design-Prinzipien
 
 ### Farben & Kontraste
-- ✅ WCAG 2.1 AA Standard für Text-Kontraste
-- ✅ Primärfarben für wichtige CTAs
-- ✅ Akzentfarbe (Orange) für Newsletter
+- WCAG 2.1 AA Standard für Text-Kontraste
+- Primärfarben für wichtige CTAs
+- Akzentfarbe (Orange) für Newsletter
 
 ### Spacing
 - Mobile: 1rem Padding
