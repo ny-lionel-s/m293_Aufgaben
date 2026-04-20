@@ -47,9 +47,18 @@ Fussball_Blog/
 │   ├── psg-monaco.html
 │   └── real-madrid-form.html
 ├── images/
-│   ├── mobile/
-│   ├── tablet/
-│   └── desktop/
+│   ├── Wireframe_Startseite_Mobile.png
+│   ├── Wireframe_Startseite_Tablet.png
+│   ├── Wireframe_Startseite_Desktop.png
+│   ├── Wireframe_Artikeluebersicht_Mobile.png
+│   ├── Wireframe_Artikeluebersicht_Tablet.png
+│   ├── Wireframe_Artikeluebersicht_Desktop.png
+│   ├── Wireframe_Artikeldetail_Mobile.png
+│   ├── Wireframe_Artikeldetail_Tablet.png
+│   ├── Wireframe_Artikeldetail_Desktop.png
+│   ├── Wireframe_Kontaktseite_Mobile.png
+│   ├── Wireframe_Kontaktseite_Tablet.png
+│   └── Wireframe_Kontaktseite_Desktop.png
 ├── generate-wireframes.ps1
 ├── WIREFRAMES.md
 └── README.md
@@ -239,24 +248,24 @@ Die im Projektauftrag geforderten Wireframes sind vollständig vorhanden.
 ### Erzeugte Wireframes
 
 #### Startseite
-- `images/mobile/Wireframe_Startseite_Mobile.png`
-- `images/tablet/Wireframe_Startseite_Tablet.png`
-- `images/desktop/Wireframe_Startseite_Desktop.png`
+- `images/Wireframe_Startseite_Mobile.png`
+- `images/Wireframe_Startseite_Tablet.png`
+- `images/Wireframe_Startseite_Desktop.png`
 
 #### Artikelübersicht
-- `images/mobile/Wireframe_Artikeluebersicht_Mobile.png`
-- `images/tablet/Wireframe_Artikeluebersicht_Tablet.png`
-- `images/desktop/Wireframe_Artikeluebersicht_Desktop.png`
+- `images/Wireframe_Artikeluebersicht_Mobile.png`
+- `images/Wireframe_Artikeluebersicht_Tablet.png`
+- `images/Wireframe_Artikeluebersicht_Desktop.png`
 
 #### Artikeldetail
-- `images/mobile/Wireframe_Artikeldetail_Mobile.png`
-- `images/tablet/Wireframe_Artikeldetail_Tablet.png`
-- `images/desktop/Wireframe_Artikeldetail_Desktop.png`
+- `images/Wireframe_Artikeldetail_Mobile.png`
+- `images/Wireframe_Artikeldetail_Tablet.png`
+- `images/Wireframe_Artikeldetail_Desktop.png`
 
 #### Kontaktseite
-- `images/mobile/Wireframe_Kontaktseite_Mobile.png`
-- `images/tablet/Wireframe_Kontaktseite_Tablet.png`
-- `images/desktop/Wireframe_Kontaktseite_Desktop.png`
+- `images/Wireframe_Kontaktseite_Mobile.png`
+- `images/Wireframe_Kontaktseite_Tablet.png`
+- `images/Wireframe_Kontaktseite_Desktop.png`
 
 Zusätzliche Dokumentation:
 
