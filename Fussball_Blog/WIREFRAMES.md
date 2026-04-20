@@ -11,22 +11,22 @@ Die Wireframes orientieren sich direkt am Projektauftrag:
 ## Dateiliste
 
 ### Mobile
-- `images/Wireframe_Startseite_Mobile.png`
-- `images/Wireframe_Artikeluebersicht_Mobile.png`
-- `images/Wireframe_Artikeldetail_Mobile.png`
-- `images/Wireframe_Kontaktseite_Mobile.png`
+- `images/mobile/Wireframe_Startseite_Mobile.png`
+- `images/mobile/Wireframe_Artikeluebersicht_Mobile.png`
+- `images/mobile/Wireframe_Artikeldetail_Mobile.png`
+- `images/mobile/Wireframe_Kontaktseite_Mobile.png`
 
 ### Tablet
-- `images/Wireframe_Startseite_Tablet.png`
-- `images/Wireframe_Artikeluebersicht_Tablet.png`
-- `images/Wireframe_Artikeldetail_Tablet.png`
-- `images/Wireframe_Kontaktseite_Tablet.png`
+- `images/tablet/Wireframe_Startseite_Tablet.png`
+- `images/tablet/Wireframe_Artikeluebersicht_Tablet.png`
+- `images/tablet/Wireframe_Artikeldetail_Tablet.png`
+- `images/tablet/Wireframe_Kontaktseite_Tablet.png`
 
 ### Desktop
-- `images/Wireframe_Startseite_Desktop.png`
-- `images/Wireframe_Artikeluebersicht_Desktop.png`
-- `images/Wireframe_Artikeldetail_Desktop.png`
-- `images/Wireframe_Kontaktseite_Desktop.png`
+- `images/desktop/Wireframe_Startseite_Desktop.png`
+- `images/desktop/Wireframe_Artikeluebersicht_Desktop.png`
+- `images/desktop/Wireframe_Artikeldetail_Desktop.png`
+- `images/desktop/Wireframe_Kontaktseite_Desktop.png`
 
 ---
 

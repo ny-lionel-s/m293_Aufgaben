@@ -1,7 +1,12 @@
 Add-Type -AssemblyName System.Drawing
 
 $OutputDir = Join-Path $PSScriptRoot 'images'
-New-Item -ItemType Directory -Force -Path $OutputDir | Out-Null
+$MobileOutputDir = Join-Path $OutputDir 'mobile'
+$TabletOutputDir = Join-Path $OutputDir 'tablet'
+$DesktopOutputDir = Join-Path $OutputDir 'desktop'
+New-Item -ItemType Directory -Force -Path $MobileOutputDir | Out-Null
+New-Item -ItemType Directory -Force -Path $TabletOutputDir | Out-Null
+New-Item -ItemType Directory -Force -Path $DesktopOutputDir | Out-Null
 
 function New-Brush([string]$hex) {
     [System.Drawing.SolidBrush]::new([System.Drawing.ColorTranslator]::FromHtml($hex))
@@ -104,10 +109,11 @@ function New-WireframeCanvas {
 function Save-Canvas {
     param(
         $Canvas,
+        [string]$TargetDir,
         [string]$Filename
     )
 
-    $path = Join-Path $OutputDir $Filename
+    $path = Join-Path $TargetDir $Filename
     $Canvas.Bitmap.Save($path, [System.Drawing.Imaging.ImageFormat]::Png)
     $Canvas.Graphics.Dispose()
     $Canvas.Bitmap.Dispose()
@@ -155,7 +161,7 @@ function Draw-StartPage {
             Draw-Box -Graphics $g -X 100 -Y 1230 -Width 300 -Height 215 -Label "Artikelkarte 3`n[Bild]`nKategorie`nTitel`nKurztext`nAutor + Datum" -Fill '#FFFFFF'
             Draw-Footer -Graphics $g -X 100 -Y 1465 -Width 300 -Height 185 -Mode mobile
             Draw-Box -Graphics $g -X 470 -Y 190 -Width 230 -Height 280 -Label "Pflicht laut Auftrag`n- neuste/beliebte Artikel`n- Themenuebersicht`n- Newsletter-Anmeldung`n- Header, Main, Footer" -Fill '#FFFFFF' -Border '#888888'
-            Save-Canvas -Canvas $c -Filename 'Wireframe_Startseite_Mobile.png'
+            Save-Canvas -Canvas $c -TargetDir $MobileOutputDir -Filename 'Wireframe_Startseite_Mobile.png'
         }
         'Tablet' {
             $c = New-WireframeCanvas -Width 1420 -Height 1160 -Title 'Startseite Tablet' -Subtitle 'Responsive Zwischenansicht mit Grid fuer Themen und Artikel'
@@ -173,7 +179,7 @@ function Draw-StartPage {
             Draw-Box -Graphics $g -X 595 -Y 860 -Width 470 -Height 140 -Label "Artikelkarte 4`n[Bild]  Titel  Meta" -Fill '#FFFFFF'
             Draw-Box -Graphics $g -X 1140 -Y 185 -Width 220 -Height 240 -Label "Tablet Fokus`n- horizontale Navigation`n- Themen im Grid`n- Artikel 2-spaltig" -Fill '#FFFFFF' -Border '#888888'
             Draw-Footer -Graphics $g -X 95 -Y 995 -Width 970 -Height 60 -Mode tablet
-            Save-Canvas -Canvas $c -Filename 'Wireframe_Startseite_Tablet.png'
+            Save-Canvas -Canvas $c -TargetDir $TabletOutputDir -Filename 'Wireframe_Startseite_Tablet.png'
         }
         'Desktop' {
             $c = New-WireframeCanvas -Width 1800 -Height 1300 -Title 'Startseite Desktop' -Subtitle 'Volles Layout mit Themenreihe, Artikel-Grid und Newsletter-Bereich'
@@ -195,7 +201,7 @@ function Draw-StartPage {
             Draw-Box -Graphics $g -X 605 -Y 900 -Width 490 -Height 175 -Label "Artikelkarte 5" -Fill '#FFFFFF'
             Draw-Box -Graphics $g -X 1110 -Y 900 -Width 490 -Height 175 -Label "Artikelkarte 6" -Fill '#FFFFFF'
             Draw-Footer -Graphics $g -X 100 -Y 1095 -Width 1600 -Height 105 -Mode desktop
-            Save-Canvas -Canvas $c -Filename 'Wireframe_Startseite_Desktop.png'
+            Save-Canvas -Canvas $c -TargetDir $DesktopOutputDir -Filename 'Wireframe_Startseite_Desktop.png'
         }
     }
 }
@@ -216,7 +222,7 @@ function Draw-ArticleListPage {
             Draw-Box -Graphics $g -X 100 -Y 1115 -Width 300 -Height 190 -Label "Artikel 4`n[Bild] Titel`nMeta" -Fill '#FFFFFF'
             Draw-Footer -Graphics $g -X 100 -Y 1325 -Width 300 -Height 115 -Mode mobile
             Draw-Box -Graphics $g -X 470 -Y 200 -Width 230 -Height 220 -Label "Pflicht`n- alle Artikel in Uebersicht`n- Themenfilter`n- Anzeige aller oder eines Themas" -Fill '#FFFFFF' -Border '#888888'
-            Save-Canvas -Canvas $c -Filename 'Wireframe_Artikeluebersicht_Mobile.png'
+            Save-Canvas -Canvas $c -TargetDir $MobileOutputDir -Filename 'Wireframe_Artikeluebersicht_Mobile.png'
         }
         'Tablet' {
             $c = New-WireframeCanvas -Width 1420 -Height 1120 -Title 'Artikeluebersicht Tablet' -Subtitle 'Filterleiste und 2-spaltiges Grid fuer die Themenseite'
@@ -232,7 +238,7 @@ function Draw-ArticleListPage {
             Draw-Box -Graphics $g -X 595 -Y 820 -Width 470 -Height 145 -Label "Artikel 6" -Fill '#FFFFFF'
             Draw-Footer -Graphics $g -X 95 -Y 975 -Width 970 -Height 60 -Mode tablet
             Draw-Box -Graphics $g -X 1140 -Y 185 -Width 220 -Height 250 -Label "Auftrag`n- Themenseite mit allen Artikeln`n- filtern nach Thema`n- Grid-Layout fuer Inhalte" -Fill '#FFFFFF' -Border '#888888'
-            Save-Canvas -Canvas $c -Filename 'Wireframe_Artikeluebersicht_Tablet.png'
+            Save-Canvas -Canvas $c -TargetDir $TabletOutputDir -Filename 'Wireframe_Artikeluebersicht_Tablet.png'
         }
         'Desktop' {
             $c = New-WireframeCanvas -Width 1800 -Height 1260 -Title 'Artikeluebersicht Desktop' -Subtitle 'Volles Raster mit Themenfilter und vielen Artikeln'
@@ -249,7 +255,7 @@ function Draw-ArticleListPage {
             }
             Draw-Footer -Graphics $g -X 100 -Y 865 -Width 1600 -Height 105 -Mode desktop
             Draw-Box -Graphics $g -X 100 -Y 995 -Width 1600 -Height 180 -Label "Hinweis fuer Auftrag: Die Seite zeigt alle Artikel oder nur ein gewaehltes Thema. Die Karten sind im Grid organisiert und fuehren zu den Detailseiten." -Fill '#FFFFFF' -Border '#888888' -FontSize 18
-            Save-Canvas -Canvas $c -Filename 'Wireframe_Artikeluebersicht_Desktop.png'
+            Save-Canvas -Canvas $c -TargetDir $DesktopOutputDir -Filename 'Wireframe_Artikeluebersicht_Desktop.png'
         }
     }
 }
@@ -271,7 +277,7 @@ function Draw-ArticleDetailPage {
             Draw-Box -Graphics $g -X 100 -Y 1255 -Width 300 -Height 90 -Label '[Zurueck zu allen Artikeln]' -Fill '#EFEFEF' -Align center
             Draw-Footer -Graphics $g -X 100 -Y 1360 -Width 300 -Height 330 -Mode mobile
             Draw-Box -Graphics $g -X 470 -Y 220 -Width 230 -Height 260 -Label "Pflicht`n- Detailseite mit Artikel`n- Bild`n- evtl. Video`n- Autor:in + Thema" -Fill '#FFFFFF' -Border '#888888'
-            Save-Canvas -Canvas $c -Filename 'Wireframe_Artikeldetail_Mobile.png'
+            Save-Canvas -Canvas $c -TargetDir $MobileOutputDir -Filename 'Wireframe_Artikeldetail_Mobile.png'
         }
         'Tablet' {
             $c = New-WireframeCanvas -Width 1420 -Height 1260 -Title 'Artikeldetail Tablet' -Subtitle 'Detailansicht mit grossem Titelbereich und Medien untereinander'
@@ -286,7 +292,7 @@ function Draw-ArticleDetailPage {
             Draw-Box -Graphics $g -X 95 -Y 900 -Width 970 -Height 170 -Label "Artikeltext`nEinleitung | Zwischenueberschriften | mehrere Absaetze" -Fill '#FFFFFF'
             Draw-Footer -Graphics $g -X 95 -Y 1080 -Width 970 -Height 70 -Mode tablet
             Draw-Box -Graphics $g -X 1140 -Y 220 -Width 220 -Height 240 -Label "Detailseite`n- Text, Bild, evtl. Video`n- Thema sichtbar`n- Autor mit Foto" -Fill '#FFFFFF' -Border '#888888'
-            Save-Canvas -Canvas $c -Filename 'Wireframe_Artikeldetail_Tablet.png'
+            Save-Canvas -Canvas $c -TargetDir $TabletOutputDir -Filename 'Wireframe_Artikeldetail_Tablet.png'
         }
         'Desktop' {
             $c = New-WireframeCanvas -Width 1800 -Height 1320 -Title 'Artikeldetail Desktop' -Subtitle 'Breite Lesespalte mit Titel, Medien und Metadaten'
@@ -302,7 +308,7 @@ function Draw-ArticleDetailPage {
             Draw-Box -Graphics $g -X 1350 -Y 320 -Width 310 -Height 260 -Label "Seiteninfo`n- Thema`n- Autor:in`n- Datum`n- Share / Navigation" -Fill '#FFFFFF' -Border '#888888'
             Draw-Box -Graphics $g -X 1350 -Y 605 -Width 310 -Height 160 -Label '[Zurueck zur Artikeluebersicht]' -Fill '#EFEFEF' -Align center
             Draw-Footer -Graphics $g -X 100 -Y 1170 -Width 1600 -Height 75 -Mode desktop
-            Save-Canvas -Canvas $c -Filename 'Wireframe_Artikeldetail_Desktop.png'
+            Save-Canvas -Canvas $c -TargetDir $DesktopOutputDir -Filename 'Wireframe_Artikeldetail_Desktop.png'
         }
     }
 }
@@ -322,7 +328,7 @@ function Draw-ContactPage {
             Draw-Box -Graphics $g -X 100 -Y 810 -Width 300 -Height 355 -Label "Kontaktformular`n[Name]`n[E-Mail]`n[Betreff v]`n[Nachricht]`n[Senden]" -Fill '#FFFFFF'
             Draw-Footer -Graphics $g -X 100 -Y 1185 -Width 300 -Height 445 -Mode mobile
             Draw-Box -Graphics $g -X 470 -Y 210 -Width 230 -Height 220 -Label "Pflicht`n- Autoreninformationen`n- Kontaktformular`n- Dropdown fuer Betreff" -Fill '#FFFFFF' -Border '#888888'
-            Save-Canvas -Canvas $c -Filename 'Wireframe_Kontaktseite_Mobile.png'
+            Save-Canvas -Canvas $c -TargetDir $MobileOutputDir -Filename 'Wireframe_Kontaktseite_Mobile.png'
         }
         'Tablet' {
             $c = New-WireframeCanvas -Width 1420 -Height 1180 -Title 'Kontaktseite Tablet' -Subtitle 'Autoren im Grid und breites Formular fuer Rueckfragen zum Blog'
@@ -337,7 +343,7 @@ function Draw-ContactPage {
             Draw-Box -Graphics $g -X 95 -Y 535 -Width 970 -Height 360 -Label "Kontaktformular`n[Name]`n[E-Mail]`n[Betreff Dropdown]`n[Nachricht]`n[Nachricht senden]" -Fill '#FFFFFF'
             Draw-Footer -Graphics $g -X 95 -Y 915 -Width 970 -Height 90 -Mode tablet
             Draw-Box -Graphics $g -X 1140 -Y 220 -Width 220 -Height 240 -Label "Kontaktseite`n- Autoren mit Foto`n- Formular fuer Fragen`n- Betreffauswahl per Dropdown" -Fill '#FFFFFF' -Border '#888888'
-            Save-Canvas -Canvas $c -Filename 'Wireframe_Kontaktseite_Tablet.png'
+            Save-Canvas -Canvas $c -TargetDir $TabletOutputDir -Filename 'Wireframe_Kontaktseite_Tablet.png'
         }
         'Desktop' {
             $c = New-WireframeCanvas -Width 1800 -Height 1280 -Title 'Kontaktseite Desktop' -Subtitle 'Teamdarstellung in mehreren Spalten und zentriertes Kontaktformular'
@@ -351,7 +357,7 @@ function Draw-ContactPage {
             }
             Draw-Box -Graphics $g -X 390 -Y 575 -Width 1020 -Height 360 -Label "Kontaktformular`nName`nE-Mail`nBetreff Dropdown`nNachricht`nNachricht senden" -Fill '#FFFFFF' -Align center -FontSize 20
             Draw-Footer -Graphics $g -X 100 -Y 970 -Width 1600 -Height 175 -Mode desktop
-            Save-Canvas -Canvas $c -Filename 'Wireframe_Kontaktseite_Desktop.png'
+            Save-Canvas -Canvas $c -TargetDir $DesktopOutputDir -Filename 'Wireframe_Kontaktseite_Desktop.png'
         }
     }
 }
@@ -365,4 +371,4 @@ foreach ($device in $devices) {
 }
 
 Write-Output 'Generated wireframes:'
-Get-ChildItem $OutputDir -Filter 'Wireframe_*.png' | Sort-Object Name | Select-Object Name, Length
+Get-ChildItem $OutputDir -Recurse -Filter 'Wireframe_*.png' | Sort-Object FullName | Select-Object FullName, Length
