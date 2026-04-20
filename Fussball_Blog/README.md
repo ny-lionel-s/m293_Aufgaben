@@ -437,7 +437,7 @@ Repository-URL:
 
 **Projekt:** Fussball Blog - M293 Projektauftrag  
 **Autor:** Lionel Schultze  
-**Umsetzung:** eigenständig mit teilweiser Unterstützung durch Codex und ChatGPT  
+**Umsetzung:** eigenständig mit Unterstützung durch Codex und ChatGPT  
 **Entwicklungszeit:** 4 mal 4 Schullektionen und zusätzliche Zeit ausserhalb der Schule  
 **Lizenz:** Educational Project
 
@@ -447,4 +447,3 @@ Repository-URL:
 
 **Version:** 1.1  
 **Stand:** April 2026  
-**Status:** Projekt dokumentiert und auftragskonform aufbereitet
