@@ -1,8 +1,9 @@
 name: Deploy Fussball_Blog to GitHub Pages
 
+permissions:
+  contents: write
+
 on:
-  permissions:
-    contents: write
   push:
     branches: ["main"]
 
@@ -20,3 +21,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./Fussball_Blog
           publish_branch: gh-pages
+          force_orphan: true
