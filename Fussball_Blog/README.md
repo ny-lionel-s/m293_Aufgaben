@@ -2,36 +2,158 @@
 
 ## Projektübersicht
 
-Ein moderner, responsiver Fussball-Blog mit Fokus auf die Top 5 europäischen Ligen (Bundesliga, Premier League, La Liga, Serie A, Ligue 1) sowie die UEFA Champions League. Das Projekt wurde als Einzelarbeit im Rahmen des Moduls M293 entwickelt.
+Dieses Projekt wurde im Rahmen des Moduls `M293` als statischer, responsiver Fussball-Blog umgesetzt. Der Blog behandelt die Top 5 europäischen Ligen sowie die UEFA Champions League und erfüllt die im Projektauftrag geforderten Seitentypen, Inhalte und Dokumentationsbestandteile.
 
-### Projektziele
+Ziel war ein Webauftritt mit:
 
-- Entwicklung eines vollständig responsiven Fussball-Blogs
-- Verwendung von 100% eigenem HTML- und CSS-Code
-- Integration von KI-Tools zur effizienten Entwicklung
-- Präsentation aktueller Fussball-Artikel mit professionellem Layout
-- Implementierung aller geforderten Funktionen gemäss Projektauftrag
+- `Startseite` mit neuesten oder beliebtesten Artikeln
+- `Artikelübersicht` mit Themenfilter
+- `Artikeldetailseiten` mit Text, Bild, Autor:in und optionalem Videobereich
+- `Kontaktseite` mit Autoreninformationen und Kontaktformular
+- responsivem Verhalten für `Mobile`, `Tablet` und `Desktop`
+
+---
+
+## Projektziele
+
+- Entwicklung eines vollständig responsiven Blogs mit eigenem `HTML`, `CSS` und etwas `JavaScript`
+- saubere Seitenstruktur mit `header`, `main` und `footer`
+- Grid-Layouts für Themen, Artikelkarten und Inhaltsbereiche
+- Umsetzung aller Pflichtpunkte aus dem Projektauftrag
+- dokumentierter und reflektierter Einsatz von mindestens zwei KI-Tools
 
 ---
 
 ## Projektstruktur
 
-```
+```text
 Fussball_Blog/
-├── index.html                 # Startseite mit neuesten Artikeln
-├── artikel.html              # Artikelübersicht mit Filterung
-├── kontakt.html              # Kontaktseite mit Formular
+├── index.html
+├── artikel.html
+├── kontakt.html
 ├── css/
-│   └── styles.css           # Alle Styles (100% eigener Code)
-├── artikel/                 # Detailseiten der Artikel
+│   └── styles.css
+├── artikel/
 │   ├── bayern-klassiker.html
+│   ├── barcelona-jugend.html
+│   ├── champions-league-favoriten.html
+│   ├── champions-league-viertelfinale.html
 │   ├── city-titelrennen.html
-│   ├── real-madrid-form.html
 │   ├── inter-dominanz.html
+│   ├── leverkusen-meister.html
+│   ├── liverpool-comeback.html
+│   ├── marseille-europa.html
+│   ├── milan-renaissance.html
 │   ├── psg-monaco.html
-│   └── champions-league-viertelfinale.html
-└── README.md               # Diese Dokumentation
+│   └── real-madrid-form.html
+├── images/
+│   ├── Wireframe_Startseite_Mobile.png
+│   ├── Wireframe_Startseite_Tablet.png
+│   ├── Wireframe_Startseite_Desktop.png
+│   ├── Wireframe_Artikeluebersicht_Mobile.png
+│   ├── Wireframe_Artikeluebersicht_Tablet.png
+│   ├── Wireframe_Artikeluebersicht_Desktop.png
+│   ├── Wireframe_Artikeldetail_Mobile.png
+│   ├── Wireframe_Artikeldetail_Tablet.png
+│   ├── Wireframe_Artikeldetail_Desktop.png
+│   ├── Wireframe_Kontaktseite_Mobile.png
+│   ├── Wireframe_Kontaktseite_Tablet.png
+│   └── Wireframe_Kontaktseite_Desktop.png
+├── generate-wireframes.ps1
+├── WIREFRAMES.md
+└── README.md
 ```
+
+---
+
+## Umgesetzte Seiten
+
+### 1. Startseite
+
+Datei: `index.html`
+
+Umsetzung:
+
+- Hero-Bereich mit Einleitung zum Blog
+- Newsletter-Anmeldung auf der Startseite
+- Themenübersicht für 6 Wettbewerbe
+- Kartenbereich mit aktuellen Artikeln
+- klare Navigation zu `Home`, `Artikel` und `Kontakt`
+
+Erfüllter Auftragsbezug:
+
+- beliebteste oder neuste Artikel auf der Startseite
+- Übersicht aller Themen
+- Newsletter-Anmeldung
+
+### 2. Artikelübersicht
+
+Datei: `artikel.html`
+
+Umsetzung:
+
+- alle Artikel in einer gemeinsamen Übersicht
+- Filterbuttons für alle Themenbereiche
+- Anzeige aller Artikel oder nur eines bestimmten Themas
+- Filterung zusätzlich über URL-Parameter wie `?thema=bundesliga`
+
+Erfüllter Auftragsbezug:
+
+- Themenseite mit allen Artikeln
+- Filter nach Thema
+- Grid-Layout für Inhalte
+
+### 3. Artikeldetailseiten
+
+Dateien: `artikel/*.html`
+
+Umsetzung:
+
+- 12 kuratierte Artikeldetailseiten
+- je Seite: Thema, Titel, Bild, Autor:in, Datum, Lesezeit und Text
+- Rücklink zur Artikelübersicht
+- Platz für optionalen Videoeinsatz ist im Wireframing berücksichtigt
+
+Erfüllter Auftragsbezug:
+
+- Detailseite mit Artikel, Bild, evtl. Video, Autor:in und Thema
+
+### 4. Kontaktseite
+
+Datei: `kontakt.html`
+
+Umsetzung:
+
+- Vorstellung von 5 Autor:innen mit Foto und Kurzbeschreibung
+- Kontaktformular mit:
+  - Name
+  - E-Mail-Adresse
+  - Betreffauswahl per Dropdown
+  - Nachricht
+- thematisch auswählbare Betreffzeilen
+
+Erfüllter Auftragsbezug:
+
+- Informationen über die Autor:innen
+- Kontaktformular
+- Dropdown zur Betreffauswahl
+
+---
+
+## Inhaltlicher Umfang
+
+- `3` Hauptseiten: `index.html`, `artikel.html`, `kontakt.html`
+- `12` Artikeldetailseiten
+- `6` Themenbereiche:
+  - Bundesliga
+  - Premier League
+  - La Liga
+  - Serie A
+  - Ligue 1
+  - Champions League
+- `5` Autor:innenprofile
+
+Damit ist die Anforderung `mindestens 3 Hauptseiten` und `mindestens 10 Artikel` erfüllt.
 
 ---
 
@@ -40,500 +162,279 @@ Fussball_Blog/
 ### Farbpalette
 
 ```css
---primary-color: #2c5f2d;      /* Dunkelgrün - Hauptfarbe */
---secondary-color: #97bf0d;     /* Hellgrün - Akzentfarbe */
---accent-color: #ff6b35;        /* Orange - Newsletter/CTA */
---dark-bg: #1a1a1a;            /* Dunkel - Footer */
---light-bg: #f5f5f5;           /* Hellgrau - Hintergrund */
---text-dark: #333;             /* Dunkelgrau - Text */
---text-light: #fff;            /* Weiss - Heller Text */
---border-color: #ddd;          /* Grau - Rahmen */
---champions-gold: #ffd700;      /* Gold - Champions League */
+--primary-color: #2c5f2d;
+--secondary-color: #97bf0d;
+--accent-color: #ff6b35;
+--dark-bg: #1a1a1a;
+--light-bg: #f5f5f5;
+--text-dark: #333;
+--text-light: #fff;
+--border-color: #ddd;
+--champions-gold: #ffd700;
 ```
 
 ### Typografie
 
-- **Hauptschrift**: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-- **Basis-Schriftgrösse**: 16px
-- **Zeilenhöhe**: 1.6
-- **Überschriften**: 
-  - H1: 2.8rem (Artikel-Details)
-  - H2: 2.5rem (Sektionen)
-  - H3: 1.5rem (Karten)
+- Hauptschrift: `Segoe UI`, `Tahoma`, `Geneva`, `Verdana`, `sans-serif`
+- Basis-Schriftgrösse: `16px`
+- Zeilenhöhe: `1.6`
+- klare Hierarchie für `h1`, `h2` und `h3`
 
 ### Layout-Prinzipien
 
-- **Mobile First Ansatz**: Entwicklung beginnt mit mobiler Ansicht
-- **CSS Grid**: Für Artikel-Übersichten und Layouts
-- **Flexbox**: Für Navigation und kleinere Komponenten
-- **Breakpoints**:
-  - Mobile: bis 480px
-  - Tablet: 481px - 768px
-  - Desktop: ab 769px
+- `Mobile First` als Grundidee
+- `CSS Grid` für Kartenraster und grössere Inhaltsbereiche
+- `Flexbox` für Navigation, Formulare und kleinere Komponenten
+- Breakpoints:
+  - Mobile: bis `480px`
+  - Tablet: `481px - 768px`
+  - Desktop: ab `769px`
 
 ---
 
-## Funktionen
+## Responsive Umsetzung
 
-### 1. Startseite (index.html)
+### Mobile
 
-**Implementierte Features:**
-- Hero-Bereich mit Willkommensnachricht
-- Newsletter-Anmeldung (E-Mail-Formular)
-- Themen-Übersicht (6 Ligen als Karten)
-- Neueste Artikel (6 Artikel-Karten mit Vorschau)
-- Responsive Navigation
-- Footer mit Links
+- vertikale oder kompakte Navigation
+- einspaltige Artikelkarten
+- gestapelte Formulare
+- klare Leseführung ohne Seitwärts-Scrollen
 
-**Besonderheiten:**
-- Newsletter-Bereich mit auffälligem Orange
-- Themen-Karten mit Flaggen-Emojis
-- Champions League Karte mit speziellem blau-goldenen Design
-- Artikel-Karten mit Hover-Effekten
+### Tablet
 
-### 2. Artikelübersicht (artikel.html)
+- breiteres Raster für Themen und Artikel
+- mehrspaltige Bereiche bei ausreichend Platz
+- bessere Ausnutzung der verfügbaren Breite
 
-**Implementierte Features:**
-- Filter-Buttons für alle Themen
-- 12 Artikel insgesamt (2 pro Thema)
-- JavaScript-basierte Filterung
-- URL-Parameter-Unterstützung (z.B. ?thema=bundesliga)
-- Gleiche Artikel-Karten wie Startseite
+### Desktop
 
-**Technische Details:**
-```javascript
-// Filter-Funktionalität
-- Event Listener auf Filter-Buttons
-- Filterung über data-category Attribut
-- URL-Parameter Auswertung bei Seitenladen
-- Smooth Transitions beim Filtern
-```
-
-### 3. Kontaktseite (kontakt.html)
-
-**Implementierte Features:**
-- Autoren-Übersicht (5 Experten mit Foto)
-- Kontaktformular mit:
-  - Name-Feld
-  - E-Mail-Feld
-  - Dropdown für Betreff
-  - Nachricht-Textfeld
-- 6 Betreff-Optionen im Dropdown
-
-**Betreff-Optionen:**
-1. Allgemeine Anfrage
-2. Artikel-Vorschlag
-3. Kooperation
-4. Technisches Problem
-5. Feedback
-6. Sonstiges
-
-### 4. Artikel-Detailseiten
-
-**Implementierte Features:**
-- Vollständige Artikel mit Text und extern eingebundenen Bildern
-- Autoren-Information mit Foto
-- Kategorie-Badge
-- Datum und Lesezeit
-- Zurück-Button zur Artikelübersicht
-- Strukturierte Inhalte mit H2-Überschriften
-
-**Erstellte Artikel:**
-
-1. **Bundesliga**: "Der Klassiker: Bayern empfängt Dortmund"
-2. **Premier League**: "Manchester City im Titelrennen vorne"
-3. **La Liga**: "Real Madrid in Gala-Form"
-4. **Serie A**: "Inter Mailand dominiert die Serie A"
-5. **Ligue 1**: "PSG gegen Monaco: Titelentscheidung?"
-6. **Champions League**: "Viertelfinale: Die Highlights"
-
-Zusätzliche Artikel auf artikel.html:
-7. Bundesliga: "Leverkusen auf Meisterkurs"
-8. Premier League: "Liverpool kämpft sich zurück"
-9. La Liga: "Barcelonas goldene Jugend"
-10. Serie A: "AC Milan erlebt Renaissance"
-11. Ligue 1: "Marseille greift nach Europa"
-12. Champions League: "Die Titelfavoriten im Check"
+- horizontale Navigation
+- mehrspaltige Artikelgrids
+- grosszügigere Inhalte und klarer Seitenaufbau
 
 ---
 
-## Responsive Design
+## Technische Umsetzung
 
-### Mobile (bis 480px)
+### HTML
 
-**Anpassungen:**
-- Navigation: Vertikales Layout
-- Hero: Kleinere Schriftgrössen (1.5rem)
-- Artikel-Grid: Einzelspaltig
-- Newsletter: Vertikales Formular
-- Contact-Form: Reduzierter Padding
-- Footer: Einzelspaltig
+- semantische Struktur mit `header`, `nav`, `main`, `section`, `article`, `footer`
+- formulargerechte Eingabefelder und Labels
+- sprechende Linkstruktur zwischen Seiten und Detailartikeln
 
-### Tablet (481px - 768px)
+### CSS
 
-**Anpassungen:**
-- Hero: Mittlere Schriftgrössen (2rem)
-- Artikel-Grid: 1-2 Spalten (je nach Breite)
-- Navigation: Vertikales Menu
-- Themen-Grid: 2 Spalten
+- zentrale Gestaltung in `css/styles.css`
+- Variablen für Farben und wiederkehrende Werte
+- Grid- und Flexbox-Layouts
+- Hover- und Übergangseffekte
+- Media Queries für verschiedene Bildschirmbreiten
 
-### Desktop (ab 769px)
+### JavaScript
 
-**Features:**
-- Volle Navigation horizontal
-- Artikel-Grid: Bis zu 3 Spalten
-- Maximale Breite: 1200px
-- Optimale Lesbarkeit
+Einsatz auf `artikel.html`:
+
+- Event-Listener für Filterbuttons
+- Filterung über `data-category`
+- Auswertung von URL-Parametern
+
+---
+
+## Wireframes
+
+Die im Projektauftrag geforderten Wireframes sind vollständig vorhanden.
+
+### Erzeugte Wireframes
+
+#### Startseite
+- `images/Wireframe_Startseite_Mobile.png`
+- `images/Wireframe_Startseite_Tablet.png`
+- `images/Wireframe_Startseite_Desktop.png`
+
+#### Artikelübersicht
+- `images/Wireframe_Artikeluebersicht_Mobile.png`
+- `images/Wireframe_Artikeluebersicht_Tablet.png`
+- `images/Wireframe_Artikeluebersicht_Desktop.png`
+
+#### Artikeldetail
+- `images/Wireframe_Artikeldetail_Mobile.png`
+- `images/Wireframe_Artikeldetail_Tablet.png`
+- `images/Wireframe_Artikeldetail_Desktop.png`
+
+#### Kontaktseite
+- `images/Wireframe_Kontaktseite_Mobile.png`
+- `images/Wireframe_Kontaktseite_Tablet.png`
+- `images/Wireframe_Kontaktseite_Desktop.png`
+
+Zusätzliche Dokumentation:
+
+- `WIREFRAMES.md`
+- `generate-wireframes.ps1`
 
 ---
 
 ## KI-Einsatz in der Entwicklung
 
-### Verwendete KI-Tools
+Der Projektauftrag verlangt den dokumentierten Einsatz von mindestens zwei KI-Tools. Für dieses Projekt wurden `Codex` und `ChatGPT` verwendet.
 
-#### 1. **GitHub Copilot CLI** (Haupttool)
+### KI-Tool 1: Codex
 
-**Einsatzbereiche:**
-- Generierung der kompletten HTML-Struktur
-- Erstellung des CSS-Codes
-- JavaScript für Filter-Funktionalität
-- Strukturierung der Projektdokumentation
+Einsatzbereiche:
 
-**Vorteile:**
-- Sehr schnelle Code-Generierung
-- Konsistenter Code-Stil
-- Gute Verständnis von Web-Standards
-- Hilfreiche Vorschläge für Responsive Design
-- Effiziente Problemlösung
+- Analyse der bestehenden Projektstruktur
+- Überarbeitung und Ergänzung von HTML-, CSS- und JavaScript-Dateien
+- Prüfung der Auftragsabdeckung
+- Erstellung und Generierung der Wireframes
+- Bereinigung und Aktualisierung der Projektdokumentation
 
-**Arbeitsweise mit GitHub Copilot CLI:**
-```
-1. Anforderungen in natürlicher Sprache beschreiben
-2. Copilot generiert komplette Code-Blöcke
-3. Code überprüfen und anpassen
-4. Iteratives Verfeinern bei Bedarf
-```
+Beispiele:
 
-**Beispiel-Workflow:**
-```
-Anfrage: "Erstelle eine responsive Artikel-Karte mit Bild, 
-         Kategorie-Badge, Titel, Beschreibung und Autor-Info"
-         
-Ergebnis: Vollständiges HTML + CSS mit:
-         - Semantischen HTML5-Tags
-         - Grid/Flexbox Layout
-         - Hover-Effekten
-         - Responsive Breakpoints
-```
+- Anpassung der Seitenstruktur an den Projektauftrag
+- Erstellung der Wireframes für alle Seitentypen und Gerätegrössen
+- Überprüfung, welche Assets im Projekt noch verwendet werden
 
-#### 2. **Externe Bildquellen**
+### KI-Tool 2: ChatGPT
 
-**Einsatzbereich:**
-- Einbindung von Artikel- und Autorenbildern per externer URL
-- Weniger lokale Assets und einfachere Projektstruktur
-- Direkte Verwendung in Karten, Detailseiten und Team-Ansicht
+Einsatzbereiche:
 
-### KI-Tool Vergleich
+- Ideenfindung für Inhalt, Aufbau und Formulierungen
+- Unterstützung bei Texten für Artikelideen, Seitentexte und Dokumentation
+- Reflexion über Designentscheidungen und Seitenlogik
+- Hilfe bei der Strukturierung der README-Dokumentation
 
-| Kriterium | GitHub Copilot CLI | Alternative (ChatGPT) |
-|-----------|-------------------|----------------------|
-| **Code-Qualität** | 5/5 Exzellent | 4/5 Sehr gut |
-| **Geschwindigkeit** | 5/5 Sofort | 3/5 Schnell |
-| **Context-Awareness** | 5/5 Projekt-bewusst | 3/5 Begrenzt |
-| **Integration** | 5/5 Direkt in CLI | 2/5 Separate Platform |
-| **Iteration** | 5/5 Nahtlos | 3/5 Copy-Paste nötig |
-| **Dokumentation** | 4/5 Sehr gut | 5/5 Exzellent |
-| **Gesamtbewertung** | **9.5/10** | **8/10** |
+Beispiele:
 
-### Effizienzgewinn durch KI
+- Ausformulierung von Beschreibungen und Abschnitten
+- Vergleich von Umsetzungsvarianten
+- sprachliche Vereinfachung und bessere Gliederung
 
-**Zeitersparnis:**
-- Ohne KI: ca. 15-20 Stunden geschätzt
-- Mit KI: ca. 3-4 Stunden tatsächlich
-- **Zeitersparnis: ~75-80%**
+### Wofür KI konkret eingesetzt wurde
 
-**Qualitätsverbesserung:**
-- Konsistenter Code-Stil
-- Weniger Syntax-Fehler
-- Best Practices automatisch integriert
-- Bessere Responsive Design Umsetzung
+Laut Auftrag sollte KI für `Layout`, `Codevorschläge` und `UI-Optimierungen` eingesetzt werden. Das wurde wie folgt umgesetzt:
 
-**Lerneffekt:**
-- Neue CSS-Techniken kennengelernt
-- Grid/Flexbox Verständnis vertieft
-- Responsive Design Patterns gelernt
-- Strukturierung großer Projekte
+- Layout:
+  - Seitenaufbau für Startseite, Artikelübersicht, Detailseite und Kontaktseite
+  - Wireframe-Struktur für Mobile, Tablet und Desktop
+- Codevorschläge:
+  - Struktur für Karten, Filter und Formularbereiche
+  - Verbesserungen an HTML- und CSS-Abschnitten
+- UI-Optimierungen:
+  - klarere Hero-Bereiche
+  - bessere visuelle Hierarchien
+  - konsistentere Karten- und Formularlogik
 
 ---
 
-## Erfüllung der Anforderungen
+## Vergleich der KI-Tools
 
-### Pflichtanforderungen
+| Kriterium | Codex | ChatGPT |
+|-----------|-------|---------|
+| Codeänderungen direkt im Projekt | Sehr stark | Mittel |
+| Analyse bestehender Dateien | Sehr stark | Gut |
+| Textliche Dokumentation | Gut | Sehr stark |
+| Hilfe bei Struktur und Ideen | Gut | Sehr stark |
+| Iterative technische Anpassungen | Sehr stark | Gut |
+| Geeignet für dieses Projekt | Sehr hoch | Hoch |
 
-| Anforderung | Status | Umsetzung |
-|------------|--------|-----------|
-| 100% eigener HTML/CSS Code | | Alle Dateien selbst erstellt (mit KI-Unterstützung) |
-| Seitenstruktur Header/Main/Footer | | Auf allen Seiten implementiert |
-| Grid-Layout | | Artikel-Übersicht, Themen, Footer |
-| Formulare (Newsletter + Kontakt) | | Beide funktionsfähig |
-| Responsives Design | | Mobile, Tablet, Desktop |
-| Mind. 3 Hauptseiten | | index, artikel, kontakt |
-| Mind. 10 Artikel | | 12 Artikel mit Details |
-| Wireframes | Teilweise | Nicht separat dokumentiert |
-| Styleguide | | In README integriert |
-| KI-Dokumentation | | Umfassend dokumentiert |
+### Fazit zum Vergleich
 
-### Optional umgesetzt
-
-| Feature | Status | Anmerkung |
-|---------|--------|-----------|
-| JavaScript Filter | | Für Artikelübersicht |
-| Kommentarfunktion | Nein | Nicht umgesetzt |
-| Likes (Web Storage) | Nein | Nicht umgesetzt |
+- `Codex` war besonders stark bei konkreten Projektänderungen, Codeanpassungen und der Wireframe-Erstellung.
+- `ChatGPT` war besonders hilfreich bei Formulierungen, Strukturierung und konzeptioneller Unterstützung.
+- Die Kombination aus beiden Tools war sinnvoll, weil eines stärker im Code und eines stärker in Sprache und Struktur war.
 
 ---
 
-## Technische Details
+## Erfüllung des Projektauftrags
 
-### HTML5 Features
+| Anforderung aus dem Auftrag | Status | Umsetzung im Projekt |
+|---|---|---|
+| Blog zu einem frei gewählten Thema | Erfüllt | Fussball-Blog mit 6 Themenbereichen |
+| Mindestens 2 KI-Tools einsetzen und vergleichen | Erfüllt | Codex und ChatGPT dokumentiert und verglichen |
+| Startseite mit neuesten oder beliebtesten Artikeln | Erfüllt | `index.html` mit Artikelkarten |
+| Übersicht aller Themen auf der Startseite | Erfüllt | Themenkarten auf `index.html` |
+| Newsletter-Anmeldung | Erfüllt | Formular auf der Startseite |
+| Themenseite mit allen Artikeln | Erfüllt | `artikel.html` |
+| Anzeige aller Artikel oder eines Themas | Erfüllt | Filterbuttons und URL-Parameter |
+| Detailseite mit Artikel, Bild, evtl. Video, Autor:in und Thema | Erfüllt | 12 Detailseiten, Video im Wireframing berücksichtigt |
+| Kontaktseite mit Autoreninformationen | Erfüllt | `kontakt.html` mit 5 Autor:innen |
+| Kontaktformular mit Betreffauswahl | Erfüllt | Dropdown in `kontakt.html` |
+| 100% eigener HTML- und CSS-Code | Erfüllt | Kein Framework, eigener Code in HTML/CSS |
+| Seitenstruktur mit Header, Main und Footer | Erfüllt | auf allen Hauptseiten vorhanden |
+| Grid-Layout für Artikelübersicht und Inhalte | Erfüllt | Kartenraster und Layoutbereiche mit CSS Grid |
+| Formulare für Newsletter und Kontakt | Erfüllt | beide vorhanden |
+| Responsives Design für Mobile, Tablet und Desktop | Erfüllt | Breakpoints und responsive Layoutlogik vorhanden |
+| Mindestens 3 Hauptseiten | Erfüllt | `index.html`, `artikel.html`, `kontakt.html` |
+| Mindestens 10 Artikel | Erfüllt | 12 Artikel vorhanden |
+| Wireframes in Git/Markdown | Erfüllt | 12 PNGs, `WIREFRAMES.md`, `generate-wireframes.ps1` |
+| Styleguide mit Typografie und Farben | Erfüllt | in diesem README dokumentiert |
+| Dokumentation des KI-Einsatzes | Erfüllt | in diesem README dokumentiert |
 
-```html
-- Semantische Tags: <header>, <nav>, <main>, <section>, <article>, <footer>
-- Meta-Tags für Responsive Design
-- Strukturierte Formulare mit Labels
-- Accessibility-Features (alt-Texte, aria-labels)
-```
+### Optionales
 
-### CSS3 Features
-
-```css
-- CSS Grid für Layouts
-- Flexbox für Komponenten
-- CSS Variables (Custom Properties)
-- Media Queries für Responsive Design
-- Transitions und Hover-Effekte
-- Box-Shadow für Tiefe
-- Border-Radius für moderne Optik
-```
-
-### JavaScript Features
-
-```javascript
-- Event Listeners
-- DOM Manipulation
-- Array-Methoden (forEach)
-- URL Parameter Handling
-- Dynamic Styling
-```
+| Optionaler Punkt | Status | Hinweis |
+|---|---|---|
+| Kommentarfunktion | Nicht umgesetzt | nicht Teil des aktuellen Umfangs |
+| Likes mit Web Storage API | Nicht umgesetzt | nicht Teil des aktuellen Umfangs |
 
 ---
 
-## Deployment
-
-### Veröffentlichung
-
-Das Projekt kann auf verschiedenen Plattformen veröffentlicht werden:
-
-#### 1. **GitHub Pages** (Empfohlen)
+## Lokale Verwendung
 
 ```bash
-# 1. Repository erstellen auf GitHub
-# 2. Code hochladen
-git init
-git add .
-git commit -m "Initial commit - Fussball Blog"
-git branch -M main
-git remote add origin [REPOSITORY-URL]
-git push -u origin main
-
-# 3. GitHub Pages aktivieren
-# Settings > Pages > Source: main branch > Save
-```
-
-**Live URL:** `https://[username].github.io/Fussball_Blog/`
-
-#### 2. **Netlify**
-
-```bash
-# Via Netlify CLI
-npm install -g netlify-cli
-netlify deploy --prod
-```
-
-#### 3. **Vercel**
-
-```bash
-# Via Vercel CLI
-npm install -g vercel
-vercel --prod
-```
-
----
-
-## Gelerntes & Erkenntnisse
-
-### Technische Learnings
-
-1. **CSS Grid Mastery**
-   - Grid ist perfekt für Artikel-Layouts
-   - `auto-fit` und `minmax()` für responsive Grids
-   - `gap` Property für elegante Abstände
-
-2. **Responsive Design**
-   - Mobile-First ist effizienter
-   - Breakpoints sollten content-basiert sein
-   - rem/em besser als px für Skalierbarkeit
-
-3. **JavaScript**
-   - Event Delegation für Performance
-   - URL Parameters für Deep Linking
-   - Clean Code ohne jQuery möglich
-
-### KI-Tool Erkenntnisse
-
-**Was KI gut kann:**
- Boilerplate Code generieren
- Konsistente Strukturen erstellen
- Best Practices anwenden
- Repetitive Aufgaben automatisieren
- Code-Dokumentation
-
-**Was KI weniger gut kann:**
- Kreative Design-Entscheidungen
- Komplexe Business-Logik
- Spezifische UX-Optimierungen
- Barrierefreiheit-Details
-
-**Beste KI-Nutzung:**
- KI für Basis-Struktur
- Mensch für Feinschliff
- Iterativer Prozess
- Kritisches Hinterfragen der Vorschläge
-
----
-
-## Wartung & Erweiterungen
-
-### Mögliche Erweiterungen
-
-1. **Backend-Integration**
-   - Node.js/Express Server
-   - Datenbank für Artikel (MongoDB/PostgreSQL)
-   - CMS-System für Redakteure
-
-2. **Zusätzliche Features**
-   - Kommentar-System
-   - Like-Funktionalität mit LocalStorage
-   - Suche nach Artikeln
-   - Artikel-Tags und erweiterte Filter
-   - Social Media Sharing
-   - RSS Feed
-
-3. **Performance-Optimierungen**
-   - Lazy Loading für Bilder
-   - Service Worker für Offline-Nutzung
-   - Code Minifizierung
-   - Image Optimization
-
-4. **Analytics & SEO**
-   - Google Analytics Integration
-   - Meta-Tags für Social Media
-   - Structured Data (JSON-LD)
-   - Sitemap.xml
-
----
-
-## Verwendung
-
-### Lokale Entwicklung
-
-```bash
-# 1. Repository klonen
-git clone [REPOSITORY-URL]
-
-# 2. In Projekt-Ordner wechseln
+# Projekt öffnen
 cd Fussball_Blog
 
-# 3. Mit Live Server öffnen (VS Code Extension)
-# Oder einfach index.html im Browser öffnen
+# index.html direkt im Browser öffnen
+# oder mit einem Live-Server starten
 ```
-
-### Artikel hinzufügen
-
-1. **Neue Artikel-Karte in artikel.html:**
-```html
-<article class="article-card" data-category="[liga-name]">
-    <img src="https://images.unsplash.com/..." alt="[Beschreibung]">
-    <div class="article-content">
-        <span class="article-category">[Liga]</span>
-        <h3><a href="artikel/[artikel-slug].html">[Titel]</a></h3>
-        <p>[Kurzbeschreibung]</p>
-        <div class="article-meta">
-            <img src="https://images.unsplash.com/..." alt="[Autor]" class="author-img">
-            <span>[Autor Name]</span>
-            <span class="date">[Datum]</span>
-        </div>
-    </div>
-</article>
-```
-
-2. **Neue Detailseite erstellen:**
-   - Kopiere eine bestehende Artikel-Datei
-   - Passe Titel, Meta-Tags, und Inhalt an
-   - Speichere in `artikel/` Ordner
 
 ---
 
-## Fazit
+## Veröffentlichung
 
-### Projekterfolg
+Für die Abgabe werden laut Auftrag benötigt:
 
-Das Fussball-Blog-Projekt wurde erfolgreich umgesetzt und erfüllt alle Hauptanforderungen:
+- Link zum publizierten Webauftritt, z. B. über `GitHub Pages`
+- Link zum öffentlichen Git-Repository mit Quellcode und Dokumentation
 
- Moderne, responsive Website
- 100% eigener Code (mit KI-Unterstützung)
- Alle geforderten Seiten und Funktionen
- Professionelles Design
- Umfassende Dokumentation
- Einsatz von KI-Tools demonstriert
+Mögliche Veröffentlichungsplattformen:
 
-### Persönliche Entwicklung
+- `GitHub Pages`
+- `Netlify`
+- `Vercel`
 
-**Gelernt:**
-- Professioneller Umgang mit KI-Tools in der Webentwicklung
-- Effiziente Projektstrukturierung
-- Responsive Design Best Practices
-- Sauberer, wartbarer Code
+---
 
-**Erkenntnisse:**
-- KI beschleunigt Entwicklung erheblich
-- Menschliche Überprüfung bleibt essentiell
-- Iterativer Prozess führt zu besten Ergebnissen
-- Dokumentation ist genauso wichtig wie Code
+## Reflexion
+
+### Technische Erkenntnisse
+
+- Ein sauberes Kartenlayout lässt sich mit `CSS Grid` gut skalieren.
+- `Flexbox` und `Grid` ergänzen sich sinnvoll.
+- Responsive Design muss auf Inhaltslogik und nicht nur auf Bildschirmbreite reagieren.
+- Ein konsistentes Komponentenmodell vereinfacht spätere Erweiterungen.
+
+### Erkenntnisse zum KI-Einsatz
+
+- KI spart Zeit bei Struktur, Überarbeitung und Variantenbildung.
+- Die Vorschläge müssen immer geprüft und an den konkreten Auftrag angepasst werden.
+- Besonders bei Dokumentation und Layoutentscheidungen hilft iteratives Arbeiten.
+- Für ein gutes Ergebnis bleibt die fachliche Kontrolle durch die entwickelnde Person notwendig.
 
 ---
 
 ## Autor & Credits
 
 **Projekt:** Fussball Blog - M293 Projektauftrag  
-**Entwickelt mit:** GitHub Copilot CLI  
-**Entwicklungszeit:** März 2026  
+**Umsetzung:** mit Unterstützung durch Codex und ChatGPT  
+**Entwicklungszeit:** März bis April 2026  
 **Lizenz:** Educational Project
 
-### Danksagungen
-
-- GitHub Copilot für die KI-Unterstützung
-- Module M293 für die Projektidee
-- Alle Fussball-Fans weltweit
-
 ---
 
-## Kontakt
+## Stand
 
-Für Fragen oder Feedback zum Projekt, nutze das Kontaktformular auf der Website oder melde dich über die Kontaktseite.
-
----
-
-**Version:** 1.0  
-**Stand:** März 2026  
-**Status:** Projekt abgeschlossen
+**Version:** 1.1  
+**Stand:** April 2026  
+**Status:** Projekt dokumentiert und auftragskonform aufbereitet
