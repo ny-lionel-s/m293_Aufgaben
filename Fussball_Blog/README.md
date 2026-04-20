@@ -276,32 +276,32 @@ Zusätzliche Dokumentation:
 
 ## KI-Einsatz in der Entwicklung
 
-Der Projektauftrag verlangt den dokumentierten Einsatz von mindestens zwei KI-Tools. Für dieses Projekt wurden `Codex` und `ChatGPT` verwendet.
+Der Projektauftrag verlangt den dokumentierten Einsatz von mindestens zwei KI-Tools. Für dieses Projekt wurden `Codex` und `ChatGPT` verwendet. Die Umsetzung erfolgte eigenständig mit intensiver KI-Unterstützung.
 
 ### KI-Tool 1: Codex
 
 Einsatzbereiche:
 
+- Codegenerierung und technische Überarbeitung im Projekt
 - Analyse der bestehenden Projektstruktur
-- Überarbeitung und Ergänzung von HTML-, CSS- und JavaScript-Dateien
-- Prüfung der Auftragsabdeckung
 - Erstellung und Generierung der Wireframes
+- Prüfung der Auftragsabdeckung
 - Bereinigung und Aktualisierung der Projektdokumentation
 
 Beispiele:
 
-- Anpassung der Seitenstruktur an den Projektauftrag
+- Unterstützung bei der Codegenerierung
 - Erstellung der Wireframes für alle Seitentypen und Gerätegrössen
-- Überprüfung, welche Assets im Projekt noch verwendet werden
+- technische Bereinigungen und strukturelle Anpassungen
 
 ### KI-Tool 2: ChatGPT
 
 Einsatzbereiche:
 
-- Ideenfindung für Inhalt, Aufbau und Formulierungen
-- Unterstützung bei Texten für Artikelideen, Seitentexte und Dokumentation
+- Research und Ideensammlung
+- Unterstützung bei Formulierungen und Struktur
+- Hilfe bei Texten für Dokumentation und Projektbeschreibung
 - Reflexion über Designentscheidungen und Seitenlogik
-- Hilfe bei der Strukturierung der README-Dokumentation
 
 Beispiele:
 
@@ -340,7 +340,7 @@ Laut Auftrag sollte KI für `Layout`, `Codevorschläge` und `UI-Optimierungen` e
 ### Fazit zum Vergleich
 
 - `Codex` war besonders stark bei konkreten Projektänderungen, Codeanpassungen und der Wireframe-Erstellung.
-- `ChatGPT` war besonders hilfreich bei Formulierungen, Strukturierung und konzeptioneller Unterstützung.
+- `ChatGPT` war besonders hilfreich für Research, Ideensammlung, Formulierungen und Strukturierung.
 - Die Kombination aus beiden Tools war sinnvoll, weil eines stärker im Code und eines stärker in Sprache und Struktur war.
 
 ---
@@ -395,14 +395,20 @@ cd Fussball_Blog
 
 Für die Abgabe werden laut Auftrag benötigt:
 
-- Link zum publizierten Webauftritt, z. B. über `GitHub Pages`
+- Link zum publizierten Webauftritt
 - Link zum öffentlichen Git-Repository mit Quellcode und Dokumentation
 
-Mögliche Veröffentlichungsplattformen:
+Geplante Veröffentlichung:
 
 - `GitHub Pages`
-- `Netlify`
-- `Vercel`
+
+Veröffentlichte URL:
+
+- `https://ny-lionel-s.github.io/m293_Aufgaben/`
+
+Repository-URL:
+
+- `[noch ergänzen]`
 
 ---
 
@@ -414,6 +420,8 @@ Mögliche Veröffentlichungsplattformen:
 - `Flexbox` und `Grid` ergänzen sich sinnvoll.
 - Responsive Design muss auf Inhaltslogik und nicht nur auf Bildschirmbreite reagieren.
 - Ein konsistentes Komponentenmodell vereinfacht spätere Erweiterungen.
+- Die Veröffentlichung über `GitHub Pages` war technisch der schwierigste Teil, weil sich das Projekt in einem Repository mit mehreren Aufgaben befindet.
+- Dafür musste ein passender Workflow eingerichtet werden, zusammen mit einem Branch, der für die Veröffentlichung aktuell gehalten wird.
 
 ### Erkenntnisse zum KI-Einsatz
 
@@ -421,14 +429,16 @@ Mögliche Veröffentlichungsplattformen:
 - Die Vorschläge müssen immer geprüft und an den konkreten Auftrag angepasst werden.
 - Besonders bei Dokumentation und Layoutentscheidungen hilft iteratives Arbeiten.
 - Für ein gutes Ergebnis bleibt die fachliche Kontrolle durch die entwickelnde Person notwendig.
+- Ich habe gelernt, KI gezielter einzusetzen und besser zu unterscheiden, welches Tool für welche Aufgabe geeignet ist.
 
 ---
 
 ## Autor & Credits
 
 **Projekt:** Fussball Blog - M293 Projektauftrag  
-**Umsetzung:** mit Unterstützung durch Codex und ChatGPT  
-**Entwicklungszeit:** März bis April 2026  
+**Autor:** Lionel Schultze  
+**Umsetzung:** eigenständig mit teilweiser Unterstützung durch Codex und ChatGPT  
+**Entwicklungszeit:** 4 mal 4 Schullektionen und zusätzliche Zeit ausserhalb der Schule  
 **Lizenz:** Educational Project
 
 ---
