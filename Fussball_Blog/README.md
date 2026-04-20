@@ -23,24 +23,6 @@ Fussball_Blog/
 ├── kontakt.html              # Kontaktseite mit Formular
 ├── css/
 │   └── styles.css           # Alle Styles (100% eigener Code)
-├── images/                  # Bilder und Grafiken
-│   ├── bayern-dortmund.jpg
-│   ├── manchester-city.jpg
-│   ├── real-madrid.jpg
-│   ├── inter-milan.jpg
-│   ├── psg-monaco.jpg
-│   ├── champions-league.jpg
-│   ├── leverkusen.jpg
-│   ├── liverpool.jpg
-│   ├── barcelona.jpg
-│   ├── ac-milan.jpg
-│   ├── marseille.jpg
-│   ├── champions-league-2.jpg
-│   ├── autor-mueller.jpg
-│   ├── autor-schmidt.jpg
-│   ├── autor-garcia.jpg
-│   ├── autor-rossi.jpg
-│   └── autor-dubois.jpg
 ├── artikel/                 # Detailseiten der Artikel
 │   ├── bayern-klassiker.html
 │   ├── city-titelrennen.html
@@ -149,7 +131,7 @@ Fussball_Blog/
 ### 4. Artikel-Detailseiten
 
 **Implementierte Features:**
-- Vollständige Artikel mit Text und Bildern
+- Vollständige Artikel mit Text und extern eingebundenen Bildern
 - Autoren-Information mit Foto
 - Kategorie-Badge
 - Datum und Lesezeit
@@ -215,7 +197,6 @@ Zusätzliche Artikel auf artikel.html:
 - Generierung der kompletten HTML-Struktur
 - Erstellung des CSS-Codes
 - JavaScript für Filter-Funktionalität
-- Python-Script für Platzhalter-Bilder
 - Strukturierung der Projektdokumentation
 
 **Vorteile:**
@@ -245,18 +226,12 @@ Ergebnis: Vollständiges HTML + CSS mit:
          - Responsive Breakpoints
 ```
 
-#### 2. **Python mit PIL (Pillow)** für Bilder
+#### 2. **Externe Bildquellen**
 
 **Einsatzbereich:**
-- Automatische Generierung von Platzhalter-Bildern
-- Erstellung von 17 Bildern mit Team-Farben
-- Konsistente Bildgrößen (800x600px)
-
-**Generierte Bilder:**
-```python
-- 12 Team/Liga Bilder (mit spezifischen Farben)
-- 5 Autoren-Bilder (mit verschiedenen Farben)
-```
+- Einbindung von Artikel- und Autorenbildern per externer URL
+- Weniger lokale Assets und einfachere Projektstruktur
+- Direkte Verwendung in Karten, Detailseiten und Team-Ansicht
 
 ### KI-Tool Vergleich
 
@@ -488,13 +463,13 @@ cd Fussball_Blog
 1. **Neue Artikel-Karte in artikel.html:**
 ```html
 <article class="article-card" data-category="[liga-name]">
-    <img src="images/[bild].jpg" alt="[Beschreibung]">
+    <img src="https://images.unsplash.com/..." alt="[Beschreibung]">
     <div class="article-content">
         <span class="article-category">[Liga]</span>
         <h3><a href="artikel/[artikel-slug].html">[Titel]</a></h3>
         <p>[Kurzbeschreibung]</p>
         <div class="article-meta">
-            <img src="images/[autor].jpg" alt="[Autor]" class="author-img">
+            <img src="https://images.unsplash.com/..." alt="[Autor]" class="author-img">
             <span>[Autor Name]</span>
             <span class="date">[Datum]</span>
         </div>
@@ -541,7 +516,7 @@ Das Fussball-Blog-Projekt wurde erfolgreich umgesetzt und erfüllt alle Hauptanf
 ## Autor & Credits
 
 **Projekt:** Fussball Blog - M293 Projektauftrag  
-**Entwickelt mit:** GitHub Copilot CLI, Python (Pillow)  
+**Entwickelt mit:** GitHub Copilot CLI  
 **Entwicklungszeit:** März 2026  
 **Lizenz:** Educational Project
 
