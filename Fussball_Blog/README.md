@@ -14,13 +14,9 @@ Ziel war ein Webauftritt mit:
 
 ---
 
-## Projektziele
+## Projektziel
 
-- Entwicklung eines vollständig responsiven Blogs mit eigenem `HTML`, `CSS` und etwas `JavaScript`
-- saubere Seitenstruktur mit `header`, `main` und `footer`
-- Grid-Layouts für Themen, Artikelkarten und Inhaltsbereiche
-- Umsetzung aller Pflichtpunkte aus dem Projektauftrag
-- dokumentierter und reflektierter Einsatz von mindestens zwei KI-Tools
+- M293-Pa01-Projektauftrag-Blog.docx erfüllen
 
 ---
 
@@ -302,6 +298,7 @@ Einsatzbereiche:
 - Unterstützung bei Formulierungen und Struktur
 - Hilfe bei Texten für Dokumentation und Projektbeschreibung
 - Reflexion über Designentscheidungen und Seitenlogik
+- Hilfe bei kurzen Fragen die keine änderung im Projekt benötigen
 
 Beispiele:
 
@@ -328,20 +325,20 @@ Laut Auftrag sollte KI für `Layout`, `Codevorschläge` und `UI-Optimierungen` e
 
 ## Vergleich der KI-Tools
 
-| Kriterium | Codex | ChatGPT |
+| Kriterium | Codex CLI | ChatGPT |
 |-----------|-------|---------|
-| Codeänderungen direkt im Projekt | Sehr stark | Mittel |
-| Analyse bestehender Dateien | Sehr stark | Gut |
+| Codeänderungen direkt im Projekt | Sehr stark | Schwach |
+| Analyse bestehender Dateien | Sehr stark | Mittel |
 | Textliche Dokumentation | Gut | Sehr stark |
 | Hilfe bei Struktur und Ideen | Gut | Sehr stark |
-| Iterative technische Anpassungen | Sehr stark | Gut |
-| Geeignet für dieses Projekt | Sehr hoch | Hoch |
+| Technische Anpassungen | Sehr stark | Gut |
+| Geeignet für dieses Projekt | Sehr stark | Mittel |
 
 ### Fazit zum Vergleich
 
-- `Codex` war besonders stark bei konkreten Projektänderungen, Codeanpassungen und der Wireframe-Erstellung.
+- `Codex CLI` war besonders stark bei konkreten Projektänderungen, Codeanpassungen und der Wireframe-Erstellung. Es ist ein sehr starkes free Tool aber man hat jedoch ein Weekly-Limit das, wenn aufgebraucht keine Usage des Tools mehr erlaubt.
 - `ChatGPT` war besonders hilfreich für Research, Ideensammlung, Formulierungen und Strukturierung.
-- Die Kombination aus beiden Tools war sinnvoll, weil eines stärker im Code und eines stärker in Sprache und Struktur war.
+- `ChatGPT` habe ich ganz am Anfang für die Planung und zwischendurch für kurze fragen benutzt und `Codex CLI` habe ich dann konkret bei der Umsetzung benutzt wo es dann viel besser ist da es selber Dinge in meinem Projekt abändern konnte und das ganze Projekt als kontext hat und auch den Projektauftrag anschauen konnte und mir so Mitteilen was ich noch ändern oder haben muss. Gewisse Teile der Dokumentation wie die Farben, Schriftarten und Ordnerstrukturen und die Erfüllung des Projektautrages konnte ich mit dem Tool auch super machen da es viel schneller überprüfen kann ob alle Kriterien im Projekt erfüllt sind, da es mithilfe von Python-Skripts den Projektauftrag als Word anschauen kann. 
 
 ---
 
@@ -398,7 +395,7 @@ Für die Abgabe werden laut Auftrag benötigt:
 - Link zum publizierten Webauftritt
 - Link zum öffentlichen Git-Repository mit Quellcode und Dokumentation
 
-Geplante Veröffentlichung:
+Veröffentlichung:
 
 - `GitHub Pages`
 
