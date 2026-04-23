@@ -390,12 +390,7 @@ cd Fussball_Blog
 
 ## Veröffentlichung
 
-Für die Abgabe werden laut Auftrag benötigt:
-
-- Link zum publizierten Webauftritt
-- Link zum öffentlichen Git-Repository mit Quellcode und Dokumentation
-
-Veröffentlichung:
+Veröffentlichungsmethode:
 
 - `GitHub Pages`
 
@@ -417,8 +412,7 @@ Repository-URL:
 - `Flexbox` und `Grid` ergänzen sich sinnvoll.
 - Responsive Design muss auf Inhaltslogik und nicht nur auf Bildschirmbreite reagieren.
 - Ein konsistentes Komponentenmodell vereinfacht spätere Erweiterungen.
-- Die Veröffentlichung über `GitHub Pages` war technisch der schwierigste Teil, weil sich das Projekt in einem Repository mit mehreren Aufgaben befindet.
-- Dafür musste ein passender Workflow eingerichtet werden, zusammen mit einem Branch, der für die Veröffentlichung aktuell gehalten wird.
+- Die Veröffentlichung über `GitHub Pages` war technisch der schwierigste Teil, weil sich das Projekt in einem Repository mit mehreren Aufgaben befindet. Dafür musste ich ein passenden Workflow einrichten, zusammen mit einem Branch, der für die Veröffentlichung aktuell gehalten wird. Weil bei Gihub Pages wird immer nur im Main Folder nach einem index.html gesucht und wenn dies nicht gefunden wirg gibt es einen Error.
 
 ### Erkenntnisse zum KI-Einsatz
 
