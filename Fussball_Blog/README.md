@@ -108,7 +108,7 @@ Umsetzung:
 - 12 kuratierte Artikeldetailseiten
 - je Seite: Thema, Titel, Bild, Autor:in, Datum, Lesezeit und Text
 - Rücklink zur Artikelübersicht
-- Videobereich auf der Detailseite `leverkusen-meister.html` mit extern eingebettetem Highlight
+- Jede Artikeldetailseite enthält einen extern eingebetteten Videobereich
 
 Erfüllter Auftragsbezug:
 
@@ -353,7 +353,7 @@ Laut Auftrag sollte KI für `Layout`, `Codevorschläge` und `UI-Optimierungen` e
 | Newsletter-Anmeldung | Erfüllt | Formular auf der Startseite |
 | Themenseite mit allen Artikeln | Erfüllt | `artikel.html` |
 | Anzeige aller Artikel oder eines Themas | Erfüllt | Filterbuttons und URL-Parameter |
-| Detailseite mit Artikel, Bild, Video, Autor:in und Thema | Erfüllt | 12 Detailseiten, davon eine mit eingebettetem externen Video |
+| Detailseite mit Artikel, Bild, Video, Autor:in und Thema | Erfüllt | 12 Detailseiten mit extern eingebetteten Videos |
 | Kontaktseite mit Autoreninformationen | Erfüllt | `kontakt.html` mit 5 Autor:innen |
 | Kontaktformular mit Betreffauswahl | Erfüllt | Dropdown in `kontakt.html` |
 | 100% eigener HTML- und CSS-Code | Erfüllt | Kein Framework, eigener Code in HTML/CSS |

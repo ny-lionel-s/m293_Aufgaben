@@ -570,6 +570,11 @@ header {
     transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
 }
 
+.article-card-link {
+    color: inherit;
+    text-decoration: none;
+}
+
 .article-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 22px 44px rgba(13, 30, 24, 0.12);
@@ -621,16 +626,6 @@ header {
     letter-spacing: -0.05em;
 }
 
-.article-content h3 a {
-    color: var(--text-dark);
-    text-decoration: none;
-    transition: color 0.25s;
-}
-
-.article-content h3 a:hover {
-    color: var(--primary-color);
-}
-
 .article-content p {
     color: var(--text-muted);
 }
@@ -661,6 +656,11 @@ header {
 
 .article-card[hidden] {
     display: none !important;
+}
+
+.article-card-link:focus-visible {
+    outline: 3px solid rgba(189, 242, 102, 0.55);
+    outline-offset: 4px;
 }
 
 .filter-shell {
