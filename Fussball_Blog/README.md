@@ -8,7 +8,7 @@ Ziel war ein Webauftritt mit:
 
 - `Startseite` mit neuesten oder beliebtesten Artikeln
 - `Artikelübersicht` mit Themenfilter
-- `Artikeldetailseiten` mit Text, Bild, Autor:in und optionalem Videobereich
+- `Artikeldetailseiten` mit Text, Bild, Autor:in und Videobereich
 - `Kontaktseite` mit Autoreninformationen und Kontaktformular
 - responsivem Verhalten für `Mobile`, `Tablet` und `Desktop`
 
@@ -108,11 +108,11 @@ Umsetzung:
 - 12 kuratierte Artikeldetailseiten
 - je Seite: Thema, Titel, Bild, Autor:in, Datum, Lesezeit und Text
 - Rücklink zur Artikelübersicht
-- Platz für optionalen Videoeinsatz ist im Wireframing berücksichtigt
+- Videobereich auf der Detailseite `leverkusen-meister.html` mit extern eingebettetem Highlight
 
 Erfüllter Auftragsbezug:
 
-- Detailseite mit Artikel, Bild, evtl. Video, Autor:in und Thema
+- Detailseite mit Artikel, Bild, Video, Autor:in und Thema
 
 ### 4. Kontaktseite
 
@@ -353,7 +353,7 @@ Laut Auftrag sollte KI für `Layout`, `Codevorschläge` und `UI-Optimierungen` e
 | Newsletter-Anmeldung | Erfüllt | Formular auf der Startseite |
 | Themenseite mit allen Artikeln | Erfüllt | `artikel.html` |
 | Anzeige aller Artikel oder eines Themas | Erfüllt | Filterbuttons und URL-Parameter |
-| Detailseite mit Artikel, Bild, evtl. Video, Autor:in und Thema | Erfüllt | 12 Detailseiten, Video im Wireframing berücksichtigt |
+| Detailseite mit Artikel, Bild, Video, Autor:in und Thema | Erfüllt | 12 Detailseiten, davon eine mit eingebettetem externen Video |
 | Kontaktseite mit Autoreninformationen | Erfüllt | `kontakt.html` mit 5 Autor:innen |
 | Kontaktformular mit Betreffauswahl | Erfüllt | Dropdown in `kontakt.html` |
 | 100% eigener HTML- und CSS-Code | Erfüllt | Kein Framework, eigener Code in HTML/CSS |

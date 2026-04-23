@@ -4,7 +4,7 @@ Die Wireframes orientieren sich direkt am Projektauftrag:
 
 - `Startseite` mit beliebtesten oder neusten Artikeln, Themenuebersicht und Newsletter
 - `Artikeluebersicht` mit Themenfilter und Anzeige aller oder gefilterter Artikel
-- `Artikeldetailseite` mit Thema, Autor:in, Bild und optionalem Video
+- `Artikeldetailseite` mit Thema, Autor:in, Bild und Videobereich
 - `Kontaktseite` mit Autoreninformationen und Kontaktformular inklusive Betreffauswahl
 - responsiv fuer `Mobile`, `Tablet` und `Desktop`
 
@@ -45,7 +45,7 @@ Die Wireframes orientieren sich direkt am Projektauftrag:
 ### Artikeldetail Mobile
 - Themenbadge oberhalb des Titels
 - Autor:in mit Foto und Metadaten
-- Artikelbild und optionaler Videobereich
+- Artikelbild und Videobereich
 - Text in einer klaren Lesespalte
 
 ### Kontaktseite Mobile
@@ -95,7 +95,7 @@ Die Wireframes orientieren sich direkt am Projektauftrag:
 ### Artikeldetail Desktop
 - breite Titelflaeche mit Thema und Metadaten
 - grosses Artikelbild
-- optionales Video unterhalb des Bildes
+- Video unterhalb des Bildes
 - Lesebereich mit klarer Inhaltsstruktur
 
 ### Kontaktseite Desktop
