@@ -43,18 +43,21 @@ Fussball_Blog/
 │   ├── psg-monaco.html
 │   └── real-madrid-form.html
 ├── images/
-│   ├── Wireframe_Startseite_Mobile.png
-│   ├── Wireframe_Startseite_Tablet.png
-│   ├── Wireframe_Startseite_Desktop.png
-│   ├── Wireframe_Artikeluebersicht_Mobile.png
-│   ├── Wireframe_Artikeluebersicht_Tablet.png
-│   ├── Wireframe_Artikeluebersicht_Desktop.png
-│   ├── Wireframe_Artikeldetail_Mobile.png
-│   ├── Wireframe_Artikeldetail_Tablet.png
-│   ├── Wireframe_Artikeldetail_Desktop.png
-│   ├── Wireframe_Kontaktseite_Mobile.png
-│   ├── Wireframe_Kontaktseite_Tablet.png
-│   └── Wireframe_Kontaktseite_Desktop.png
+│   ├── mobile/
+│   │   ├── Wireframe_Startseite_Mobile.png
+│   │   ├── Wireframe_Artikeluebersicht_Mobile.png
+│   │   ├── Wireframe_Artikeldetail_Mobile.png
+│   │   └── Wireframe_Kontaktseite_Mobile.png
+│   ├── tablet/
+│   │   ├── Wireframe_Startseite_Tablet.png
+│   │   ├── Wireframe_Artikeluebersicht_Tablet.png
+│   │   ├── Wireframe_Artikeldetail_Tablet.png
+│   │   └── Wireframe_Kontaktseite_Tablet.png
+│   └── desktop/
+│       ├── Wireframe_Startseite_Desktop.png
+│       ├── Wireframe_Artikeluebersicht_Desktop.png
+│       ├── Wireframe_Artikeldetail_Desktop.png
+│       └── Wireframe_Kontaktseite_Desktop.png
 ├── generate-wireframes.ps1
 ├── WIREFRAMES.md
 └── README.md
@@ -158,33 +161,36 @@ Damit ist die Anforderung `mindestens 3 Hauptseiten` und `mindestens 10 Artikel`
 ### Farbpalette
 
 ```css
---primary-color: #2c5f2d;
---secondary-color: #97bf0d;
---accent-color: #ff6b35;
---dark-bg: #1a1a1a;
---light-bg: #f5f5f5;
---text-dark: #333;
---text-light: #fff;
---border-color: #ddd;
---champions-gold: #ffd700;
+--page-bg: #f2f4ee;
+--primary-color: #123c31;
+--primary-color-soft: #1d5a4a;
+--primary-deep: #091d18;
+--secondary-color: #bdf266;
+--accent-color: #ff7a45;
+--text-dark: #15211d;
+--text-muted: #5f6c67;
+--text-light: #f7fbf5;
+--border-color: rgba(18, 60, 49, 0.12);
+--champions-gold: #ffe082;
 ```
 
 ### Typografie
 
-- Hauptschrift: `Segoe UI`, `Tahoma`, `Geneva`, `Verdana`, `sans-serif`
+- Primärschrift: `Manrope`, `Segoe UI`, `sans-serif`
+- Akzentschrift (z. B. Headlines): `Space Grotesk`, `Segoe UI`, `sans-serif`
 - Basis-Schriftgrösse: `16px`
 - Zeilenhöhe: `1.6`
 - klare Hierarchie für `h1`, `h2` und `h3`
 
 ### Layout-Prinzipien
 
-- `Mobile First` als Grundidee
+- Responsiver Ansatz mit adaptiven Layouts
 - `CSS Grid` für Kartenraster und grössere Inhaltsbereiche
 - `Flexbox` für Navigation, Formulare und kleinere Komponenten
 - Breakpoints:
-  - Mobile: bis `480px`
-  - Tablet: `481px - 768px`
-  - Desktop: ab `769px`
+  - Desktop/Narrow: bis `960px`
+  - Tablet: bis `768px`
+  - Mobile: bis `560px`
 
 ---
 
@@ -244,24 +250,24 @@ Die im Projektauftrag geforderten Wireframes sind vollständig vorhanden.
 ### Erzeugte Wireframes
 
 #### Startseite
-- `images/Wireframe_Startseite_Mobile.png`
-- `images/Wireframe_Startseite_Tablet.png`
-- `images/Wireframe_Startseite_Desktop.png`
+- `images/mobile/Wireframe_Startseite_Mobile.png`
+- `images/tablet/Wireframe_Startseite_Tablet.png`
+- `images/desktop/Wireframe_Startseite_Desktop.png`
 
 #### Artikelübersicht
-- `images/Wireframe_Artikeluebersicht_Mobile.png`
-- `images/Wireframe_Artikeluebersicht_Tablet.png`
-- `images/Wireframe_Artikeluebersicht_Desktop.png`
+- `images/mobile/Wireframe_Artikeluebersicht_Mobile.png`
+- `images/tablet/Wireframe_Artikeluebersicht_Tablet.png`
+- `images/desktop/Wireframe_Artikeluebersicht_Desktop.png`
 
 #### Artikeldetail
-- `images/Wireframe_Artikeldetail_Mobile.png`
-- `images/Wireframe_Artikeldetail_Tablet.png`
-- `images/Wireframe_Artikeldetail_Desktop.png`
+- `images/mobile/Wireframe_Artikeldetail_Mobile.png`
+- `images/tablet/Wireframe_Artikeldetail_Tablet.png`
+- `images/desktop/Wireframe_Artikeldetail_Desktop.png`
 
 #### Kontaktseite
-- `images/Wireframe_Kontaktseite_Mobile.png`
-- `images/Wireframe_Kontaktseite_Tablet.png`
-- `images/Wireframe_Kontaktseite_Desktop.png`
+- `images/mobile/Wireframe_Kontaktseite_Mobile.png`
+- `images/tablet/Wireframe_Kontaktseite_Tablet.png`
+- `images/desktop/Wireframe_Kontaktseite_Desktop.png`
 
 Zusätzliche Dokumentation:
 
@@ -437,5 +443,5 @@ Repository-URL:
 
 ## Stand
 
-**Version:** 1.1  
+**Version:** 1.2  
 **Stand:** April 2026  
