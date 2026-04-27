@@ -1,11 +1,11 @@
 # Wireframes - Fussball Blog
 
-Die Wireframes orientieren sich direkt am Projektauftrag:
+Die Wireframes wurden an die aktuell umgesetzte Site angepasst:
 
-- `Startseite` mit beliebtesten oder neusten Artikeln, Themenuebersicht und Newsletter
-- `Artikeluebersicht` mit Themenfilter und Anzeige aller oder gefilterter Artikel
-- `Artikeldetailseite` mit Thema, Autor:in, Bild und Videobereich
-- `Kontaktseite` mit Autoreninformationen und Kontaktformular inklusive Betreffauswahl
+- `Startseite` mit zweigeteiltem Hero, Newsletter, Themenkarten und Artikelraster
+- `Artikeluebersicht` mit Hero plus Infopanel, Themenfilter und Kartenraster
+- `Artikeldetailseite` mit grossem Artikel-Header, Bild, Videoabschnitt, Fliesstext und Ruecklink
+- `Kontaktseite` mit Hero plus Infopanel, Autorenraster sowie Kontaktpanel und Formular
 - responsiv fuer `Mobile`, `Tablet` und `Desktop`
 
 ## Dateiliste
@@ -33,25 +33,24 @@ Die Wireframes orientieren sich direkt am Projektauftrag:
 ## Mobile Design
 
 ### Startseite Mobile
-- vertikaler Aufbau mit `Header`, `Hero`, `Newsletter`, `Themenuebersicht`, `Artikelkarten` und `Footer`
-- Themen untereinander, damit die Navigation auf kleinen Screens klar bleibt
-- neuste oder beliebte Artikel als Karten unter dem Themenbereich
+- vertikaler Aufbau mit `Sticky Header`, `Hero Content`, `Hero Panel`, `Newsletter`, `Themenbereich`, `Artikelbereich` und `Footer`
+- Themenkarten untereinander, damit die Navigation auf kleinen Screens klar bleibt
+- Artikelkarten als einzelne Karten unter dem Themenbereich
 
 ### Artikeluebersicht Mobile
-- Hero mit Titel `Alle Artikel`
-- Filter in mehreren Zeilen
-- Artikelkarten untereinander
+- Hero mit Inhaltsblock und separatem Infopanel
+- Filterbereich mit Heading und Buttons in mehreren Zeilen
+- Artikelheading und Artikelkarten untereinander
 
 ### Artikeldetail Mobile
-- Themenbadge oberhalb des Titels
-- Autor:in mit Foto und Metadaten
-- Artikelbild und Videobereich
-- Text in einer klaren Lesespalte
+- kompakter Artikel-Header mit Themenbadge, Titel und Autor:in
+- Artikelbild und eigener Videobereich mit Quellenlink
+- Text in einer klaren Lesespalte mit Ruecklink unterhalb
 
 ### Kontaktseite Mobile
-- Autoren untereinander mit Foto und Kurzinfo
-- Kontaktformular mit `Name`, `E-Mail`, `Betreff` und `Nachricht`
-- Dropdown fuer Betreffauswahl
+- Hero mit Inhaltsblock und Kontaktpanel
+- Autorenkarten untereinander mit Foto, Rolle und Kurzinfo
+- Kontaktbereich mit Infopanel sowie Formular mit `Name`, `E-Mail`, `Betreff` und `Nachricht`
 
 ---
 
@@ -59,23 +58,23 @@ Die Wireframes orientieren sich direkt am Projektauftrag:
 
 ### Startseite Tablet
 - horizontale Navigation
-- Hero und Newsletter in voller Breite
-- Themen und Artikel im 2- bis 3-spaltigen Raster
+- Hero Content und Hero Panel untereinander, danach Newsletter
+- Themen im 3-spaltigen Raster und Artikel im 2-spaltigen Raster
 
 ### Artikeluebersicht Tablet
-- Filterleiste in einer Zeile
-- Artikel in zwei Spalten
-- Fokus auf schnelles Wechseln zwischen Themen
+- Hero mit Content links und Infopanel rechts
+- Filterbereich mit Heading und Filterleiste
+- Artikel in zwei Spalten mit separatem Bereichsheading
 
 ### Artikeldetail Tablet
-- grosser Titelbereich
-- Medien untereinander
-- breite Lesespalte fuer den Artikelinhalt
+- breiter Artikel-Header mit Badge, Titel und Autorblock
+- Bild und Video untereinander
+- Textblock und Ruecklink unterhalb
 
 ### Kontaktseite Tablet
-- Autoren in mehreren Spalten
-- breiteres Formular als auf Mobile
-- klare Trennung zwischen Team und Formular
+- Hero mit Content links und Kontaktpanel rechts
+- Autoren im Raster
+- Kontaktbereich zweigeteilt in Infopanel und Formular
 
 ---
 
@@ -83,33 +82,33 @@ Die Wireframes orientieren sich direkt am Projektauftrag:
 
 ### Startseite Desktop
 - volle horizontale Navigation
-- Hero ueber die gesamte Breite
-- Themen als breite Kartenreihe
-- Artikel im Grid mit mehreren Spalten
+- zweispaltiger Hero mit Content links und Info-Panel rechts
+- Themen als Kartenraster
+- Artikel im 3-spaltigen Grid
 
 ### Artikeluebersicht Desktop
-- Filterleiste ueber dem Artikelraster
-- mehrere Karten pro Zeile
-- geeignet fuer die komplette Themenuebersicht
+- zweispaltiger Hero oberhalb des Filters
+- Filterbereich mit Heading ueber dem Artikelraster
+- mehrere Karten pro Zeile fuer die komplette Themenuebersicht
 
 ### Artikeldetail Desktop
-- breite Titelflaeche mit Thema und Metadaten
+- grosser Artikel-Header als Einstieg in die Detailseite
 - grosses Artikelbild
-- Video unterhalb des Bildes
-- Lesebereich mit klarer Inhaltsstruktur
+- Videoabschnitt unterhalb des Bildes
+- Lesebereich mit Ruecklink unter dem Body
 
 ### Kontaktseite Desktop
+- zweispaltiger Hero oberhalb des Teams
 - Teamdarstellung in mehreren Spalten
-- zentriertes Kontaktformular
-- klare Zuordnung der Fragen ueber die Betreffauswahl
+- Kontaktlayout mit linkem Infopanel und rechtem Formular
 
 ---
 
 ## Hinweise zur Umsetzung
 
-- Die Wireframes zeigen Struktur und Informationsarchitektur, nicht das finale visuelle Design.
-- Alle Seiten folgen der geforderten Grundstruktur mit `Header`, `Main` und `Footer`.
-- Die PNG-Dateien wurden aus dem Projektskript `generate-wireframes.ps1` erzeugt und koennen bei Bedarf reproduziert werden.
+- Die Wireframes zeigen die aktuelle Informationsarchitektur der implementierten Seiten, nicht das finale visuelle Design.
+- Alle Seiten folgen weiterhin der Grundstruktur mit `Header`, `Main` und `Footer`.
+- Die PNG-Dateien werden aus `generate-wireframes.ps1` erzeugt und koennen bei Bedarf neu generiert werden.
 
 ---
 

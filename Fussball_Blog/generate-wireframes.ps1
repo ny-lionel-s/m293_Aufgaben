@@ -8,12 +8,12 @@ New-Item -ItemType Directory -Force -Path $MobileOutputDir | Out-Null
 New-Item -ItemType Directory -Force -Path $TabletOutputDir | Out-Null
 New-Item -ItemType Directory -Force -Path $DesktopOutputDir | Out-Null
 
-function New-Brush([string]$hex) {
-    [System.Drawing.SolidBrush]::new([System.Drawing.ColorTranslator]::FromHtml($hex))
+function New-Brush([string]$Hex) {
+    [System.Drawing.SolidBrush]::new([System.Drawing.ColorTranslator]::FromHtml($Hex))
 }
 
-function New-Pen([string]$hex, [float]$width = 2) {
-    [System.Drawing.Pen]::new([System.Drawing.ColorTranslator]::FromHtml($hex), $width)
+function New-Pen([string]$Hex, [float]$Width = 2) {
+    [System.Drawing.Pen]::new([System.Drawing.ColorTranslator]::FromHtml($Hex), $Width)
 }
 
 function Draw-TextBlock {
@@ -85,8 +85,8 @@ function Draw-CanvasTitle {
         [string]$Subtitle
     )
 
-    Draw-TextBlock -Graphics $Graphics -Text $Title -X 32 -Y 18 -Width 1200 -Height 50 -Size 28 -Bold
-    Draw-TextBlock -Graphics $Graphics -Text $Subtitle -X 34 -Y 64 -Width 1500 -Height 32 -Size 13 -Color '#5F6368'
+    Draw-TextBlock -Graphics $Graphics -Text $Title -X 32 -Y 18 -Width 1400 -Height 50 -Size 28 -Bold
+    Draw-TextBlock -Graphics $Graphics -Text $Subtitle -X 34 -Y 64 -Width 1600 -Height 32 -Size 13 -Color '#5F6368'
 }
 
 function New-WireframeCanvas {
@@ -128,19 +128,43 @@ function Draw-ViewportFrame {
         [int]$Height,
         [string]$Label
     )
+
     Draw-Box -Graphics $Graphics -X $X -Y $Y -Width $Width -Height $Height -Fill '#FCFCFC' -Border '#222222'
     Draw-TextBlock -Graphics $Graphics -Text $Label -X $X -Y ($Y + $Height - 34) -Width $Width -Height 24 -Size 11 -Align center -Color '#444444'
 }
 
 function Draw-Header {
-    param([System.Drawing.Graphics]$Graphics,[int]$X,[int]$Y,[int]$Width,[string]$Mode)
-    $label = if ($Mode -eq 'mobile') { "Header`nLogo`nMenu" } else { 'Header: Logo | Home | Artikel | Kontakt' }
-    Draw-Box -Graphics $Graphics -X $X -Y $Y -Width $Width -Height 74 -Label $label -Fill '#2F6B31' -Border '#222222' -TextColor '#FFFFFF' -FontSize 17 -Align center
+    param(
+        [System.Drawing.Graphics]$Graphics,
+        [int]$X,
+        [int]$Y,
+        [int]$Width,
+        [string]$Mode
+    )
+
+    $label = if ($Mode -eq 'mobile') {
+        "Sticky Header`nLogo`nHome | Artikel | Kontakt"
+    } else {
+        'Sticky Header | Logo | Home | Artikel | Kontakt'
+    }
+    Draw-Box -Graphics $Graphics -X $X -Y $Y -Width $Width -Height 78 -Label $label -Fill '#204F2B' -Border '#222222' -TextColor '#FFFFFF' -FontSize 17 -Align center
 }
 
 function Draw-Footer {
-    param([System.Drawing.Graphics]$Graphics,[int]$X,[int]$Y,[int]$Width,[int]$Height,[string]$Mode)
-    $label = if ($Mode -eq 'desktop') { 'Footer | Ueber uns | Quick Links | Social | Copyright' } else { 'Footer | Ueber uns | Links | Copyright' }
+    param(
+        [System.Drawing.Graphics]$Graphics,
+        [int]$X,
+        [int]$Y,
+        [int]$Width,
+        [int]$Height,
+        [string]$Mode
+    )
+
+    $label = if ($Mode -eq 'desktop') {
+        'Footer | Ueber uns | Quick Links | Bleib dran | Copyright'
+    } else {
+        'Footer | Ueber uns | Links | Bleib dran | Copyright'
+    }
     Draw-Box -Graphics $Graphics -X $X -Y $Y -Width $Width -Height $Height -Label $label -Fill '#252525' -Border '#222222' -TextColor '#FFFFFF' -FontSize 16 -Align center
 }
 
@@ -149,58 +173,61 @@ function Draw-StartPage {
 
     switch ($Device) {
         'Mobile' {
-            $c = New-WireframeCanvas -Width 760 -Height 1780 -Title 'Startseite Mobile' -Subtitle 'Beliebte oder neuste Artikel, Themenuebersicht und Newsletter laut Projektauftrag'
+            $c = New-WireframeCanvas -Width 820 -Height 2160 -Title 'Startseite Mobile' -Subtitle 'Aktuelle Site: Hero mit Info-Panel, Newsletter, Themenkarten und Artikel-Grid'
             $g = $c.Graphics
-            Draw-ViewportFrame -Graphics $g -X 70 -Y 110 -Width 360 -Height 1590 -Label 'SMARTPHONE VIEW'
-            Draw-Header -Graphics $g -X 100 -Y 155 -Width 300 -Mode mobile
-            Draw-Box -Graphics $g -X 100 -Y 245 -Width 300 -Height 150 -Label "Hero`nWillkommen beim Fussball Blog" -Fill '#DCE8FA' -Align center -FontSize 18
-            Draw-Box -Graphics $g -X 100 -Y 410 -Width 300 -Height 115 -Label "Newsletter`n[E-Mail-Adresse]`n[Abonnieren]" -Fill '#FFD9BF' -Align center
-            Draw-Box -Graphics $g -X 100 -Y 540 -Width 300 -Height 215 -Label "Themenuebersicht`nBundesliga`nPremier League`nLa Liga`nSerie A`nLigue 1`nChampions League" -Fill '#FFF4CC'
-            Draw-Box -Graphics $g -X 100 -Y 770 -Width 300 -Height 215 -Label "Artikelkarte 1`n[Bild]`nKategorie`nTitel`nKurztext`nAutor + Datum" -Fill '#FFFFFF'
-            Draw-Box -Graphics $g -X 100 -Y 1000 -Width 300 -Height 215 -Label "Artikelkarte 2`n[Bild]`nKategorie`nTitel`nKurztext`nAutor + Datum" -Fill '#FFFFFF'
-            Draw-Box -Graphics $g -X 100 -Y 1230 -Width 300 -Height 215 -Label "Artikelkarte 3`n[Bild]`nKategorie`nTitel`nKurztext`nAutor + Datum" -Fill '#FFFFFF'
-            Draw-Footer -Graphics $g -X 100 -Y 1465 -Width 300 -Height 185 -Mode mobile
-            Draw-Box -Graphics $g -X 470 -Y 190 -Width 230 -Height 280 -Label "Pflicht laut Auftrag`n- neuste/beliebte Artikel`n- Themenuebersicht`n- Newsletter-Anmeldung`n- Header, Main, Footer" -Fill '#FFFFFF' -Border '#888888'
+            Draw-ViewportFrame -Graphics $g -X 70 -Y 110 -Width 410 -Height 1970 -Label 'SMARTPHONE VIEW'
+            Draw-Header -Graphics $g -X 100 -Y 155 -Width 350 -Mode mobile
+            Draw-Box -Graphics $g -X 100 -Y 255 -Width 350 -Height 170 -Label "Hero Content`nEyebrow`nHeadline`nKurztext`n2 CTA Buttons" -Fill '#DCE8FA' -Align center -FontSize 18
+            Draw-Box -Graphics $g -X 100 -Y 440 -Width 350 -Height 200 -Label "Hero Panel`nIm Ueberblick`n3 Highlights`n3 Stat-Boxen" -Fill '#EAF4E3' -Align center -FontSize 17
+            Draw-Box -Graphics $g -X 100 -Y 660 -Width 350 -Height 125 -Label "Newsletter Section`nCopy`n[E-Mail-Adresse] [Abonnieren]" -Fill '#FFD9BF' -Align center
+            Draw-Box -Graphics $g -X 100 -Y 805 -Width 350 -Height 300 -Label "Themenbereich`nSection Heading`n6 Topic Cards untereinander`nBundesliga | Premier League | La Liga`nSerie A | Ligue 1 | Champions League" -Fill '#FFF4CC'
+            Draw-Box -Graphics $g -X 100 -Y 1125 -Width 350 -Height 120 -Label "Artikelbereich Heading`nNeueste Artikel | Link zu allen Artikeln" -Fill '#EFEFEF'
+            Draw-Box -Graphics $g -X 100 -Y 1260 -Width 350 -Height 180 -Label "Artikelkarte 1`nBild`nKategorie`nTitel`nKurztext`nAutor + Datum" -Fill '#FFFFFF'
+            Draw-Box -Graphics $g -X 100 -Y 1455 -Width 350 -Height 180 -Label "Artikelkarte 2`nBild`nKategorie`nTitel`nKurztext`nAutor + Datum" -Fill '#FFFFFF'
+            Draw-Box -Graphics $g -X 100 -Y 1650 -Width 350 -Height 180 -Label "Artikelkarte 3`nBild`nKategorie`nTitel`nKurztext`nAutor + Datum" -Fill '#FFFFFF'
+            Draw-Footer -Graphics $g -X 100 -Y 1845 -Width 350 -Height 190 -Mode mobile
             Save-Canvas -Canvas $c -TargetDir $MobileOutputDir -Filename 'Wireframe_Startseite_Mobile.png'
         }
         'Tablet' {
-            $c = New-WireframeCanvas -Width 1420 -Height 1160 -Title 'Startseite Tablet' -Subtitle 'Responsive Zwischenansicht mit Grid fuer Themen und Artikel'
+            $c = New-WireframeCanvas -Width 1500 -Height 1460 -Title 'Startseite Tablet' -Subtitle 'Aktuelle Site: gestapelter Hero mit Panel, Newsletter, Themenraster und Artikelkarten'
             $g = $c.Graphics
-            Draw-ViewportFrame -Graphics $g -X 60 -Y 110 -Width 1040 -Height 960 -Label 'TABLET VIEW'
-            Draw-Header -Graphics $g -X 95 -Y 160 -Width 970 -Mode tablet
-            Draw-Box -Graphics $g -X 95 -Y 250 -Width 970 -Height 140 -Label "Hero`nWillkommen beim Fussball Blog" -Fill '#DCE8FA' -Align center -FontSize 22
-            Draw-Box -Graphics $g -X 95 -Y 405 -Width 970 -Height 84 -Label 'Newsletter: [E-Mail-Adresse] [Abonnieren]' -Fill '#FFD9BF' -Align center -FontSize 18
-            Draw-Box -Graphics $g -X 95 -Y 510 -Width 300 -Height 130 -Label 'Thema 1' -Fill '#FFF4CC' -Align center -FontSize 18
-            Draw-Box -Graphics $g -X 430 -Y 510 -Width 300 -Height 130 -Label 'Thema 2' -Fill '#FFF4CC' -Align center -FontSize 18
-            Draw-Box -Graphics $g -X 765 -Y 510 -Width 300 -Height 130 -Label 'Thema 3' -Fill '#FFF4CC' -Align center -FontSize 18
-            Draw-Box -Graphics $g -X 95 -Y 660 -Width 470 -Height 180 -Label "Artikelkarte 1`n[Bild]  Titel  Meta" -Fill '#FFFFFF'
-            Draw-Box -Graphics $g -X 595 -Y 660 -Width 470 -Height 180 -Label "Artikelkarte 2`n[Bild]  Titel  Meta" -Fill '#FFFFFF'
-            Draw-Box -Graphics $g -X 95 -Y 860 -Width 470 -Height 140 -Label "Artikelkarte 3`n[Bild]  Titel  Meta" -Fill '#FFFFFF'
-            Draw-Box -Graphics $g -X 595 -Y 860 -Width 470 -Height 140 -Label "Artikelkarte 4`n[Bild]  Titel  Meta" -Fill '#FFFFFF'
-            Draw-Box -Graphics $g -X 1140 -Y 185 -Width 220 -Height 240 -Label "Tablet Fokus`n- horizontale Navigation`n- Themen im Grid`n- Artikel 2-spaltig" -Fill '#FFFFFF' -Border '#888888'
-            Draw-Footer -Graphics $g -X 95 -Y 995 -Width 970 -Height 60 -Mode tablet
+            Draw-ViewportFrame -Graphics $g -X 60 -Y 110 -Width 1120 -Height 1265 -Label 'TABLET VIEW'
+            Draw-Header -Graphics $g -X 95 -Y 160 -Width 1050 -Mode tablet
+            Draw-Box -Graphics $g -X 95 -Y 255 -Width 1050 -Height 145 -Label "Hero Content`nHeadline | Kurztext | 2 CTA Buttons" -Fill '#DCE8FA' -Align center -FontSize 22
+            Draw-Box -Graphics $g -X 95 -Y 420 -Width 1050 -Height 145 -Label "Hero Panel`nHighlights + Stat-Boxen" -Fill '#EAF4E3' -Align center -FontSize 19
+            Draw-Box -Graphics $g -X 95 -Y 585 -Width 1050 -Height 105 -Label "Newsletter Section`nCopy links | Formular rechts bzw. gestapelt" -Fill '#FFD9BF' -Align center -FontSize 18
+            Draw-Box -Graphics $g -X 95 -Y 715 -Width 320 -Height 120 -Label 'Topic Card 1' -Fill '#FFF4CC' -Align center -FontSize 18
+            Draw-Box -Graphics $g -X 460 -Y 715 -Width 320 -Height 120 -Label 'Topic Card 2' -Fill '#FFF4CC' -Align center -FontSize 18
+            Draw-Box -Graphics $g -X 825 -Y 715 -Width 320 -Height 120 -Label 'Topic Card 3' -Fill '#FFF4CC' -Align center -FontSize 18
+            Draw-Box -Graphics $g -X 95 -Y 855 -Width 320 -Height 120 -Label 'Topic Card 4' -Fill '#FFF4CC' -Align center -FontSize 18
+            Draw-Box -Graphics $g -X 460 -Y 855 -Width 320 -Height 120 -Label 'Topic Card 5' -Fill '#FFF4CC' -Align center -FontSize 18
+            Draw-Box -Graphics $g -X 825 -Y 855 -Width 320 -Height 120 -Label 'Topic Card 6' -Fill '#E6F0FF' -Align center -FontSize 18
+            Draw-Box -Graphics $g -X 95 -Y 1010 -Width 505 -Height 180 -Label "Artikelkarte 1`nBild | Kategorie | Titel | Meta" -Fill '#FFFFFF'
+            Draw-Box -Graphics $g -X 640 -Y 1010 -Width 505 -Height 180 -Label "Artikelkarte 2`nBild | Kategorie | Titel | Meta" -Fill '#FFFFFF'
+            Draw-Box -Graphics $g -X 95 -Y 1210 -Width 505 -Height 100 -Label "Artikelkarte 3" -Fill '#FFFFFF'
+            Draw-Box -Graphics $g -X 640 -Y 1210 -Width 505 -Height 100 -Label "Artikelkarte 4" -Fill '#FFFFFF'
             Save-Canvas -Canvas $c -TargetDir $TabletOutputDir -Filename 'Wireframe_Startseite_Tablet.png'
         }
         'Desktop' {
-            $c = New-WireframeCanvas -Width 1800 -Height 1300 -Title 'Startseite Desktop' -Subtitle 'Volles Layout mit Themenreihe, Artikel-Grid und Newsletter-Bereich'
+            $c = New-WireframeCanvas -Width 1900 -Height 1560 -Title 'Startseite Desktop' -Subtitle 'Aktuelle Site: zweispaltiger Hero, Newsletter, Themenkarten und 3-spaltiges Artikelraster'
             $g = $c.Graphics
-            Draw-ViewportFrame -Graphics $g -X 60 -Y 110 -Width 1680 -Height 1140 -Label 'DESKTOP VIEW'
-            Draw-Header -Graphics $g -X 100 -Y 160 -Width 1600 -Mode desktop
-            Draw-Box -Graphics $g -X 100 -Y 255 -Width 1600 -Height 145 -Label "Hero`nWillkommen beim Fussball Blog`nDie neuesten News aus den Top-Ligen" -Fill '#DCE8FA' -Align center -FontSize 24
-            Draw-Box -Graphics $g -X 100 -Y 420 -Width 1600 -Height 90 -Label 'Newsletter: [E-Mail-Adresse] [Abonnieren]' -Fill '#FFD9BF' -Align center -FontSize 18
+            Draw-ViewportFrame -Graphics $g -X 60 -Y 110 -Width 1760 -Height 1390 -Label 'DESKTOP VIEW'
+            Draw-Header -Graphics $g -X 100 -Y 160 -Width 1680 -Mode desktop
+            Draw-Box -Graphics $g -X 100 -Y 255 -Width 1080 -Height 210 -Label "Hero Content`nEyebrow`nHeadline`nEinleitung`n2 CTA Buttons" -Fill '#DCE8FA' -Align center -FontSize 24
+            Draw-Box -Graphics $g -X 1210 -Y 255 -Width 570 -Height 210 -Label "Hero Panel`nIm Ueberblick`n3 Highlights`n3 Stat-Boxen" -Fill '#EAF4E3' -Align center -FontSize 21
+            Draw-Box -Graphics $g -X 100 -Y 490 -Width 1680 -Height 120 -Label "Newsletter Section`nCopy links | Formular rechts" -Fill '#FFD9BF' -Align center -FontSize 18
+            Draw-Box -Graphics $g -X 100 -Y 635 -Width 1680 -Height 72 -Label 'Themen Heading | Waehle deine Liga oder gehe direkt zur Champions League' -Fill '#EFEFEF' -Align center -FontSize 18
             0..5 | ForEach-Object {
-                $x = 100 + ($_ * 265)
-                $w = if ($_ -eq 5) { 275 } else { 235 }
-                $label = @('Bundesliga','Premier League','La Liga','Serie A','Ligue 1','Champions League')[$_]
-                Draw-Box -Graphics $g -X $x -Y 535 -Width $w -Height 88 -Label $label -Fill ($(if($_ -eq 5){'#E6F0FF'}else{'#FFF4CC'})) -Align center -FontSize 18
+                $x = 100 + (($_ % 3) * 565)
+                $y = 730 + ([math]::Floor($_ / 3) * 155)
+                $fill = if ($_ -eq 5) { '#E6F0FF' } else { '#FFF4CC' }
+                Draw-Box -Graphics $g -X $x -Y $y -Width 520 -Height 125 -Label ("Topic Card {0}`nIcon | Titel | Kurztext | Link" -f ($_ + 1)) -Fill $fill -Align center -FontSize 18
             }
-            Draw-Box -Graphics $g -X 100 -Y 665 -Width 490 -Height 215 -Label "Artikelkarte 1`n[Bild]`nKategorie  Titel`nKurztext`nAutor + Datum" -Fill '#FFFFFF'
-            Draw-Box -Graphics $g -X 605 -Y 665 -Width 490 -Height 215 -Label "Artikelkarte 2`n[Bild]`nKategorie  Titel`nKurztext`nAutor + Datum" -Fill '#FFFFFF'
-            Draw-Box -Graphics $g -X 1110 -Y 665 -Width 490 -Height 215 -Label "Artikelkarte 3`n[Bild]`nKategorie  Titel`nKurztext`nAutor + Datum" -Fill '#FFFFFF'
-            Draw-Box -Graphics $g -X 100 -Y 900 -Width 490 -Height 175 -Label "Artikelkarte 4" -Fill '#FFFFFF'
-            Draw-Box -Graphics $g -X 605 -Y 900 -Width 490 -Height 175 -Label "Artikelkarte 5" -Fill '#FFFFFF'
-            Draw-Box -Graphics $g -X 1110 -Y 900 -Width 490 -Height 175 -Label "Artikelkarte 6" -Fill '#FFFFFF'
-            Draw-Footer -Graphics $g -X 100 -Y 1095 -Width 1600 -Height 105 -Mode desktop
+            Draw-Box -Graphics $g -X 100 -Y 1065 -Width 1680 -Height 72 -Label 'Artikel Heading | Neueste Artikel | Link zu allen Artikeln' -Fill '#EFEFEF' -Align center -FontSize 18
+            Draw-Box -Graphics $g -X 100 -Y 1160 -Width 520 -Height 180 -Label "Artikelkarte 1`nBild`nKategorie | Titel | Kurztext | Meta" -Fill '#FFFFFF'
+            Draw-Box -Graphics $g -X 680 -Y 1160 -Width 520 -Height 180 -Label "Artikelkarte 2`nBild`nKategorie | Titel | Kurztext | Meta" -Fill '#FFFFFF'
+            Draw-Box -Graphics $g -X 1260 -Y 1160 -Width 520 -Height 180 -Label "Artikelkarte 3`nBild`nKategorie | Titel | Kurztext | Meta" -Fill '#FFFFFF'
+            Draw-Footer -Graphics $g -X 100 -Y 1365 -Width 1680 -Height 95 -Mode desktop
             Save-Canvas -Canvas $c -TargetDir $DesktopOutputDir -Filename 'Wireframe_Startseite_Desktop.png'
         }
     }
@@ -208,53 +235,58 @@ function Draw-StartPage {
 
 function Draw-ArticleListPage {
     param([string]$Device)
+
     switch ($Device) {
         'Mobile' {
-            $c = New-WireframeCanvas -Width 760 -Height 1560 -Title 'Artikeluebersicht Mobile' -Subtitle 'Themenseite mit allen Artikeln und Filter nach Thema'
+            $c = New-WireframeCanvas -Width 820 -Height 2050 -Title 'Artikeluebersicht Mobile' -Subtitle 'Aktuelle Site: Hero mit Panel, Themenfilter und Artikelkarten in einer Spalte'
             $g = $c.Graphics
-            Draw-ViewportFrame -Graphics $g -X 70 -Y 110 -Width 360 -Height 1370 -Label 'SMARTPHONE VIEW'
-            Draw-Header -Graphics $g -X 100 -Y 155 -Width 300 -Mode mobile
-            Draw-Box -Graphics $g -X 100 -Y 245 -Width 300 -Height 95 -Label 'Hero: Alle Artikel' -Fill '#DCE8FA' -Align center -FontSize 18
-            Draw-Box -Graphics $g -X 100 -Y 355 -Width 300 -Height 110 -Label "[Alle] [Bundesliga] [Premier]`n[La Liga] [Serie A] [Ligue 1] [UCL]" -Fill '#EFEFEF' -Align center
-            Draw-Box -Graphics $g -X 100 -Y 485 -Width 300 -Height 190 -Label "Artikel 1`n[Bild] Titel`nMeta" -Fill '#FFFFFF'
-            Draw-Box -Graphics $g -X 100 -Y 695 -Width 300 -Height 190 -Label "Artikel 2`n[Bild] Titel`nMeta" -Fill '#FFFFFF'
-            Draw-Box -Graphics $g -X 100 -Y 905 -Width 300 -Height 190 -Label "Artikel 3`n[Bild] Titel`nMeta" -Fill '#FFFFFF'
-            Draw-Box -Graphics $g -X 100 -Y 1115 -Width 300 -Height 190 -Label "Artikel 4`n[Bild] Titel`nMeta" -Fill '#FFFFFF'
-            Draw-Footer -Graphics $g -X 100 -Y 1325 -Width 300 -Height 115 -Mode mobile
-            Draw-Box -Graphics $g -X 470 -Y 200 -Width 230 -Height 220 -Label "Pflicht`n- alle Artikel in Uebersicht`n- Themenfilter`n- Anzeige aller oder eines Themas" -Fill '#FFFFFF' -Border '#888888'
+            Draw-ViewportFrame -Graphics $g -X 70 -Y 110 -Width 410 -Height 1860 -Label 'SMARTPHONE VIEW'
+            Draw-Header -Graphics $g -X 100 -Y 155 -Width 350 -Mode mobile
+            Draw-Box -Graphics $g -X 100 -Y 255 -Width 350 -Height 145 -Label "Hero Content`nAlle Artikel auf einen Blick`nKurztext" -Fill '#DCE8FA' -Align center -FontSize 18
+            Draw-Box -Graphics $g -X 100 -Y 415 -Width 350 -Height 155 -Label "Hero Panel`nFilterbar`nHinweis + 3 Stat-Boxen" -Fill '#EAF4E3' -Align center -FontSize 17
+            Draw-Box -Graphics $g -X 100 -Y 590 -Width 350 -Height 155 -Label "Filterbereich`nHeading`n[Alle] [Bundesliga] [Premier League]`n[La Liga] [Serie A] [Ligue 1] [Champions League]" -Fill '#EFEFEF' -Align center
+            Draw-Box -Graphics $g -X 100 -Y 765 -Width 350 -Height 110 -Label "Artikelgrid Heading`nAlle Beitraege | Link zur Startseite" -Fill '#EFEFEF'
+            Draw-Box -Graphics $g -X 100 -Y 890 -Width 350 -Height 180 -Label "Artikelkarte 1`nBild`nKategorie`nTitel`nKurztext`nMeta" -Fill '#FFFFFF'
+            Draw-Box -Graphics $g -X 100 -Y 1085 -Width 350 -Height 180 -Label "Artikelkarte 2`nBild`nKategorie`nTitel`nKurztext`nMeta" -Fill '#FFFFFF'
+            Draw-Box -Graphics $g -X 100 -Y 1280 -Width 350 -Height 180 -Label "Artikelkarte 3`nBild`nKategorie`nTitel`nKurztext`nMeta" -Fill '#FFFFFF'
+            Draw-Box -Graphics $g -X 100 -Y 1475 -Width 350 -Height 180 -Label "Artikelkarte 4`nBild`nKategorie`nTitel`nKurztext`nMeta" -Fill '#FFFFFF'
+            Draw-Footer -Graphics $g -X 100 -Y 1670 -Width 350 -Height 255 -Mode mobile
             Save-Canvas -Canvas $c -TargetDir $MobileOutputDir -Filename 'Wireframe_Artikeluebersicht_Mobile.png'
         }
         'Tablet' {
-            $c = New-WireframeCanvas -Width 1420 -Height 1120 -Title 'Artikeluebersicht Tablet' -Subtitle 'Filterleiste und 2-spaltiges Grid fuer die Themenseite'
+            $c = New-WireframeCanvas -Width 1500 -Height 1470 -Title 'Artikeluebersicht Tablet' -Subtitle 'Aktuelle Site: Hero mit Panel, Filterleiste und Artikelkarten in zwei Spalten'
             $g = $c.Graphics
-            Draw-ViewportFrame -Graphics $g -X 60 -Y 110 -Width 1040 -Height 930 -Label 'TABLET VIEW'
-            Draw-Header -Graphics $g -X 95 -Y 160 -Width 970 -Mode tablet
-            Draw-Box -Graphics $g -X 95 -Y 250 -Width 970 -Height 84 -Label 'Filterleiste: Alle | Bundesliga | Premier League | La Liga | Serie A | Ligue 1 | UCL' -Fill '#EFEFEF' -Align center
-            Draw-Box -Graphics $g -X 95 -Y 360 -Width 470 -Height 205 -Label "Artikel 1`n[Bild] Titel`nMeta" -Fill '#FFFFFF'
-            Draw-Box -Graphics $g -X 595 -Y 360 -Width 470 -Height 205 -Label "Artikel 2`n[Bild] Titel`nMeta" -Fill '#FFFFFF'
-            Draw-Box -Graphics $g -X 95 -Y 590 -Width 470 -Height 205 -Label "Artikel 3`n[Bild] Titel`nMeta" -Fill '#FFFFFF'
-            Draw-Box -Graphics $g -X 595 -Y 590 -Width 470 -Height 205 -Label "Artikel 4`n[Bild] Titel`nMeta" -Fill '#FFFFFF'
-            Draw-Box -Graphics $g -X 95 -Y 820 -Width 470 -Height 145 -Label "Artikel 5" -Fill '#FFFFFF'
-            Draw-Box -Graphics $g -X 595 -Y 820 -Width 470 -Height 145 -Label "Artikel 6" -Fill '#FFFFFF'
-            Draw-Footer -Graphics $g -X 95 -Y 975 -Width 970 -Height 60 -Mode tablet
-            Draw-Box -Graphics $g -X 1140 -Y 185 -Width 220 -Height 250 -Label "Auftrag`n- Themenseite mit allen Artikeln`n- filtern nach Thema`n- Grid-Layout fuer Inhalte" -Fill '#FFFFFF' -Border '#888888'
+            Draw-ViewportFrame -Graphics $g -X 60 -Y 110 -Width 1120 -Height 1275 -Label 'TABLET VIEW'
+            Draw-Header -Graphics $g -X 95 -Y 160 -Width 1050 -Mode tablet
+            Draw-Box -Graphics $g -X 95 -Y 255 -Width 660 -Height 150 -Label "Hero Content`nAlle Artikel auf einen Blick`nKurztext" -Fill '#DCE8FA' -Align center -FontSize 22
+            Draw-Box -Graphics $g -X 780 -Y 255 -Width 365 -Height 150 -Label "Hero Panel`nFilterbar`nHinweis + Stat-Boxen" -Fill '#EAF4E3' -Align center -FontSize 18
+            Draw-Box -Graphics $g -X 95 -Y 430 -Width 1050 -Height 165 -Label "Filterbereich`nHeading`nAlle | Bundesliga | Premier League | La Liga | Serie A | Ligue 1 | Champions League" -Fill '#EFEFEF' -Align center -FontSize 18
+            Draw-Box -Graphics $g -X 95 -Y 620 -Width 1050 -Height 72 -Label 'Artikelgrid Heading | Alle Beitraege | Link zur Startseite' -Fill '#EFEFEF' -Align center -FontSize 18
+            Draw-Box -Graphics $g -X 95 -Y 720 -Width 505 -Height 190 -Label "Artikelkarte 1`nBild | Kategorie | Titel | Meta" -Fill '#FFFFFF'
+            Draw-Box -Graphics $g -X 640 -Y 720 -Width 505 -Height 190 -Label "Artikelkarte 2`nBild | Kategorie | Titel | Meta" -Fill '#FFFFFF'
+            Draw-Box -Graphics $g -X 95 -Y 930 -Width 505 -Height 190 -Label "Artikelkarte 3`nBild | Kategorie | Titel | Meta" -Fill '#FFFFFF'
+            Draw-Box -Graphics $g -X 640 -Y 930 -Width 505 -Height 190 -Label "Artikelkarte 4`nBild | Kategorie | Titel | Meta" -Fill '#FFFFFF'
+            Draw-Box -Graphics $g -X 95 -Y 1140 -Width 505 -Height 140 -Label "Artikelkarte 5" -Fill '#FFFFFF'
+            Draw-Box -Graphics $g -X 640 -Y 1140 -Width 505 -Height 140 -Label "Artikelkarte 6" -Fill '#FFFFFF'
             Save-Canvas -Canvas $c -TargetDir $TabletOutputDir -Filename 'Wireframe_Artikeluebersicht_Tablet.png'
         }
         'Desktop' {
-            $c = New-WireframeCanvas -Width 1800 -Height 1260 -Title 'Artikeluebersicht Desktop' -Subtitle 'Volles Raster mit Themenfilter und vielen Artikeln'
+            $c = New-WireframeCanvas -Width 1900 -Height 1500 -Title 'Artikeluebersicht Desktop' -Subtitle 'Aktuelle Site: zweispaltiger Hero, Filterleiste und grosses Kartenraster'
             $g = $c.Graphics
-            Draw-ViewportFrame -Graphics $g -X 60 -Y 110 -Width 1680 -Height 1100 -Label 'DESKTOP VIEW'
-            Draw-Header -Graphics $g -X 100 -Y 160 -Width 1600 -Mode desktop
-            Draw-Box -Graphics $g -X 100 -Y 255 -Width 1600 -Height 78 -Label 'Filter: Alle | Bundesliga | Premier League | La Liga | Serie A | Ligue 1 | Champions League' -Fill '#EFEFEF' -Align center -FontSize 17
+            Draw-ViewportFrame -Graphics $g -X 60 -Y 110 -Width 1760 -Height 1330 -Label 'DESKTOP VIEW'
+            Draw-Header -Graphics $g -X 100 -Y 160 -Width 1680 -Mode desktop
+            Draw-Box -Graphics $g -X 100 -Y 255 -Width 1080 -Height 185 -Label "Hero Content`nAlle Artikel auf einen Blick`nKurztext" -Fill '#DCE8FA' -Align center -FontSize 24
+            Draw-Box -Graphics $g -X 1210 -Y 255 -Width 570 -Height 185 -Label "Hero Panel`nFilterbar`nHinweis + 3 Stat-Boxen" -Fill '#EAF4E3' -Align center -FontSize 20
+            Draw-Box -Graphics $g -X 100 -Y 470 -Width 1680 -Height 140 -Label "Filterbereich`nHeading + Beschreibung`nAlle | Bundesliga | Premier League | La Liga | Serie A | Ligue 1 | Champions League" -Fill '#EFEFEF' -Align center -FontSize 18
+            Draw-Box -Graphics $g -X 100 -Y 640 -Width 1680 -Height 72 -Label 'Artikelgrid Heading | Alle Beitraege im modernen Kartenlayout | Link zur Startseite' -Fill '#EFEFEF' -Align center -FontSize 18
             $positions = @(
-                @{X=100;Y=365}, @{X=615;Y=365}, @{X=1130;Y=365},
-                @{X=100;Y=615}, @{X=615;Y=615}, @{X=1130;Y=615}
+                @{X=100;Y=735}, @{X=680;Y=735}, @{X=1260;Y=735},
+                @{X=100;Y=950}, @{X=680;Y=950}, @{X=1260;Y=950}
             )
             for ($i = 0; $i -lt $positions.Count; $i++) {
-                Draw-Box -Graphics $g -X $positions[$i].X -Y $positions[$i].Y -Width 470 -Height 215 -Label ("Artikel {0}`n[Bild] Titel`nMeta" -f ($i + 1)) -Fill '#FFFFFF'
+                Draw-Box -Graphics $g -X $positions[$i].X -Y $positions[$i].Y -Width 520 -Height 190 -Label ("Artikelkarte {0}`nBild | Kategorie | Titel | Kurztext | Meta" -f ($i + 1)) -Fill '#FFFFFF'
             }
-            Draw-Footer -Graphics $g -X 100 -Y 865 -Width 1600 -Height 105 -Mode desktop
-            Draw-Box -Graphics $g -X 100 -Y 995 -Width 1600 -Height 180 -Label "Hinweis fuer Auftrag: Die Seite zeigt alle Artikel oder nur ein gewaehltes Thema. Die Karten sind im Grid organisiert und fuehren zu den Detailseiten." -Fill '#FFFFFF' -Border '#888888' -FontSize 18
+            Draw-Footer -Graphics $g -X 100 -Y 1170 -Width 1680 -Height 95 -Mode desktop
             Save-Canvas -Canvas $c -TargetDir $DesktopOutputDir -Filename 'Wireframe_Artikeluebersicht_Desktop.png'
         }
     }
@@ -262,52 +294,44 @@ function Draw-ArticleListPage {
 
 function Draw-ArticleDetailPage {
     param([string]$Device)
+
     switch ($Device) {
         'Mobile' {
-            $c = New-WireframeCanvas -Width 760 -Height 1820 -Title 'Artikeldetail Mobile' -Subtitle 'Artikel mit Thema, Bild, optionalem Video und Autorin/Autor'
+            $c = New-WireframeCanvas -Width 820 -Height 2100 -Title 'Artikeldetail Mobile' -Subtitle 'Aktuelle Site: Artikel-Header, Bild, Video, Text und Ruecklink'
             $g = $c.Graphics
-            Draw-ViewportFrame -Graphics $g -X 70 -Y 110 -Width 360 -Height 1630 -Label 'SMARTPHONE VIEW'
-            Draw-Header -Graphics $g -X 100 -Y 155 -Width 300 -Mode mobile
-            Draw-Box -Graphics $g -X 100 -Y 245 -Width 300 -Height 50 -Label 'Themenbadge: Bundesliga' -Fill '#FFF4CC' -Align center
-            Draw-Box -Graphics $g -X 100 -Y 310 -Width 300 -Height 95 -Label "Titel`nDer Klassiker: Bayern empfaengt Dortmund" -Fill '#FFFFFF' -FontSize 17 -Bold
-            Draw-Box -Graphics $g -X 100 -Y 420 -Width 300 -Height 60 -Label 'Autor-Foto | Max Mueller | Datum | Lesezeit' -Fill '#EFEFEF' -Align center
-            Draw-Box -Graphics $g -X 100 -Y 495 -Width 300 -Height 180 -Label '[Artikelbild]' -Fill '#FFFFFF' -Align center
-            Draw-Box -Graphics $g -X 100 -Y 690 -Width 300 -Height 130 -Label "[Optionales Video]`nEmbed oder Platzhalter" -Fill '#F7F7F7' -Align center -Border '#666666' -Dashed
-            Draw-Box -Graphics $g -X 100 -Y 835 -Width 300 -Height 405 -Label "Artikeltext`nEinleitung`nZwischenueberschrift`nAbsatz`nAbsatz`nAbsatz" -Fill '#FFFFFF'
-            Draw-Box -Graphics $g -X 100 -Y 1255 -Width 300 -Height 90 -Label '[Zurueck zu allen Artikeln]' -Fill '#EFEFEF' -Align center
-            Draw-Footer -Graphics $g -X 100 -Y 1360 -Width 300 -Height 330 -Mode mobile
-            Draw-Box -Graphics $g -X 470 -Y 220 -Width 230 -Height 260 -Label "Pflicht`n- Detailseite mit Artikel`n- Bild`n- evtl. Video`n- Autor:in + Thema" -Fill '#FFFFFF' -Border '#888888'
+            Draw-ViewportFrame -Graphics $g -X 70 -Y 110 -Width 410 -Height 1910 -Label 'SMARTPHONE VIEW'
+            Draw-Header -Graphics $g -X 100 -Y 155 -Width 350 -Mode mobile
+            Draw-Box -Graphics $g -X 100 -Y 255 -Width 350 -Height 190 -Label "Article Header`nThemenbadge`nTitel`nAutor-Foto | Name | Datum | Lesezeit" -Fill '#DCE8FA' -Align center -FontSize 18
+            Draw-Box -Graphics $g -X 100 -Y 465 -Width 350 -Height 180 -Label '[Artikelbild]' -Fill '#FFFFFF' -Align center
+            Draw-Box -Graphics $g -X 100 -Y 665 -Width 350 -Height 150 -Label "Video Section`nUeberschrift`nEmbedded Video`nQuellenlink" -Fill '#F7F7F7' -Align center -Border '#666666' -Dashed
+            Draw-Box -Graphics $g -X 100 -Y 835 -Width 350 -Height 635 -Label "Article Body`nEinleitung`nZwischenueberschriften`nmehrere Absaetze" -Fill '#FFFFFF'
+            Draw-Box -Graphics $g -X 100 -Y 1490 -Width 350 -Height 95 -Label '[Zurueck zu allen Artikeln]' -Fill '#EFEFEF' -Align center
+            Draw-Footer -Graphics $g -X 100 -Y 1605 -Width 350 -Height 370 -Mode mobile
             Save-Canvas -Canvas $c -TargetDir $MobileOutputDir -Filename 'Wireframe_Artikeldetail_Mobile.png'
         }
         'Tablet' {
-            $c = New-WireframeCanvas -Width 1420 -Height 1260 -Title 'Artikeldetail Tablet' -Subtitle 'Detailansicht mit grossem Titelbereich und Medien untereinander'
+            $c = New-WireframeCanvas -Width 1500 -Height 1450 -Title 'Artikeldetail Tablet' -Subtitle 'Aktuelle Site: breiter Artikel-Header und Medien/Text untereinander'
             $g = $c.Graphics
-            Draw-ViewportFrame -Graphics $g -X 60 -Y 110 -Width 1040 -Height 1070 -Label 'TABLET VIEW'
-            Draw-Header -Graphics $g -X 95 -Y 160 -Width 970 -Mode tablet
-            Draw-Box -Graphics $g -X 95 -Y 255 -Width 180 -Height 48 -Label 'Thema: Bundesliga' -Fill '#FFF4CC' -Align center
-            Draw-Box -Graphics $g -X 95 -Y 320 -Width 970 -Height 90 -Label 'Titel: Der Klassiker: Bayern empfaengt Dortmund' -Fill '#FFFFFF' -FontSize 22 -Bold -Align center
-            Draw-Box -Graphics $g -X 95 -Y 425 -Width 970 -Height 56 -Label 'Autor-Foto | Max Mueller | 20. Maerz 2026 | 5 Min' -Fill '#EFEFEF' -Align center
-            Draw-Box -Graphics $g -X 95 -Y 500 -Width 970 -Height 220 -Label '[Grosses Artikelbild]' -Fill '#FFFFFF' -Align center
-            Draw-Box -Graphics $g -X 95 -Y 740 -Width 970 -Height 140 -Label '[Optionales Video / Embed]' -Fill '#F7F7F7' -Border '#666666' -Dashed -Align center
-            Draw-Box -Graphics $g -X 95 -Y 900 -Width 970 -Height 170 -Label "Artikeltext`nEinleitung | Zwischenueberschriften | mehrere Absaetze" -Fill '#FFFFFF'
-            Draw-Footer -Graphics $g -X 95 -Y 1080 -Width 970 -Height 70 -Mode tablet
-            Draw-Box -Graphics $g -X 1140 -Y 220 -Width 220 -Height 240 -Label "Detailseite`n- Text, Bild, evtl. Video`n- Thema sichtbar`n- Autor mit Foto" -Fill '#FFFFFF' -Border '#888888'
+            Draw-ViewportFrame -Graphics $g -X 60 -Y 110 -Width 1120 -Height 1260 -Label 'TABLET VIEW'
+            Draw-Header -Graphics $g -X 95 -Y 160 -Width 1050 -Mode tablet
+            Draw-Box -Graphics $g -X 95 -Y 255 -Width 1050 -Height 180 -Label "Article Header`nThemenbadge | Titel | Autor-Foto | Name | Datum | Lesezeit" -Fill '#DCE8FA' -Align center -FontSize 22
+            Draw-Box -Graphics $g -X 95 -Y 460 -Width 1050 -Height 245 -Label '[Grosses Artikelbild]' -Fill '#FFFFFF' -Align center
+            Draw-Box -Graphics $g -X 95 -Y 730 -Width 1050 -Height 165 -Label "Video Section`nUeberschrift | Embedded Video | Quellenlink" -Fill '#F7F7F7' -Border '#666666' -Dashed -Align center
+            Draw-Box -Graphics $g -X 95 -Y 920 -Width 1050 -Height 250 -Label "Article Body`nEinleitung | Zwischenueberschriften | mehrere Absaetze" -Fill '#FFFFFF'
+            Draw-Box -Graphics $g -X 95 -Y 1190 -Width 1050 -Height 72 -Label '[Zurueck zu allen Artikeln]' -Fill '#EFEFEF' -Align center
             Save-Canvas -Canvas $c -TargetDir $TabletOutputDir -Filename 'Wireframe_Artikeldetail_Tablet.png'
         }
         'Desktop' {
-            $c = New-WireframeCanvas -Width 1800 -Height 1320 -Title 'Artikeldetail Desktop' -Subtitle 'Breite Lesespalte mit Titel, Medien und Metadaten'
+            $c = New-WireframeCanvas -Width 1900 -Height 1500 -Title 'Artikeldetail Desktop' -Subtitle 'Aktuelle Site: grosser Header, Medien im Body und Ruecklink unter dem Artikel'
             $g = $c.Graphics
-            Draw-ViewportFrame -Graphics $g -X 60 -Y 110 -Width 1680 -Height 1160 -Label 'DESKTOP VIEW'
-            Draw-Header -Graphics $g -X 100 -Y 160 -Width 1600 -Mode desktop
-            Draw-Box -Graphics $g -X 100 -Y 255 -Width 200 -Height 46 -Label 'Bundesliga' -Fill '#FFF4CC' -Align center
-            Draw-Box -Graphics $g -X 100 -Y 320 -Width 1200 -Height 85 -Label 'Der Klassiker: Bayern empfaengt Dortmund' -Fill '#FFFFFF' -FontSize 26 -Bold
-            Draw-Box -Graphics $g -X 100 -Y 420 -Width 1200 -Height 56 -Label 'Autor-Foto | Max Mueller | 20. Maerz 2026 | 5 Min Lesezeit' -Fill '#EFEFEF' -Align center
-            Draw-Box -Graphics $g -X 100 -Y 495 -Width 1200 -Height 260 -Label '[Artikelbild]' -Fill '#FFFFFF' -Align center -FontSize 22
-            Draw-Box -Graphics $g -X 100 -Y 775 -Width 1200 -Height 155 -Label '[Optionales Video / Embed]' -Fill '#F7F7F7' -Border '#666666' -Dashed -Align center
-            Draw-Box -Graphics $g -X 100 -Y 950 -Width 1200 -Height 200 -Label "Artikeltext`nZwischenueberschriften`nAbsaetze mit Bild-/Video-Bezug" -Fill '#FFFFFF'
-            Draw-Box -Graphics $g -X 1350 -Y 320 -Width 310 -Height 260 -Label "Seiteninfo`n- Thema`n- Autor:in`n- Datum`n- Share / Navigation" -Fill '#FFFFFF' -Border '#888888'
-            Draw-Box -Graphics $g -X 1350 -Y 605 -Width 310 -Height 160 -Label '[Zurueck zur Artikeluebersicht]' -Fill '#EFEFEF' -Align center
-            Draw-Footer -Graphics $g -X 100 -Y 1170 -Width 1600 -Height 75 -Mode desktop
+            Draw-ViewportFrame -Graphics $g -X 60 -Y 110 -Width 1760 -Height 1330 -Label 'DESKTOP VIEW'
+            Draw-Header -Graphics $g -X 100 -Y 160 -Width 1680 -Mode desktop
+            Draw-Box -Graphics $g -X 230 -Y 255 -Width 1420 -Height 210 -Label "Article Header`nThemenbadge`nGrosser Titel`nAutor-Foto | Name | Datum | Lesezeit" -Fill '#DCE8FA' -Align center -FontSize 24
+            Draw-Box -Graphics $g -X 230 -Y 490 -Width 1420 -Height 285 -Label '[Grosses Artikelbild]' -Fill '#FFFFFF' -Align center -FontSize 22
+            Draw-Box -Graphics $g -X 230 -Y 800 -Width 1420 -Height 175 -Label "Video Section`nUeberschrift | Embedded Video | Quellenlink" -Fill '#F7F7F7' -Border '#666666' -Dashed -Align center -FontSize 20
+            Draw-Box -Graphics $g -X 230 -Y 1000 -Width 1420 -Height 210 -Label "Article Body`nEinleitung | Zwischenueberschriften | mehrere Absaetze" -Fill '#FFFFFF'
+            Draw-Box -Graphics $g -X 680 -Y 1230 -Width 520 -Height 72 -Label '[Zurueck zu allen Artikeln]' -Fill '#EFEFEF' -Align center
+            Draw-Footer -Graphics $g -X 100 -Y 1325 -Width 1680 -Height 95 -Mode desktop
             Save-Canvas -Canvas $c -TargetDir $DesktopOutputDir -Filename 'Wireframe_Artikeldetail_Desktop.png'
         }
     }
@@ -315,54 +339,68 @@ function Draw-ArticleDetailPage {
 
 function Draw-ContactPage {
     param([string]$Device)
+
     switch ($Device) {
         'Mobile' {
-            $c = New-WireframeCanvas -Width 760 -Height 1760 -Title 'Kontaktseite Mobile' -Subtitle 'Autoreninformationen und Kontaktformular mit Betreffauswahl'
+            $c = New-WireframeCanvas -Width 820 -Height 2260 -Title 'Kontaktseite Mobile' -Subtitle 'Aktuelle Site: Hero mit Panel, Autorenkarten und Kontaktbereich mit Infopanel'
             $g = $c.Graphics
-            Draw-ViewportFrame -Graphics $g -X 70 -Y 110 -Width 360 -Height 1570 -Label 'SMARTPHONE VIEW'
-            Draw-Header -Graphics $g -X 100 -Y 155 -Width 300 -Mode mobile
-            Draw-Box -Graphics $g -X 100 -Y 245 -Width 300 -Height 85 -Label 'Hero: Kontakt' -Fill '#DCE8FA' -Align center
-            Draw-Box -Graphics $g -X 100 -Y 345 -Width 300 -Height 140 -Label "Autor 1`n[Foto] Name | Rolle" -Fill '#FFFFFF'
-            Draw-Box -Graphics $g -X 100 -Y 500 -Width 300 -Height 140 -Label "Autor 2`n[Foto] Name | Rolle" -Fill '#FFFFFF'
-            Draw-Box -Graphics $g -X 100 -Y 655 -Width 300 -Height 140 -Label "Autor 3`n[Foto] Name | Rolle" -Fill '#FFFFFF'
-            Draw-Box -Graphics $g -X 100 -Y 810 -Width 300 -Height 355 -Label "Kontaktformular`n[Name]`n[E-Mail]`n[Betreff v]`n[Nachricht]`n[Senden]" -Fill '#FFFFFF'
-            Draw-Footer -Graphics $g -X 100 -Y 1185 -Width 300 -Height 445 -Mode mobile
-            Draw-Box -Graphics $g -X 470 -Y 210 -Width 230 -Height 220 -Label "Pflicht`n- Autoreninformationen`n- Kontaktformular`n- Dropdown fuer Betreff" -Fill '#FFFFFF' -Border '#888888'
+            Draw-ViewportFrame -Graphics $g -X 70 -Y 110 -Width 410 -Height 2070 -Label 'SMARTPHONE VIEW'
+            Draw-Header -Graphics $g -X 100 -Y 155 -Width 350 -Mode mobile
+            Draw-Box -Graphics $g -X 100 -Y 255 -Width 350 -Height 145 -Label "Hero Content`nUnser Team und dein direkter Draht zum Blog`nKurztext" -Fill '#DCE8FA' -Align center -FontSize 18
+            Draw-Box -Graphics $g -X 100 -Y 415 -Width 350 -Height 155 -Label "Hero Panel`nKontaktpunkte`nHinweis + 3 Stat-Boxen" -Fill '#EAF4E3' -Align center -FontSize 17
+            Draw-Box -Graphics $g -X 100 -Y 590 -Width 350 -Height 105 -Label "Autor:innen Heading`nUnser Team hinter dem Fussball Blog" -Fill '#EFEFEF'
+            Draw-Box -Graphics $g -X 100 -Y 710 -Width 350 -Height 130 -Label "Autor Card 1`nFoto | Name | Specialty | Kurzinfo" -Fill '#FFFFFF'
+            Draw-Box -Graphics $g -X 100 -Y 855 -Width 350 -Height 130 -Label "Autor Card 2`nFoto | Name | Specialty | Kurzinfo" -Fill '#FFFFFF'
+            Draw-Box -Graphics $g -X 100 -Y 1000 -Width 350 -Height 130 -Label "Autor Card 3`nFoto | Name | Specialty | Kurzinfo" -Fill '#FFFFFF'
+            Draw-Box -Graphics $g -X 100 -Y 1145 -Width 350 -Height 130 -Label "Autor Card 4`nFoto | Name | Specialty | Kurzinfo" -Fill '#FFFFFF'
+            Draw-Box -Graphics $g -X 100 -Y 1290 -Width 350 -Height 130 -Label "Autor Card 5`nFoto | Name | Specialty | Kurzinfo" -Fill '#FFFFFF'
+            Draw-Box -Graphics $g -X 100 -Y 1440 -Width 350 -Height 115 -Label "Formular Heading`nSchreib uns direkt ueber das Kontaktformular" -Fill '#EFEFEF'
+            Draw-Box -Graphics $g -X 100 -Y 1570 -Width 350 -Height 160 -Label "Contact Panel`nAnfragen`n3 Hinweise / Punkte" -Fill '#EAF4E3' -Align center
+            Draw-Box -Graphics $g -X 100 -Y 1745 -Width 350 -Height 215 -Label "Kontaktformular`n[Name]`n[E-Mail]`n[Betreff Dropdown]`n[Nachricht]`n[Senden]" -Fill '#FFFFFF'
+            Draw-Footer -Graphics $g -X 100 -Y 1975 -Width 350 -Height 160 -Mode mobile
             Save-Canvas -Canvas $c -TargetDir $MobileOutputDir -Filename 'Wireframe_Kontaktseite_Mobile.png'
         }
         'Tablet' {
-            $c = New-WireframeCanvas -Width 1420 -Height 1180 -Title 'Kontaktseite Tablet' -Subtitle 'Autoren im Grid und breites Formular fuer Rueckfragen zum Blog'
+            $c = New-WireframeCanvas -Width 1500 -Height 1560 -Title 'Kontaktseite Tablet' -Subtitle 'Aktuelle Site: Hero mit Panel, Autorenraster und zweigeteilter Kontaktbereich'
             $g = $c.Graphics
-            Draw-ViewportFrame -Graphics $g -X 60 -Y 110 -Width 1040 -Height 990 -Label 'TABLET VIEW'
-            Draw-Header -Graphics $g -X 95 -Y 160 -Width 970 -Mode tablet
-            Draw-Box -Graphics $g -X 95 -Y 255 -Width 970 -Height 82 -Label 'Kontakt' -Fill '#DCE8FA' -Align center -FontSize 22
-            Draw-Box -Graphics $g -X 95 -Y 360 -Width 230 -Height 145 -Label "Autor 1`n[Foto] Name" -Fill '#FFFFFF'
-            Draw-Box -Graphics $g -X 345 -Y 360 -Width 230 -Height 145 -Label "Autor 2`n[Foto] Name" -Fill '#FFFFFF'
-            Draw-Box -Graphics $g -X 595 -Y 360 -Width 230 -Height 145 -Label "Autor 3`n[Foto] Name" -Fill '#FFFFFF'
-            Draw-Box -Graphics $g -X 835 -Y 360 -Width 230 -Height 145 -Label "Autor 4`n[Foto] Name" -Fill '#FFFFFF'
-            Draw-Box -Graphics $g -X 95 -Y 535 -Width 970 -Height 360 -Label "Kontaktformular`n[Name]`n[E-Mail]`n[Betreff Dropdown]`n[Nachricht]`n[Nachricht senden]" -Fill '#FFFFFF'
-            Draw-Footer -Graphics $g -X 95 -Y 915 -Width 970 -Height 90 -Mode tablet
-            Draw-Box -Graphics $g -X 1140 -Y 220 -Width 220 -Height 240 -Label "Kontaktseite`n- Autoren mit Foto`n- Formular fuer Fragen`n- Betreffauswahl per Dropdown" -Fill '#FFFFFF' -Border '#888888'
+            Draw-ViewportFrame -Graphics $g -X 60 -Y 110 -Width 1120 -Height 1365 -Label 'TABLET VIEW'
+            Draw-Header -Graphics $g -X 95 -Y 160 -Width 1050 -Mode tablet
+            Draw-Box -Graphics $g -X 95 -Y 255 -Width 660 -Height 150 -Label "Hero Content`nUnser Team und dein direkter Draht zum Blog`nKurztext" -Fill '#DCE8FA' -Align center -FontSize 22
+            Draw-Box -Graphics $g -X 780 -Y 255 -Width 365 -Height 150 -Label "Hero Panel`nKontaktpunkte`nHinweis + Stat-Boxen" -Fill '#EAF4E3' -Align center -FontSize 18
+            Draw-Box -Graphics $g -X 95 -Y 430 -Width 1050 -Height 72 -Label 'Autor:innen Heading | Unser Team hinter dem Fussball Blog' -Fill '#EFEFEF' -Align center -FontSize 18
+            Draw-Box -Graphics $g -X 95 -Y 525 -Width 320 -Height 140 -Label "Autor Card 1" -Fill '#FFFFFF' -Align center
+            Draw-Box -Graphics $g -X 460 -Y 525 -Width 320 -Height 140 -Label "Autor Card 2" -Fill '#FFFFFF' -Align center
+            Draw-Box -Graphics $g -X 825 -Y 525 -Width 320 -Height 140 -Label "Autor Card 3" -Fill '#FFFFFF' -Align center
+            Draw-Box -Graphics $g -X 95 -Y 685 -Width 320 -Height 140 -Label "Autor Card 4" -Fill '#FFFFFF' -Align center
+            Draw-Box -Graphics $g -X 460 -Y 685 -Width 320 -Height 140 -Label "Autor Card 5" -Fill '#FFFFFF' -Align center
+            Draw-Box -Graphics $g -X 95 -Y 855 -Width 1050 -Height 72 -Label 'Formular Heading | Schreib uns direkt ueber das Kontaktformular' -Fill '#EFEFEF' -Align center -FontSize 18
+            Draw-Box -Graphics $g -X 95 -Y 950 -Width 380 -Height 255 -Label "Contact Panel`nAnfragen`n3 Hinweise / Punkte" -Fill '#EAF4E3' -Align center -FontSize 18
+            Draw-Box -Graphics $g -X 505 -Y 950 -Width 640 -Height 255 -Label "Kontaktformular`nName | E-Mail | Betreff Dropdown | Nachricht | Senden" -Fill '#FFFFFF' -Align center -FontSize 18
+            Draw-Footer -Graphics $g -X 95 -Y 1230 -Width 1050 -Height 105 -Mode tablet
             Save-Canvas -Canvas $c -TargetDir $TabletOutputDir -Filename 'Wireframe_Kontaktseite_Tablet.png'
         }
         'Desktop' {
-            $c = New-WireframeCanvas -Width 1800 -Height 1280 -Title 'Kontaktseite Desktop' -Subtitle 'Teamdarstellung in mehreren Spalten und zentriertes Kontaktformular'
+            $c = New-WireframeCanvas -Width 1900 -Height 1580 -Title 'Kontaktseite Desktop' -Subtitle 'Aktuelle Site: zweispaltiger Hero, Autorenraster und Kontaktlayout mit Panel plus Formular'
             $g = $c.Graphics
-            Draw-ViewportFrame -Graphics $g -X 60 -Y 110 -Width 1680 -Height 1120 -Label 'DESKTOP VIEW'
-            Draw-Header -Graphics $g -X 100 -Y 160 -Width 1600 -Mode desktop
-            Draw-Box -Graphics $g -X 100 -Y 255 -Width 1600 -Height 84 -Label 'Kontakt' -Fill '#DCE8FA' -Align center -FontSize 24
+            Draw-ViewportFrame -Graphics $g -X 60 -Y 110 -Width 1760 -Height 1410 -Label 'DESKTOP VIEW'
+            Draw-Header -Graphics $g -X 100 -Y 160 -Width 1680 -Mode desktop
+            Draw-Box -Graphics $g -X 100 -Y 255 -Width 1080 -Height 180 -Label "Hero Content`nUnser Team und dein direkter Draht zum Blog`nKurztext" -Fill '#DCE8FA' -Align center -FontSize 24
+            Draw-Box -Graphics $g -X 1210 -Y 255 -Width 570 -Height 180 -Label "Hero Panel`nKontaktpunkte`nHinweis + 3 Stat-Boxen" -Fill '#EAF4E3' -Align center -FontSize 20
+            Draw-Box -Graphics $g -X 100 -Y 465 -Width 1680 -Height 72 -Label 'Autor:innen Heading | Unser Team hinter dem Fussball Blog' -Fill '#EFEFEF' -Align center -FontSize 18
             for ($i = 0; $i -lt 5; $i++) {
-                $x = 100 + ($i * 315)
-                Draw-Box -Graphics $g -X $x -Y 370 -Width 250 -Height 160 -Label ("Autor {0}`n[Foto] Name" -f ($i + 1)) -Fill '#FFFFFF' -Align center
+                $x = 100 + ($i * 320)
+                Draw-Box -Graphics $g -X $x -Y 560 -Width 270 -Height 190 -Label ("Autor Card {0}`nFoto | Name | Specialty | Kurzinfo" -f ($i + 1)) -Fill '#FFFFFF' -Align center
             }
-            Draw-Box -Graphics $g -X 390 -Y 575 -Width 1020 -Height 360 -Label "Kontaktformular`nName`nE-Mail`nBetreff Dropdown`nNachricht`nNachricht senden" -Fill '#FFFFFF' -Align center -FontSize 20
-            Draw-Footer -Graphics $g -X 100 -Y 970 -Width 1600 -Height 175 -Mode desktop
+            Draw-Box -Graphics $g -X 100 -Y 780 -Width 1680 -Height 72 -Label 'Formular Heading | Schreib uns direkt ueber das Kontaktformular' -Fill '#EFEFEF' -Align center -FontSize 18
+            Draw-Box -Graphics $g -X 100 -Y 875 -Width 520 -Height 310 -Label "Contact Panel`nAnfragen`n3 Hinweise / Punkte" -Fill '#EAF4E3' -Align center -FontSize 20
+            Draw-Box -Graphics $g -X 660 -Y 875 -Width 1120 -Height 310 -Label "Kontaktformular`nName | E-Mail | Betreff Dropdown | Nachricht | Senden" -Fill '#FFFFFF' -Align center -FontSize 20
+            Draw-Footer -Graphics $g -X 100 -Y 1210 -Width 1680 -Height 95 -Mode desktop
             Save-Canvas -Canvas $c -TargetDir $DesktopOutputDir -Filename 'Wireframe_Kontaktseite_Desktop.png'
         }
     }
 }
 
-$devices = 'Mobile','Tablet','Desktop'
+$devices = 'Mobile', 'Tablet', 'Desktop'
 foreach ($device in $devices) {
     Draw-StartPage -Device $device
     Draw-ArticleListPage -Device $device
