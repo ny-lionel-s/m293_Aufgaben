@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alle Artikel - Fussball Blog</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="logo">
+                <h1>Fussball Blog</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="artikel.html" class="active">Artikel</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero hero-page">
+            <div class="hero-content">
+                <span class="eyebrow">Artikelübersicht</span>
+                <h2>Alle Artikel auf einen Blick.</h2>
+                <p>Hier bleiben alle Beiträge als Grid sichtbar und lassen sich über Themenfilter gezielt eingrenzen. So ist die Übersicht schnell erfassbar und direkt nutzbar.</p>
+            </div>
+            <aside class="hero-panel">
+                <span class="panel-kicker">Filterbar</span>
+                <h3>Vom Überblick direkt in die passende Liga.</h3>
+                <p>Nutze die Filter, um nur Artikel zu einem bestimmten Thema anzuzeigen oder alles gesammelt zu sehen.</p>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <strong>12</strong>
+                        <span>Artikel</span>
+                    </div>
+                    <div class="hero-stat">
+                        <strong>6</strong>
+                        <span>Themen</span>
+                    </div>
+                    <div class="hero-stat">
+                        <strong>1</strong>
+                        <span>Übersicht</span>
+                    </div>
+                </div>
+            </aside>
+        </section>
+
+        <section class="filter-shell">
+            <div class="section-heading">
+                <div>
+                    <span class="section-kicker">Themenfilter</span>
+                    <h2>Filtere die Übersicht nach Liga oder Wettbewerb.</h2>
+                </div>
+                <p>Alle Artikel bleiben in derselben Kartenlogik dargestellt und können über URL-Parameter direkt vorgefiltert werden.</p>
+            </div>
+            <div class="filter-section">
+                <button type="button" class="filter-btn active" data-filter="alle">Alle</button>
+                <button type="button" class="filter-btn" data-filter="bundesliga">Bundesliga</button>
+                <button type="button" class="filter-btn" data-filter="premier-league">Premier League</button>
+                <button type="button" class="filter-btn" data-filter="la-liga">La Liga</button>
+                <button type="button" class="filter-btn" data-filter="serie-a">Serie A</button>
+                <button type="button" class="filter-btn" data-filter="ligue-1">Ligue 1</button>
+                <button type="button" class="filter-btn" data-filter="champions-league">Champions League</button>
+            </div>
+        </section>
+
+        <section class="latest-articles">
+            <div class="section-heading">
+                <div>
+                    <span class="section-kicker">Artikelgrid</span>
+                    <h2>Alle Beiträge im modernen Kartenlayout.</h2>
+                </div>
+                <a href="index.html" class="section-link">Zur Startseite</a>
+            </div>
+            <div class="articles-grid">
+                <a class="article-card article-card-link" data-category="bundesliga" href="artikel/bayern-klassiker.html">
+                    <img src="https://images.unsplash.com/photo-1675474463858-54ea69949dfe?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000" alt="Bayern München vs Borussia Dortmund">
+                    <div class="article-content">
+                        <span class="article-category">Bundesliga</span>
+                        <h3>Der Klassiker: Bayern empfängt Dortmund</h3>
+                        <p>Das Spitzenspiel der Bundesliga steht bevor. Beide Teams in Topform - wer sichert sich die drei Punkte?</p>
+                        <div class="article-meta">
+                            <img src="https://images.unsplash.com/photo-1747174140000-c0502180b904?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000" alt="Max Müller" class="author-img">
+                            <span>Max Müller</span>
+                            <span class="date">20. März 2026</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="article-card article-card-link" data-category="premier-league" href="artikel/city-titelrennen.html">
+                    <img src="https://images.unsplash.com/photo-1714213450890-3f465d40ed46?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000" alt="Manchester City">
+                    <div class="article-content">
+                        <span class="article-category">Premier League</span>
+                        <h3>Manchester City im Titelrennen vorne</h3>
+                        <p>Die Citizens zeigen beeindruckende Form und führen die Tabelle an. Kann Arsenal noch mithalten?</p>
+                        <div class="article-meta">
+                            <img src="https://images.unsplash.com/photo-1741202231255-f84937c09d03?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000" alt="Sarah Schmidt" class="author-img">
+                            <span>Sarah Schmidt</span>
+                            <span class="date">19. März 2026</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="article-card article-card-link" data-category="la-liga" href="artikel/real-madrid-form.html">
+                    <img src="https://images.unsplash.com/flagged/photo-1552987246-c68926651688?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000" alt="Real Madrid">
+                    <div class="article-content">
+                        <span class="article-category">La Liga</span>
+                        <h3>Real Madrid in Gala-Form</h3>
+                        <p>Die Königlichen zeigen spektakulären Fussball. Bellingham brilliert weiterhin in seiner ersten Saison.</p>
+                        <div class="article-meta">
+                            <img src="https://images.unsplash.com/photo-1534399315465-2b91232de345?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000" alt="Carlos Garcia" class="author-img">
+                            <span>Carlos Garcia</span>
+                            <span class="date">18. März 2026</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="article-card article-card-link" data-category="serie-a" href="artikel/inter-dominanz.html">
+                    <img src="https://images.unsplash.com/photo-1693517413656-d3445182b2e2?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000" alt="Inter Milan">
+                    <div class="article-content">
+                        <span class="article-category">Serie A</span>
+                        <h3>Inter Mailand dominiert die Serie A</h3>
+                        <p>Die Nerazzurri sind das Mass aller Dinge in Italien. Die Defensive steht wie eine Mauer.</p>
+                        <div class="article-meta">
+                            <img src="https://images.unsplash.com/photo-1747214300266-ceabd1cccb80?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000" alt="Marco Rossi" class="author-img">
+                            <span>Marco Rossi</span>
+                            <span class="date">17. März 2026</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="article-card article-card-link" data-category="ligue-1" href="artikel/psg-monaco.html">
+                    <img src="https://images.unsplash.com/photo-1753187075700-2682ab113cbd?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000" alt="PSG vs Monaco">
+                    <div class="article-content">
+                        <span class="article-category">Ligue 1</span>
+                        <h3>PSG gegen Monaco: Titelentscheidung?</h3>
+                        <p>Das wichtigste Spiel der Saison in Frankreich. Monaco fordert PSG in einem packenden Duell heraus.</p>
+                        <div class="article-meta">
+                            <img src="https://images.unsplash.com/flagged/photo-1557581462-0bf3e5907811?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000" alt="Pierre Dubois" class="author-img">
+                            <span>Pierre Dubois</span>
+                            <span class="date">16. März 2026</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="article-card article-card-link" data-category="champions-league" href="artikel/champions-league-viertelfinale.html">
+                    <img src="https://images.unsplash.com/photo-1749577268292-e05b0da79a67?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000" alt="Champions League">
+                    <div class="article-content">
+                        <span class="article-category champions">Champions League</span>
+                        <h3>Viertelfinale: Die Highlights</h3>
+                        <p>Spektakuläre Duelle im Viertelfinale der Champions League. Alle Spiele und Analysen im Überblick.</p>
+                        <div class="article-meta">
+                            <img src="https://images.unsplash.com/photo-1747174140000-c0502180b904?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000" alt="Max Müller" class="author-img">
+                            <span>Max Müller</span>
+                            <span class="date">15. März 2026</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="article-card article-card-link" data-category="bundesliga" href="artikel/leverkusen-meister.html">
+                    <img src="https://images.unsplash.com/photo-1705838856469-fba22e39a4d9?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000" alt="Bayer Leverkusen">
+                    <div class="article-content">
+                        <span class="article-category">Bundesliga</span>
+                        <h3>Leverkusen auf Meisterkurs</h3>
+                        <p>Die Werkself zeigt eine beeindruckende Saison. Xabi Alonso revolutioniert die Bundesliga mit seinem Spielstil.</p>
+                        <div class="article-meta">
+                            <img src="https://images.unsplash.com/photo-1747174140000-c0502180b904?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000" alt="Max Müller" class="author-img">
+                            <span>Max Müller</span>
+                            <span class="date">14. März 2026</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="article-card article-card-link" data-category="premier-league" href="artikel/liverpool-comeback.html">
+                    <img src="https://images.unsplash.com/photo-1731931539748-40ff51b863c5?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000" alt="Liverpool FC">
+                    <div class="article-content">
+                        <span class="article-category">Premier League</span>
+                        <h3>Liverpool kämpft sich zurück</h3>
+                        <p>Die Reds zeigen Moral und holen wichtige Punkte im Titelrennen. Klopp motiviert sein Team zu Höchstleistungen.</p>
+                        <div class="article-meta">
+                            <img src="https://images.unsplash.com/photo-1741202231255-f84937c09d03?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000" alt="Sarah Schmidt" class="author-img">
+                            <span>Sarah Schmidt</span>
+                            <span class="date">13. März 2026</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="article-card article-card-link" data-category="la-liga" href="artikel/barcelona-jugend.html">
+                    <img src="https://images.unsplash.com/photo-1760420981382-e71863c28750?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000" alt="FC Barcelona">
+                    <div class="article-content">
+                        <span class="article-category">La Liga</span>
+                        <h3>Barcelonas goldene Jugend</h3>
+                        <p>La Masia produziert wieder Weltklasse-Talente. Die jungen Stars überzeugen auf ganzer Linie.</p>
+                        <div class="article-meta">
+                            <img src="https://images.unsplash.com/photo-1534399315465-2b91232de345?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000" alt="Carlos Garcia" class="author-img">
+                            <span>Carlos Garcia</span>
+                            <span class="date">12. März 2026</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="article-card article-card-link" data-category="serie-a" href="artikel/milan-renaissance.html">
+                    <img src="https://images.unsplash.com/photo-1693517343607-e7dced201648?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000" alt="AC Milan">
+                    <div class="article-content">
+                        <span class="article-category">Serie A</span>
+                        <h3>AC Milan erlebt Renaissance</h3>
+                        <p>Die Rossoneri sind zurück an der Spitze. Mit spektakulärem Fussball zurück zu alter Stärke.</p>
+                        <div class="article-meta">
+                            <img src="https://images.unsplash.com/photo-1747214300266-ceabd1cccb80?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000" alt="Marco Rossi" class="author-img">
+                            <span>Marco Rossi</span>
+                            <span class="date">11. März 2026</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="article-card article-card-link" data-category="ligue-1" href="artikel/marseille-europa.html">
+                    <img src="https://images.unsplash.com/photo-1542652420-d071027a88bb?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000" alt="Olympique Marseille">
+                    <div class="article-content">
+                        <span class="article-category">Ligue 1</span>
+                        <h3>Marseille greift nach Europa</h3>
+                        <p>OM zeigt starke Leistungen und will zurück in die Champions League. Die Fans sind euphorisch.</p>
+                        <div class="article-meta">
+                            <img src="https://images.unsplash.com/flagged/photo-1557581462-0bf3e5907811?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000" alt="Pierre Dubois" class="author-img">
+                            <span>Pierre Dubois</span>
+                            <span class="date">10. März 2026</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="article-card article-card-link" data-category="champions-league" href="artikel/champions-league-favoriten.html">
+                    <img src="https://images.unsplash.com/photo-1735587804709-8dd78b5c44ad?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000" alt="Champions League Action">
+                    <div class="article-content">
+                        <span class="article-category champions">Champions League</span>
+                        <h3>Die Titelfavoriten im Check</h3>
+                        <p>Wer wird Champion? Eine Analyse der heissesten Anwärter auf den Henkelpott.</p>
+                        <div class="article-meta">
+                            <img src="https://images.unsplash.com/photo-1747174140000-c0502180b904?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000" alt="Max Müller" class="author-img">
+                            <span>Max Müller</span>
+                            <span class="date">9. März 2026</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Über uns</h4>
+                <p>Aktuelle Analysen, klare Themenstruktur und kuratierte Fussball-Artikel aus Europas wichtigsten Wettbewerben.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="artikel.html">Artikel</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Bleib dran</h4>
+                <p>Nutze die Themenfilter, um schnell zu Bundesliga, Premier League, La Liga, Serie A, Ligue 1 oder Champions League zu springen.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Fussball Blog. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <script>
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const articles = document.querySelectorAll('.article-card');
+
+        function applyFilter(filter) {
+            filterBtns.forEach(btn => {
+                const isActive = btn.dataset.filter === filter;
+                btn.classList.toggle('active', isActive);
+                btn.setAttribute('aria-pressed', isActive);
+            });
+
+            articles.forEach(article => {
+                const matches = filter === 'alle' || article.dataset.category === filter;
+                article.hidden = !matches;
+            });
+        }
+
+        filterBtns.forEach(btn => {
+            btn.setAttribute('aria-pressed', btn.classList.contains('active'));
+            btn.addEventListener('click', () => applyFilter(btn.dataset.filter));
+        });
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const thema = urlParams.get('thema');
+        applyFilter(thema || 'alle');
+    </script>
+</body>
+</html>
