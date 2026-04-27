@@ -272,9 +272,9 @@ Zusätzliche Dokumentation:
 
 ## KI-Einsatz in der Entwicklung
 
-Der Projektauftrag verlangt den dokumentierten Einsatz von mindestens zwei KI-Tools. Für dieses Projekt wurden `Codex` und `ChatGPT` verwendet. Die Umsetzung erfolgte eigenständig mit intensiver KI-Unterstützung.
+Der Projektauftrag verlangt den dokumentierten Einsatz von mindestens zwei KI-Tools. Für dieses Projekt wurden `Codex CLI` und `ChatGPT` verwendet. Die Umsetzung erfolgte eigenständig mit intensiver KI-Unterstützung.
 
-### KI-Tool 1: Codex
+### KI-Tool 1: Codex CLI
 
 Einsatzbereiche:
 
@@ -332,6 +332,7 @@ Laut Auftrag sollte KI für `Layout`, `Codevorschläge` und `UI-Optimierungen` e
 | Textliche Dokumentation | Gut | Sehr stark |
 | Hilfe bei Struktur und Ideen | Gut | Sehr stark |
 | Technische Anpassungen | Sehr stark | Gut |
+| kurze Fragen | Stark(Tokenverschwendung) | Sehr stark |
 | Geeignet für dieses Projekt | Sehr stark | Mittel |
 
 ### Fazit zum Vergleich
@@ -347,7 +348,7 @@ Laut Auftrag sollte KI für `Layout`, `Codevorschläge` und `UI-Optimierungen` e
 | Anforderung aus dem Auftrag | Status | Umsetzung im Projekt |
 |---|---|---|
 | Blog zu einem frei gewählten Thema | Erfüllt | Fussball-Blog mit 6 Themenbereichen |
-| Mindestens 2 KI-Tools einsetzen und vergleichen | Erfüllt | Codex und ChatGPT dokumentiert und verglichen |
+| Mindestens 2 KI-Tools einsetzen und vergleichen | Erfüllt | Codex CLI und ChatGPT dokumentiert und verglichen |
 | Startseite mit neuesten oder beliebtesten Artikeln | Erfüllt | `index.html` mit Artikelkarten |
 | Übersicht aller Themen auf der Startseite | Erfüllt | Themenkarten auf `index.html` |
 | Newsletter-Anmeldung | Erfüllt | Formular auf der Startseite |
@@ -411,15 +412,15 @@ Repository-URL:
 - Ein sauberes Kartenlayout lässt sich mit `CSS Grid` gut skalieren.
 - `Flexbox` und `Grid` ergänzen sich sinnvoll.
 - Responsive Design muss auf Inhaltslogik und nicht nur auf Bildschirmbreite reagieren.
-- Ein konsistentes Komponentenmodell vereinfacht spätere Erweiterungen.
+- Wenn alle Komponenten eines Systems einheitlich aufgebaut sind dann kann man das System später leichter erweitern.
 - Die Veröffentlichung über `GitHub Pages` war technisch der schwierigste Teil, weil sich das Projekt in einem Repository mit mehreren Aufgaben befindet. Dafür musste ich ein passenden Workflow einrichten, zusammen mit einem Branch, der für die Veröffentlichung aktuell gehalten wird. Weil bei Gihub Pages wird immer nur im Main Folder nach einem index.html gesucht und wenn dies nicht gefunden wirg gibt es einen Error.
 
 ### Erkenntnisse zum KI-Einsatz
 
-- KI spart Zeit bei Struktur, Überarbeitung und Variantenbildung.
+- KI spart viel Zeit bei Struktur, Überarbeitung und Variantenbildung.
 - Die Vorschläge müssen immer geprüft und an den konkreten Auftrag angepasst werden.
-- Besonders bei Dokumentation und Layoutentscheidungen hilft iteratives Arbeiten.
-- Für ein gutes Ergebnis bleibt die fachliche Kontrolle durch die entwickelnde Person notwendig.
+- Besonders bei Dokumentation und Layout hilft iteratives Arbeiten.
+- Für ein gutes Ergebnis ist sehr wichtig die Website zu testen und so der KI mitteilen was noch geändert werden sollte oder was noch nicht funktioniert. Je genauer die Beschreibung ist, desto besser ist die Veränderung.
 - Ich habe gelernt, KI gezielter einzusetzen und besser zu unterscheiden, welches Tool für welche Aufgabe geeignet ist.
 
 ---
@@ -428,7 +429,7 @@ Repository-URL:
 
 **Projekt:** Fussball Blog - M293 Projektauftrag  
 **Autor:** Lionel Schultze  
-**Umsetzung:** eigenständig mit Unterstützung durch Codex und ChatGPT  
+**Umsetzung:** eigenständig mit Unterstützung durch Codex CLI und ChatGPT  
 **Entwicklungszeit:** 4 mal 4 Schullektionen und zusätzliche Zeit ausserhalb der Schule  
 **Lizenz:** Educational Project
 
