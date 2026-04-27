@@ -10,6 +10,7 @@ Ziel war ein Webauftritt mit:
 - `Artikelübersicht` mit Themenfilter
 - `Artikeldetailseiten` mit Text, Bild, Autor:in und Videobereich
 - `Kontaktseite` mit Autoreninformationen und Kontaktformular
+- optionaler `Kommentar-` und `Likefunktion` auf den Artikeldetailseiten
 - responsivem Verhalten für `Mobile`, `Tablet` und `Desktop`
 
 ---
@@ -29,6 +30,8 @@ Fussball_Blog/
 ├── kontakt.html
 ├── css/
 │   └── styles.css
+├── js/
+│   └── article-interactions.js
 ├── artikel/
 │   ├── bayern-klassiker.html
 │   ├── barcelona-jugend.html
@@ -73,7 +76,7 @@ Datei: `index.html`
 
 Umsetzung:
 
-- Hero-Bereich mit Einleitung zum Blog
+- zweigeteilter Hero-Bereich mit Einleitung und Infopanel
 - Newsletter-Anmeldung auf der Startseite
 - Themenübersicht für 6 Wettbewerbe
 - Kartenbereich mit aktuellen Artikeln
@@ -92,6 +95,7 @@ Datei: `artikel.html`
 Umsetzung:
 
 - alle Artikel in einer gemeinsamen Übersicht
+- Hero-Bereich mit zusätzlichem Infopanel
 - Filterbuttons für alle Themenbereiche
 - Anzeige aller Artikel oder nur eines bestimmten Themas
 - Filterung zusätzlich über URL-Parameter wie `?thema=bundesliga`
@@ -110,8 +114,9 @@ Umsetzung:
 
 - 12 kuratierte Artikeldetailseiten
 - je Seite: Thema, Titel, Bild, Autor:in, Datum, Lesezeit und Text
+- je Seite: eingebetteter Videobereich, Like-Funktion und Kommentarfunktion
 - Rücklink zur Artikelübersicht
-- Jede Artikeldetailseite enthält einen extern eingebetteten Videobereich
+- Interaktionen werden pro Artikel lokal im Browser gespeichert
 
 Erfüllter Auftragsbezug:
 
@@ -123,6 +128,7 @@ Datei: `kontakt.html`
 
 Umsetzung:
 
+- Hero-Bereich mit zusätzlichem Kontaktpanel
 - Vorstellung von 5 Autor:innen mit Foto und Kurzbeschreibung
 - Kontaktformular mit:
   - Name
@@ -151,6 +157,7 @@ Erfüllter Auftragsbezug:
   - Ligue 1
   - Champions League
 - `5` Autor:innenprofile
+- `12` Artikeldetailseiten mit lokaler `Kommentar-` und `Likefunktion`
 
 Damit ist die Anforderung `mindestens 3 Hauptseiten` und `mindestens 10 Artikel` erfüllt.
 
@@ -241,11 +248,18 @@ Einsatz auf `artikel.html`:
 - Filterung über `data-category`
 - Auswertung von URL-Parametern
 
+Einsatz auf `artikel/*.html`:
+
+- dynamisches Einfügen eines Interaktionsbereichs über `js/article-interactions.js`
+- lokale Like-Funktion pro Artikel mit `localStorage`
+- lokale Kommentarfunktion pro Artikel mit `localStorage`
+- Anzeige von Namen, Kommentartext und Zeitstempel pro Eintrag
+
 ---
 
 ## Wireframes
 
-Die im Projektauftrag geforderten Wireframes sind vollständig vorhanden.
+Die im Projektauftrag geforderten Wireframes sind vollständig vorhanden und wurden an die aktuell umgesetzte Seitenstruktur angepasst.
 
 ### Erzeugte Wireframes
 
@@ -378,8 +392,8 @@ Laut Auftrag sollte KI für `Layout`, `Codevorschläge` und `UI-Optimierungen` e
 
 | Optionaler Punkt | Status | Hinweis |
 |---|---|---|
-| Kommentarfunktion | Nicht umgesetzt | nicht Teil des aktuellen Umfangs |
-| Likes mit Web Storage API | Nicht umgesetzt | nicht Teil des aktuellen Umfangs |
+| Kommentarfunktion | Umgesetzt | lokale Speicherung pro Artikel im Browser |
+| Likes mit Web Storage API | Umgesetzt | Like-Status und Anzahl werden pro Artikel lokal gespeichert |
 
 ---
 
@@ -426,7 +440,7 @@ Repository-URL:
 - KI spart viel Zeit bei Struktur, Überarbeitung und Variantenbildung.
 - Die Vorschläge müssen immer geprüft und an den konkreten Auftrag angepasst werden.
 - Besonders bei Dokumentation und Layout hilft iteratives Arbeiten.
-- Für ein gutes Ergebnis ist sehr wichtig die Website zu testen und so der KI mitteilen was noch geändert werden sollte oder was noch nicht funktioniert. Je genauer die Beschreibung ist, desto besser ist die Veränderung.
+- Für ein gutes Ergebnis ist sehr wichtig die Website zu testen und so der KI mitteilen was noch geändert werden sollte oder was noch nicht funktioniert. Je genauer die Beschreibung ist, desto besser ist die Veränderung nach Erwartung.
 - Ich habe gelernt, KI gezielter einzusetzen und besser zu unterscheiden, welches Tool für welche Aufgabe geeignet ist.
 
 ---
@@ -443,5 +457,5 @@ Repository-URL:
 
 ## Stand
 
-**Version:** 1.2  
+**Version:** 1.3  
 **Stand:** April 2026  
