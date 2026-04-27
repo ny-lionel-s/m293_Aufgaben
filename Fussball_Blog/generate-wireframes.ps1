@@ -297,41 +297,44 @@ function Draw-ArticleDetailPage {
 
     switch ($Device) {
         'Mobile' {
-            $c = New-WireframeCanvas -Width 820 -Height 2100 -Title 'Artikeldetail Mobile' -Subtitle 'Aktuelle Site: Artikel-Header, Bild, Video, Text und Ruecklink'
+            $c = New-WireframeCanvas -Width 820 -Height 2360 -Title 'Artikeldetail Mobile' -Subtitle 'Aktuelle Site: Artikel-Header, Bild, Video, Text, Likes, Kommentare und Ruecklink'
             $g = $c.Graphics
-            Draw-ViewportFrame -Graphics $g -X 70 -Y 110 -Width 410 -Height 1910 -Label 'SMARTPHONE VIEW'
+            Draw-ViewportFrame -Graphics $g -X 70 -Y 110 -Width 410 -Height 2170 -Label 'SMARTPHONE VIEW'
             Draw-Header -Graphics $g -X 100 -Y 155 -Width 350 -Mode mobile
             Draw-Box -Graphics $g -X 100 -Y 255 -Width 350 -Height 190 -Label "Article Header`nThemenbadge`nTitel`nAutor-Foto | Name | Datum | Lesezeit" -Fill '#DCE8FA' -Align center -FontSize 18
             Draw-Box -Graphics $g -X 100 -Y 465 -Width 350 -Height 180 -Label '[Artikelbild]' -Fill '#FFFFFF' -Align center
             Draw-Box -Graphics $g -X 100 -Y 665 -Width 350 -Height 150 -Label "Video Section`nUeberschrift`nEmbedded Video`nQuellenlink" -Fill '#F7F7F7' -Align center -Border '#666666' -Dashed
-            Draw-Box -Graphics $g -X 100 -Y 835 -Width 350 -Height 635 -Label "Article Body`nEinleitung`nZwischenueberschriften`nmehrere Absaetze" -Fill '#FFFFFF'
-            Draw-Box -Graphics $g -X 100 -Y 1490 -Width 350 -Height 95 -Label '[Zurueck zu allen Artikeln]' -Fill '#EFEFEF' -Align center
-            Draw-Footer -Graphics $g -X 100 -Y 1605 -Width 350 -Height 370 -Mode mobile
+            Draw-Box -Graphics $g -X 100 -Y 835 -Width 350 -Height 500 -Label "Article Body`nEinleitung`nZwischenueberschriften`nmehrere Absaetze" -Fill '#FFFFFF'
+            Draw-Box -Graphics $g -X 100 -Y 1355 -Width 350 -Height 300 -Label "Interaktionsbereich`nLike Button + Count`nKommentarformular`nName | Kommentar | Speichern`nKommentarliste" -Fill '#EAF4E3'
+            Draw-Box -Graphics $g -X 100 -Y 1675 -Width 350 -Height 95 -Label '[Zurueck zu allen Artikeln]' -Fill '#EFEFEF' -Align center
+            Draw-Footer -Graphics $g -X 100 -Y 1790 -Width 350 -Height 440 -Mode mobile
             Save-Canvas -Canvas $c -TargetDir $MobileOutputDir -Filename 'Wireframe_Artikeldetail_Mobile.png'
         }
         'Tablet' {
-            $c = New-WireframeCanvas -Width 1500 -Height 1450 -Title 'Artikeldetail Tablet' -Subtitle 'Aktuelle Site: breiter Artikel-Header und Medien/Text untereinander'
+            $c = New-WireframeCanvas -Width 1500 -Height 1660 -Title 'Artikeldetail Tablet' -Subtitle 'Aktuelle Site: breiter Artikel-Header, Medien, Interaktionen und Ruecklink'
             $g = $c.Graphics
-            Draw-ViewportFrame -Graphics $g -X 60 -Y 110 -Width 1120 -Height 1260 -Label 'TABLET VIEW'
+            Draw-ViewportFrame -Graphics $g -X 60 -Y 110 -Width 1120 -Height 1470 -Label 'TABLET VIEW'
             Draw-Header -Graphics $g -X 95 -Y 160 -Width 1050 -Mode tablet
             Draw-Box -Graphics $g -X 95 -Y 255 -Width 1050 -Height 180 -Label "Article Header`nThemenbadge | Titel | Autor-Foto | Name | Datum | Lesezeit" -Fill '#DCE8FA' -Align center -FontSize 22
             Draw-Box -Graphics $g -X 95 -Y 460 -Width 1050 -Height 245 -Label '[Grosses Artikelbild]' -Fill '#FFFFFF' -Align center
             Draw-Box -Graphics $g -X 95 -Y 730 -Width 1050 -Height 165 -Label "Video Section`nUeberschrift | Embedded Video | Quellenlink" -Fill '#F7F7F7' -Border '#666666' -Dashed -Align center
-            Draw-Box -Graphics $g -X 95 -Y 920 -Width 1050 -Height 250 -Label "Article Body`nEinleitung | Zwischenueberschriften | mehrere Absaetze" -Fill '#FFFFFF'
-            Draw-Box -Graphics $g -X 95 -Y 1190 -Width 1050 -Height 72 -Label '[Zurueck zu allen Artikeln]' -Fill '#EFEFEF' -Align center
+            Draw-Box -Graphics $g -X 95 -Y 920 -Width 1050 -Height 210 -Label "Article Body`nEinleitung | Zwischenueberschriften | mehrere Absaetze" -Fill '#FFFFFF'
+            Draw-Box -Graphics $g -X 95 -Y 1155 -Width 1050 -Height 220 -Label "Interaktionsbereich`nKommentare & Likes`nLike Button | Kommentarformular | Kommentarliste" -Fill '#EAF4E3' -Align center -FontSize 19
+            Draw-Box -Graphics $g -X 95 -Y 1400 -Width 1050 -Height 72 -Label '[Zurueck zu allen Artikeln]' -Fill '#EFEFEF' -Align center
             Save-Canvas -Canvas $c -TargetDir $TabletOutputDir -Filename 'Wireframe_Artikeldetail_Tablet.png'
         }
         'Desktop' {
-            $c = New-WireframeCanvas -Width 1900 -Height 1500 -Title 'Artikeldetail Desktop' -Subtitle 'Aktuelle Site: grosser Header, Medien im Body und Ruecklink unter dem Artikel'
+            $c = New-WireframeCanvas -Width 1900 -Height 1710 -Title 'Artikeldetail Desktop' -Subtitle 'Aktuelle Site: grosser Header, Medien, Interaktionen und Ruecklink unter dem Artikel'
             $g = $c.Graphics
-            Draw-ViewportFrame -Graphics $g -X 60 -Y 110 -Width 1760 -Height 1330 -Label 'DESKTOP VIEW'
+            Draw-ViewportFrame -Graphics $g -X 60 -Y 110 -Width 1760 -Height 1540 -Label 'DESKTOP VIEW'
             Draw-Header -Graphics $g -X 100 -Y 160 -Width 1680 -Mode desktop
             Draw-Box -Graphics $g -X 230 -Y 255 -Width 1420 -Height 210 -Label "Article Header`nThemenbadge`nGrosser Titel`nAutor-Foto | Name | Datum | Lesezeit" -Fill '#DCE8FA' -Align center -FontSize 24
             Draw-Box -Graphics $g -X 230 -Y 490 -Width 1420 -Height 285 -Label '[Grosses Artikelbild]' -Fill '#FFFFFF' -Align center -FontSize 22
             Draw-Box -Graphics $g -X 230 -Y 800 -Width 1420 -Height 175 -Label "Video Section`nUeberschrift | Embedded Video | Quellenlink" -Fill '#F7F7F7' -Border '#666666' -Dashed -Align center -FontSize 20
-            Draw-Box -Graphics $g -X 230 -Y 1000 -Width 1420 -Height 210 -Label "Article Body`nEinleitung | Zwischenueberschriften | mehrere Absaetze" -Fill '#FFFFFF'
-            Draw-Box -Graphics $g -X 680 -Y 1230 -Width 520 -Height 72 -Label '[Zurueck zu allen Artikeln]' -Fill '#EFEFEF' -Align center
-            Draw-Footer -Graphics $g -X 100 -Y 1325 -Width 1680 -Height 95 -Mode desktop
+            Draw-Box -Graphics $g -X 230 -Y 1000 -Width 1420 -Height 190 -Label "Article Body`nEinleitung | Zwischenueberschriften | mehrere Absaetze" -Fill '#FFFFFF'
+            Draw-Box -Graphics $g -X 230 -Y 1215 -Width 1420 -Height 220 -Label "Interaktionsbereich`nKommentare & Likes`nLike Button | Kommentarformular | Kommentarliste" -Fill '#EAF4E3' -Align center -FontSize 20
+            Draw-Box -Graphics $g -X 680 -Y 1460 -Width 520 -Height 72 -Label '[Zurueck zu allen Artikeln]' -Fill '#EFEFEF' -Align center
+            Draw-Footer -Graphics $g -X 100 -Y 1555 -Width 1680 -Height 95 -Mode desktop
             Save-Canvas -Canvas $c -TargetDir $DesktopOutputDir -Filename 'Wireframe_Artikeldetail_Desktop.png'
         }
     }

@@ -4,7 +4,7 @@ Die Wireframes wurden an die aktuell umgesetzte Site angepasst:
 
 - `Startseite` mit zweigeteiltem Hero, Newsletter, Themenkarten und Artikelraster
 - `Artikeluebersicht` mit Hero plus Infopanel, Themenfilter und Kartenraster
-- `Artikeldetailseite` mit grossem Artikel-Header, Bild, Videoabschnitt, Fliesstext und Ruecklink
+- `Artikeldetailseite` mit grossem Artikel-Header, Bild, Videoabschnitt, Fliesstext, Likes, Kommentaren und Ruecklink
 - `Kontaktseite` mit Hero plus Infopanel, Autorenraster sowie Kontaktpanel und Formular
 - responsiv fuer `Mobile`, `Tablet` und `Desktop`
 
@@ -45,7 +45,9 @@ Die Wireframes wurden an die aktuell umgesetzte Site angepasst:
 ### Artikeldetail Mobile
 - kompakter Artikel-Header mit Themenbadge, Titel und Autor:in
 - Artikelbild und eigener Videobereich mit Quellenlink
-- Text in einer klaren Lesespalte mit Ruecklink unterhalb
+- Text in einer klaren Lesespalte
+- Interaktionsbereich mit Like-Button, Kommentarformular und Kommentarliste
+- Ruecklink unterhalb des Interaktionsbereichs
 
 ### Kontaktseite Mobile
 - Hero mit Inhaltsblock und Kontaktpanel
@@ -69,7 +71,9 @@ Die Wireframes wurden an die aktuell umgesetzte Site angepasst:
 ### Artikeldetail Tablet
 - breiter Artikel-Header mit Badge, Titel und Autorblock
 - Bild und Video untereinander
-- Textblock und Ruecklink unterhalb
+- Textblock
+- Interaktionsbereich mit Like-Button, Kommentarformular und Kommentarliste
+- Ruecklink unterhalb
 
 ### Kontaktseite Tablet
 - Hero mit Content links und Kontaktpanel rechts
@@ -95,7 +99,9 @@ Die Wireframes wurden an die aktuell umgesetzte Site angepasst:
 - grosser Artikel-Header als Einstieg in die Detailseite
 - grosses Artikelbild
 - Videoabschnitt unterhalb des Bildes
-- Lesebereich mit Ruecklink unter dem Body
+- Lesebereich im Body
+- Interaktionsbereich mit Likes und Kommentaren unter dem Body
+- Ruecklink unterhalb des Interaktionsbereichs
 
 ### Kontaktseite Desktop
 - zweispaltiger Hero oberhalb des Teams
