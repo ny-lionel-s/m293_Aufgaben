@@ -397,17 +397,6 @@ Laut Auftrag sollte KI für `Layout`, `Codevorschläge` und `UI-Optimierungen` e
 
 ---
 
-## Lokale Verwendung
-
-```bash
-# Projekt öffnen
-cd Fussball_Blog
-
-# index.html direkt im Browser öffnen
-# oder mit einem Live-Server starten
-```
-
----
 
 ## Veröffentlichung
 
